@@ -18,7 +18,12 @@ jobs:
       with:
         node-version: '12.x'
 
-    - name: Build and Deploy
+    - name: Build
+      run: |
+        yarn install
+        yarn build
+
+    - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
