@@ -1,4 +1,5 @@
 module.exports = ctx => ({
+  base: "/docs/",
   dest: "dist",
   locales: {
     '/': {
