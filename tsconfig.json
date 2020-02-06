@@ -4,6 +4,14 @@
     "strict": true,
     "module": "esnext",
     "moduleResolution": "node",
+    "experimentalDecorators": true,
     "types": ["vuepress-types"]
-  }
+  },
+  "include": [
+    "docs/.vuepress/**/*.vue",
+    "docs/.vuepress/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
