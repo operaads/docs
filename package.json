@@ -13,8 +13,18 @@
     "lint-md:wording": "textlint ./docs/**/*.md"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.19.0",
+    "@typescript-eslint/parser": "^2.19.0",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/eslint-config-typescript": "^5.0.1",
     "@vuepress/plugin-back-to-top": "^1.3.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-vue": "^6.1.2",
     "node-sass": "^4.13.1",
+    "prettier": "^1.19.1",
+    "pug": "^2.0.4",
+    "pug-plain-loader": "^1.0.0",
     "remark-cli": "^7.0.1",
     "remark-lint": "^6.0.5",
     "remark-preset-lint-consistent": "^2.0.3",
@@ -29,6 +39,7 @@
     "textlint-rule-terminology": "^2.0.3",
     "textlint-rule-write-good": "^1.6.2",
     "typescript": "^3.7.5",
+    "vue-eslint-parser": "^7.0.0",
     "vuepress": "^1.3.0",
     "vuepress-plugin-typescript": "^0.1.2",
     "vuepress-types": "^0.8.1"
