@@ -1,3 +1,5 @@
+const { JSGuide } = require("./sidebar/guide");
+
 module.exports = ctx => ({
   base: "/docs/",
   dest: "dist",
@@ -5,7 +7,7 @@ module.exports = ctx => ({
     "/": {
       lang: "en-US",
       title: "Opera Adx",
-      description: "Opera Adx documentations."
+      description: "Opera Adx SDK documentations."
     },
     "/zh-CN/": {
       lang: "zh-CN",
@@ -19,12 +21,20 @@ module.exports = ctx => ({
       "/": {
         label: "English",
         selectText: "Languages",
-        ariaLabel: "Select language"
+        ariaLabel: "Select language",
+        nav: require("./nav/en"),
+        sidebar: {
+          "/js/guide/": JSGuide("Guide")
+        }
       },
       "/zh-CN/": {
         label: "简体中文",
         selectText: "选择语言",
-        ariaLabel: "选择语言"
+        ariaLabel: "选择语言",
+        nav: require("./nav/zh-CN"),
+        sidebar: {
+          "/zh-CN/js/guide/": JSGuide("指南")
+        }
       }
     }
   },
@@ -38,5 +48,6 @@ module.exports = ctx => ({
         }
       }
     ]
-  ]
+  ],
+  extraWatchFiles: [".vuepress/nav/en.js", ".vuepress/nav/zh.js"]
 });
