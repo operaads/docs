@@ -64,7 +64,7 @@
 
 例如，如果您使用 ```<div align="center">``` 和 ```</div>``` HTML 标记将您的广告代码括起来，则广告将显示在网页中间。
 
-``` html{3,12}
+``` html{3,11}
 <html>
 <head> 这是您网页的标题部分 <title>示例 HTML 网页</title> </head> <body> 这是您网页的正文部分。
 <div align="center">
