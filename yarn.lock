@@ -9428,10 +9428,10 @@ textlint-rule-helper@^2.0.0, textlint-rule-helper@^2.1.1:
     structured-source "^3.0.2"
     unist-util-visit "^1.1.0"
 
-textlint-rule-stop-words@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/textlint-rule-stop-words/-/textlint-rule-stop-words-2.0.0.tgz#0802bfac1ffabf8359cc7ead21c7da694e9d5cb0"
-  integrity sha512-JG06DCJv7i7UjEdFC39eS8uGdY4295wf3SzVvSVhKplQPsLu1LZdMCSON3uziDrLv4B1EEN7lRI9QHMXYTv/6Q==
+textlint-rule-stop-words@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/textlint-rule-stop-words/-/textlint-rule-stop-words-2.0.1.tgz#d5bf17fd5ec078c792235d9193e3dba489965362"
+  integrity sha512-TUnOIMXl850Px9bl3H522UeeStmh92EYwXXnkMZOBIerHwFLG2KaaH+qGN+FaL0EugKj6WY8QKG6jOufGAiJsQ==
   dependencies:
     lodash "^4.17.15"
     split-lines "^2.0.0"
