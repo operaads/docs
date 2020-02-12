@@ -8,10 +8,9 @@
 <script src="http://url-to-opera-adx-js-sdk.js" async></script>
 <ins id="test_ad_1"
   data-adx-slot="s600961065408"
-  data-adx-creative-types="BIG_CARD"
   style="display: inline-block;width: 500px;"
 ></ins>
-<script>(OperaAdx = window.OperaAdx || []).push("test_ad_1");</script>
+<script>(adsbyopera = window.adsbyopera || []).push("test_ad_1");</script>
 ```
 
 在上面的例子中，需要注意的地方有：
@@ -46,10 +45,9 @@
 <script src="http://url-to-opera-adx-js-sdk.js" async></script>
 <ins id="test_ad_1"
   data-adx-slot="s600961065408"
-  data-adx-creative-types="BIG_CARD"
   style="display: inline-block;width: 500px;"
 ></ins>
-<script>(OperaAdx = window.OperaAdx || []).push("test_ad_1");</script>
+<script>(adsbyopera = window.adsbyopera || []).push("test_ad_1");</script>
 </body>
 </html>
 ```
@@ -64,17 +62,16 @@
 
 例如，如果您使用 ```<div align="center">``` 和 ```</div>``` HTML 标记将您的广告代码括起来，则广告将显示在网页中间。
 
-``` html{3,11}
+``` html{3,10}
 <html>
 <head> 这是您网页的标题部分 <title>示例 HTML 网页</title> </head> <body> 这是您网页的正文部分。
 <div align="center">
 <script src="http://url-to-opera-adx-js-sdk.js" async></script>
 <ins id="test_ad_1"
   data-adx-slot="s600961065408"
-  data-adx-creative-types="BIG_CARD"
   style="display: inline-block;width: 500px;"
 ></ins>
-<script>(OperaAdx = window.OperaAdx || []).push("test_ad_1");</script>
+<script>(adsbyopera = window.adsbyopera || []).push("test_ad_1");</script>
 </div>
 </body>
 </html>
