@@ -57,13 +57,13 @@ interface AdxOptions {
 
 ### data-adx-width
 
-* 类型：nunber
+* 类型：number
 
 * 说明：广告的宽度
 
 ### data-adx-height
 
-* 类型：nunber
+* 类型：number
 
 * 说明：广告的高度
 

@@ -21,14 +21,14 @@
 
 3. 第二个 ```<script></script>``` 中的代码用于执行广告渲染。
 
-
 ## 将广告代码粘贴到页面中
 
 未添加广告代码时：
 
 ``` html
 <html>
-<head> 这是您网页的标题部分。
+<head>
+这是您网页的标题部分。
 <title>示例 HTML 网页</title>
 </head>
 <body>
@@ -41,7 +41,12 @@
 
 ``` html
 <html>
-<head> 这是您网页的标题部分 <title>示例 HTML 网页</title> </head> <body> 这是您网页的正文部分。
+<head>
+这是您网页的标题部分
+<title>示例 HTML 网页</title>
+</head>
+<body>
+这是您网页的正文部分。
 <script src="http://url-to-opera-adx-js-sdk.js" async></script>
 <ins id="test_ad_1"
   data-adx-slot="s600961065408"
@@ -62,9 +67,14 @@
 
 例如，如果您使用 ```<div align="center">``` 和 ```</div>``` HTML 标记将您的广告代码括起来，则广告将显示在网页中间。
 
-``` html{3,10}
+``` html{8,15}
 <html>
-<head> 这是您网页的标题部分 <title>示例 HTML 网页</title> </head> <body> 这是您网页的正文部分。
+<head>
+这是您网页的标题部分
+<title>示例 HTML 网页</title>
+</head>
+<body>
+这是您网页的正文部分。
 <div align="center">
 <script src="http://url-to-opera-adx-js-sdk.js" async></script>
 <ins id="test_ad_1"

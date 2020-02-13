@@ -1,0 +1,74 @@
+# Basic Config
+
+Take the code as an example:
+
+``` html
+<script src="http://url-to-opera-adx-js-sdk.js" async></script>
+<ins id="test_ad_1"
+  data-adx-slot="s600961065408"
+  style="display: inline-block;width: 500px;"
+></ins>
+<script>(adsbyopera = window.adsbyopera || []).push("test_ad_1");</script>
+```
+
+## Size of the ads
+
+For the ```<ins>``` tag, you need to set CSS style to it, which is usually ```display: inline-block```.
+
+It is recommended to set the width and height of the ```<ins>``` tag, such as ```width: 500px; height: 300px;``` to determine the width and height of the ad.
+
+::: tip
+Please always set the width for the ```<ins>``` tag. If the width is empty, the rendered width of the tag is taken as the width of the ad.
+When the height is not set, the height of the ```<ins>``` tag will be set automatically based on the height of the ad.
+:::
+
+## Ad Rendering
+
+The rendering of the ad uses the following code:
+
+``` js
+(adsbyopera = window.adsbyopera || []).push("test_ad_1");
+```
+
+```adsbyopera``` is an object exported by default in the JS SDK. Use the object's ```push``` method to render ads.
+
+The parameter can be the ```id``` of the ```<ins>``` tag, a specific DOM object (for example: ```document.getElementById("test_ad_1")```), or a configuration object.
+
+The definition of the configuration object is as follows:
+
+``` ts
+interface AdxOptions {
+  adxSlot?: string; // slot id
+  adxWidth?: number; // ad width
+  adxHeight?: number; // ad height
+  adxTarget: string | Element; // render target
+}
+```
+
+## Configure ads with HTML attributes
+
+You can also use HTML attributes to configure ad slots.
+
+Available attributes are:
+
+### data-adx-slot
+
+* Type: string
+
+* Desc: The Slot ID of ad
+
+### data-adx-width
+
+* Type: number
+
+* Desc: Width of ad
+
+### data-adx-height
+
+* Type: number
+
+* Desc: Height of ad
+
+::: tip
+When a configuration item is specified through both the configuration object and the HTML attribute, the content in the configuration object is used.
+:::
