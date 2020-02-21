@@ -10391,10 +10391,10 @@ vuepress-plugin-smooth-scroll@^0.0.3:
   dependencies:
     smoothscroll-polyfill "^0.4.3"
 
-vuepress-plugin-typescript@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/vuepress-plugin-typescript/-/vuepress-plugin-typescript-0.1.2.tgz#a224ad4408fa8fe2ffe55c2c86d3437731a6747b"
-  integrity sha512-gblqhiaqH3MAYEaG49FGWhnaMVBPWpjT1hLD7bOqPeo8QgryeY11KvASyomeSgpiwPOjtNWO0SIJuTaPINTJsA==
+vuepress-plugin-typescript@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/vuepress-plugin-typescript/-/vuepress-plugin-typescript-0.2.0.tgz#1d27f747af2eabeb8ae803f02370797dae9ee51b"
+  integrity sha512-ETpiJ+96tzd6Yb/bQVRmEQKeLOcCjHIDvDMQVV93UVO5gCziRt2WtX0/v9E869ij9/dHAnHFMfqhuOJN3oAeEw==
   dependencies:
     ts-loader "^6.2.1"
 
