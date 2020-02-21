@@ -4,14 +4,7 @@
 
 A typical piece of ad code shows as follows:
 
-``` html
-<script src="http://url-to-opera-adx-js-sdk.js" async></script>
-<ins id="test_ad_1"
-  data-adx-slot="s600961065408"
-  style="display: inline-block;width: 500px;"
-></ins>
-<script>(adsbyopera = window.adsbyopera || []).push("test_ad_1");</script>
-```
+<DemoAndCode adx-slot="s600961065408" />
 
 In which:
 

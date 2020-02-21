@@ -3,6 +3,11 @@ const { JSGuide } = require("./sidebar/guide");
 module.exports = ctx => ({
   base: "/docs/",
   dest: "dist",
+  define: {
+    SDK_URL: ctx.isProd
+      ? "http://pagead.adx.ams.op-mobile.opera.com/adsbyopera.js"
+      : "http://127.0.0.1:10001/index.bundle.js"
+  },
   locales: {
     "/": {
       lang: "en-US",
@@ -49,5 +54,9 @@ module.exports = ctx => ({
       }
     ]
   ],
-  extraWatchFiles: [".vuepress/nav/en.js", ".vuepress/nav/zh.js"]
+  extraWatchFiles: [
+    ".vuepress/nav/en.js",
+    ".vuepress/nav/zh.js",
+    ".vuepress/examples/*"
+  ]
 });
