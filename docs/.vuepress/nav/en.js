@@ -8,8 +8,18 @@ module.exports = [
         link: "/js/guide/"
       },
       {
-        text: "Example",
-        link: "/js/examples/"
+        text: "Examples",
+        link: "/js/examples/",
+        items: [
+          {
+            text: "Desktop",
+            link: "/js/examples/desktop/"
+          },
+          {
+            text: "Mobile",
+            link: "/js/examples/mobile/"
+          }
+        ]
       }
     ]
   },

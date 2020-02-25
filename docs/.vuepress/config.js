@@ -6,7 +6,7 @@ module.exports = ctx => ({
   define: {
     SDK_URL: ctx.isProd
       ? "https://res-odx.op-mobile.opera.com/adsbyopera.js"
-      : "http://127.0.0.1:10001/index.bundle.js"
+      : "http://127.0.0.1:10001/adsbyopera.js"
   },
   locales: {
     "/": {

@@ -9,7 +9,17 @@ module.exports = [
       },
       {
         text: "样例",
-        link: "/zh-CN/js/examples/"
+        ariaLabel: "Examples",
+        items: [
+          {
+            text: "桌面端",
+            link: "/zh-CN/js/examples/desktop/"
+          },
+          {
+            text: "移动端",
+            link: "/zh-CN/js/examples/mobile/"
+          }
+        ]
       }
     ]
   },
