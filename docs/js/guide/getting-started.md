@@ -4,7 +4,14 @@
 
 A typical piece of ad code shows as follows:
 
-<DemoAndCode adx-slot="s600961065408" />
+``` html
+<script src="https://res-odx.op-mobile.opera.com/adsbyopera.js" async></script>
+<ins id="test_ad_1"
+  data-adx-slot="s600xxxxxxxx"
+  style="display: inline-block;width: 300px;"
+></ins>
+<script>(adsbyopera = window.adsbyopera || []).push("test_ad_1");</script>
+```
 
 In which:
 
@@ -40,10 +47,10 @@ This is the head of your page.
 </head>
 <body>
 This is the body of your page.
-<script src="http://url-to-opera-adx-js-sdk.js" async></script>
+<script src="https://res-odx.op-mobile.opera.com/adsbyopera.js" async></script>
 <ins id="test_ad_1"
-  data-adx-slot="s600961065408"
-  style="display: inline-block;width: 500px;"
+  data-adx-slot="s600xxxxxxxxx"
+  style="display: inline-block;width: 300px;"
 ></ins>
 <script>(adsbyopera = window.adsbyopera || []).push("test_ad_1");</script>
 </body>
@@ -69,10 +76,10 @@ This is the head of your page.
 <body>
 This is the body of your page.
 <div align="center">
-<script src="http://url-to-opera-adx-js-sdk.js" async></script>
+<script src="https://res-odx.op-mobile.opera.com/adsbyopera.js" async></script>
 <ins id="test_ad_1"
-  data-adx-slot="s600961065408"
-  style="display: inline-block;width: 500px;"
+  data-adx-slot="s600xxxxxxxxx"
+  style="display: inline-block;width: 300px;"
 ></ins>
 <script>(adsbyopera = window.adsbyopera || []).push("test_ad_1");</script>
 </div>

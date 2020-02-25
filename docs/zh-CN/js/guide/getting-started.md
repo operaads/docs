@@ -5,10 +5,10 @@
 一段典型的广告代码如下：
 
 ``` html
-<script src="http://url-to-opera-adx-js-sdk.js" async></script>
+<script src="https://res-odx.op-mobile.opera.com/adsbyopera.js" async></script>
 <ins id="test_ad_1"
-  data-adx-slot="s600961065408"
-  style="display: inline-block;width: 500px;"
+  data-adx-slot="s600xxxxxxxx"
+  style="display: inline-block;width: 300px;"
 ></ins>
 <script>(adsbyopera = window.adsbyopera || []).push("test_ad_1");</script>
 ```
@@ -47,10 +47,10 @@
 </head>
 <body>
 这是您网页的正文部分。
-<script src="http://url-to-opera-adx-js-sdk.js" async></script>
+<script src="https://res-odx.op-mobile.opera.com/adsbyopera.js" async></script>
 <ins id="test_ad_1"
-  data-adx-slot="s600961065408"
-  style="display: inline-block;width: 500px;"
+  data-adx-slot="s600xxxxxxxxx"
+  style="display: inline-block;width: 300px;"
 ></ins>
 <script>(adsbyopera = window.adsbyopera || []).push("test_ad_1");</script>
 </body>
@@ -76,10 +76,10 @@
 <body>
 这是您网页的正文部分。
 <div align="center">
-<script src="http://url-to-opera-adx-js-sdk.js" async></script>
+<script src="https://res-odx.op-mobile.opera.com/adsbyopera.js" async></script>
 <ins id="test_ad_1"
-  data-adx-slot="s600961065408"
-  style="display: inline-block;width: 500px;"
+  data-adx-slot="s600xxxxxxxxx"
+  style="display: inline-block;width: 300px;"
 ></ins>
 <script>(adsbyopera = window.adsbyopera || []).push("test_ad_1");</script>
 </div>

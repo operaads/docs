@@ -9,7 +9,7 @@ module.exports = [
       },
       {
         text: "样例",
-        link: "/zh-CN/js/examples"
+        link: "/zh-CN/js/examples/"
       }
     ]
   },
