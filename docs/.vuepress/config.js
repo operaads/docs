@@ -8,6 +8,15 @@ module.exports = ctx => ({
       ? "https://res-odx.op-mobile.opera.com/adsbyopera.js"
       : "http://127.0.0.1:10001/adsbyopera.js"
   },
+  head: [
+    [
+      "script",
+      {
+        src:
+          "https://polyfill.io/v3/polyfill.min.js?features=Object.assign%2CPromise%2CNodeList.prototype.forEach"
+      }
+    ]
+  ],
   locales: {
     "/": {
       lang: "en-US",
