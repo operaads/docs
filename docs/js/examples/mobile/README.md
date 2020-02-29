@@ -21,3 +21,23 @@
 ### Display HTML
 
 <DemoAndCode adx-slot="s2580300887936" />
+
+### Tel
+
+<DemoAndCode adx-slot="s2602890806464" />
+
+### Sms
+
+<DemoAndCode adx-slot="s2602902910144" />
+
+### SmsTo
+
+<DemoAndCode adx-slot="s2602905655360" />
+
+### WhatsApp
+
+<DemoAndCode adx-slot="s2602906496768" />
+
+### USSD
+
+<DemoAndCode adx-slot="s2602907231744" />
