@@ -50,7 +50,7 @@ export default class DemoAndCode extends Vue {
   renderAdElement: HTMLScriptElement | null = null;
 
   get highlightedCode(): string {
-    const code = `<script src="${SDK_URL}"><\/script>
+    const code = `<script src="${SDK_URL}" async><\/script>
 ${this.htmlContent}
 <script>(adsbyopera = window.adsbyopera || []).push("${this.id}");<\/script>`;
 
