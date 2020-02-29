@@ -41,3 +41,7 @@
 ### USSD
 
 <DemoAndCode adx-slot="s2602907231744" />
+
+### Intent
+
+<DemoAndCode adx-slot="s2603173937088" />
