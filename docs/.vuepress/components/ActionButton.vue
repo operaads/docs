@@ -13,7 +13,7 @@ import { Component, Vue, Prop } from "vue-property-decorator";
 export default class ActionButton extends Vue {
   @Prop({
     type: String,
-    required: true
+    required: true,
   })
   readonly link!: string;
 

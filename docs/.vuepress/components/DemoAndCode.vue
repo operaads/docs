@@ -23,18 +23,16 @@ import * as Prism from "prismjs";
 export default class DemoAndCode extends Vue {
   @Prop({
     type: String,
-    required: true
+    required: true,
   })
   adxSlot!: string;
 
   @Prop({
     type: String,
     default() {
-      const randomId = Math.random()
-        .toString(36)
-        .substring(2, 7);
+      const randomId = Math.random().toString(36).substring(2, 7);
       return `ad-${randomId}`;
-    }
+    },
   })
   id!: string;
 
@@ -63,7 +61,7 @@ ${this.htmlContent}
 
   get codeWrapperStyle(): object {
     return {
-      maxHeight: this.isShowCode ? `${this.codeHeight}px` : "0"
+      maxHeight: this.isShowCode ? `${this.codeHeight}px` : "0",
     };
   }
 

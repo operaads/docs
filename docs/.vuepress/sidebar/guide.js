@@ -1,11 +1,11 @@
-module.exports.JSGuide = function(groupA) {
+module.exports.JSGuide = function (groupA) {
   return [
     {
       title: groupA,
       collapsable: false,
-      children: ["", "getting-started", "basic-config"]
-    }
+      children: ["", "getting-started", "basic-config"],
+    },
   ];
 };
 
-module.exports.AndroidGuide = function(groupA) {};
+module.exports.AndroidGuide = function (groupA) {};

@@ -5,7 +5,7 @@ module.exports = [
     items: [
       {
         text: "Guide",
-        link: "/js/guide/"
+        link: "/js/guide/",
       },
       {
         text: "Examples",
@@ -13,15 +13,15 @@ module.exports = [
         items: [
           {
             text: "Desktop",
-            link: "/js/examples/desktop/"
+            link: "/js/examples/desktop/",
           },
           {
             text: "Mobile",
-            link: "/js/examples/mobile/"
-          }
-        ]
-      }
-    ]
+            link: "/js/examples/mobile/",
+          },
+        ],
+      },
+    ],
   },
   {
     text: "Android",
@@ -29,12 +29,12 @@ module.exports = [
     items: [
       {
         text: "Guide",
-        link: "/android/guide/"
+        link: "/android/guide/",
       },
       {
         text: "Example",
-        link: "/android/examples/"
-      }
-    ]
-  }
+        link: "/android/examples/",
+      },
+    ],
+  },
 ];
