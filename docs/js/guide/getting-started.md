@@ -6,18 +6,18 @@ A typical piece of ad code shows as follows:
 
 ``` html
 <script src="https://res-odx.op-mobile.opera.com/adsbyopera.js" async></script>
-<ins id="test_ad_1"
+<ins id="ad_1"
   data-adx-slot="s600xxxxxxxx"
   style="display: inline-block;width: 300px;"
 ></ins>
-<script>(adsbyopera = window.adsbyopera || []).push("test_ad_1");</script>
+<script>(adsbyopera = window.adsbyopera || []).push("ad_1");</script>
 ```
 
 In which:
 
 1. Introduced Opera Ad JS SDK，and use ```async``` to asynchronous loading.
 
-2. ```<ins></ins>``` tag defines the body of the ad, the ad will be rendered into the tag, and the ID of the tag is ```test_ad_1```.
+2. ```<ins></ins>``` tag defines the body of the ad, the ad will be rendered into the tag, and the ID of the tag is ```ad_1```.
 
 3. The code in second ```<script></script>``` tag is used to perform ad rendering ad.
 
@@ -48,11 +48,11 @@ This is the head of your page.
 <body>
 This is the body of your page.
 <script src="https://res-odx.op-mobile.opera.com/adsbyopera.js" async></script>
-<ins id="test_ad_1"
+<ins id="ad_1"
   data-adx-slot="s600xxxxxxxxx"
   style="display: inline-block;width: 300px;"
 ></ins>
-<script>(adsbyopera = window.adsbyopera || []).push("test_ad_1");</script>
+<script>(adsbyopera = window.adsbyopera || []).push("ad_1");</script>
 </body>
 </html>
 ```
@@ -77,11 +77,11 @@ This is the head of your page.
 This is the body of your page.
 <div align="center">
 <script src="https://res-odx.op-mobile.opera.com/adsbyopera.js" async></script>
-<ins id="test_ad_1"
+<ins id="ad_1"
   data-adx-slot="s600xxxxxxxxx"
   style="display: inline-block;width: 300px;"
 ></ins>
-<script>(adsbyopera = window.adsbyopera || []).push("test_ad_1");</script>
+<script>(adsbyopera = window.adsbyopera || []).push("ad_1");</script>
 </div>
 </body>
 </html>

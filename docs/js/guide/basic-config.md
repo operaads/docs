@@ -1,14 +1,14 @@
 # Basic Config
 
-Take the code as an example:
+Take the following code as an example:
 
 ``` html
 <script src="https://res-odx.op-mobile.opera.com/adsbyopera.js" async></script>
-<ins id="test_ad_1"
+<ins class="adsbyopera"
   data-adx-slot="s600xxxxxxxxx"
   style="display: inline-block;width: 300px;"
 ></ins>
-<script>(adsbyopera = window.adsbyopera || []).push("test_ad_1");</script>
+<script>(adsbyopera = window.adsbyopera || []).push({});</script>
 ```
 
 ## Size of the ads
@@ -27,12 +27,12 @@ When the height is not set, the height of the ```<ins>``` tag will be set automa
 The rendering of the ad uses the following code:
 
 ``` js
-(adsbyopera = window.adsbyopera || []).push("test_ad_1");
+(adsbyopera = window.adsbyopera || []).push({});
 ```
 
 ```adsbyopera``` is an object exported by default in the JS SDK. Use the object's ```push``` method to render ads.
 
-The parameter can be the ```id``` of the ```<ins>``` tag, a specific DOM object (for example: ```document.getElementById("test_ad_1")```), or a configuration object.
+The parameter can be the ```id``` of the ```<ins>``` tag, a specific DOM object (for example: ```document.getElementById("ad_1")```), a configuration object.
 
 The definition of the configuration object is as follows:
 
@@ -44,6 +44,10 @@ interface AdxOptions {
   adxTarget: string | Element; // render target
 }
 ```
+
+::: tip
+When a empty object is passed, it means render all tag with class name ```adsbyopera```.
+:::
 
 ## Configure ads with HTML attributes
 

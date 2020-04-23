@@ -6,18 +6,18 @@
 
 ``` html
 <script src="https://res-odx.op-mobile.opera.com/adsbyopera.js" async></script>
-<ins id="test_ad_1"
+<ins id="ad_1"
   data-adx-slot="s600xxxxxxxx"
   style="display: inline-block;width: 300px;"
 ></ins>
-<script>(adsbyopera = window.adsbyopera || []).push("test_ad_1");</script>
+<script>(adsbyopera = window.adsbyopera || []).push("ad_1");</script>
 ```
 
 在上面的例子中，需要注意的地方有：
 
 1. 引入了 Opera Ad JS SDK，然后设置为 ```async``` 异步加载；
 
-2. ```<ins></ins>``` 标签定义了广告体，广告将渲染到该标签内，并且该标签的 ID 为 ```test_ad_1```；
+2. ```<ins></ins>``` 标签定义了广告体，广告将渲染到该标签内，并且该标签的 ID 为 ```ad_1```；
 
 3. 第二个 ```<script></script>``` 中的代码用于执行广告渲染。
 
@@ -48,11 +48,11 @@
 <body>
 这是您网页的正文部分。
 <script src="https://res-odx.op-mobile.opera.com/adsbyopera.js" async></script>
-<ins id="test_ad_1"
+<ins id="ad_1"
   data-adx-slot="s600xxxxxxxxx"
   style="display: inline-block;width: 300px;"
 ></ins>
-<script>(adsbyopera = window.adsbyopera || []).push("test_ad_1");</script>
+<script>(adsbyopera = window.adsbyopera || []).push("ad_1");</script>
 </body>
 </html>
 ```
@@ -77,11 +77,11 @@
 这是您网页的正文部分。
 <div align="center">
 <script src="https://res-odx.op-mobile.opera.com/adsbyopera.js" async></script>
-<ins id="test_ad_1"
+<ins id="ad_1"
   data-adx-slot="s600xxxxxxxxx"
   style="display: inline-block;width: 300px;"
 ></ins>
-<script>(adsbyopera = window.adsbyopera || []).push("test_ad_1");</script>
+<script>(adsbyopera = window.adsbyopera || []).push("ad_1");</script>
 </div>
 </body>
 </html>

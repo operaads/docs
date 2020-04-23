@@ -1,14 +1,14 @@
 # 基本配置
 
-以示例代码为例：
+以下列代码为例：
 
 ``` html
 <script src="https://res-odx.op-mobile.opera.com/adsbyopera.js" async></script>
-<ins id="test_ad_1"
-  data-adx-slot="s600961065408"
+<ins class="adsbyopera"
+  data-adx-slot="s600xxxxxxxxx"
   style="display: inline-block;width: 300px;"
 ></ins>
-<script>(adsbyopera = window.adsbyopera || []).push("test_ad_1");</script>
+<script>(adsbyopera = window.adsbyopera || []).push({});</script>
 ```
 
 ## 广告宽高
@@ -27,10 +27,10 @@
 广告的渲染使用到了如下代码：
 
 ``` js
-(adsbyopera = window.adsbyopera || []).push("test_ad_1");
+(adsbyopera = window.adsbyopera || []).push({});
 ```
 
-```adsbyopera``` 为 JS SDK 中默认导出的对象，使用该对象的 ```push``` 方法来渲染广告。参数可以是 ```<ins>``` 标签的 ```id```、具体的 DOM 对象（例如：```document.getElementById("test_ad_1")```）或者一个配置对象。
+```adsbyopera``` 为 JS SDK 中默认导出的对象，使用该对象的 ```push``` 方法来渲染广告。参数可以是 ```<ins>``` 标签的 ```id```、具体的 DOM 对象（例如：```document.getElementById("ad_1")```）或者一个配置对象。
 
 配置对象的定义如下：
 
@@ -42,6 +42,10 @@ interface AdxOptions {
   adxTarget: string | Element; // 渲染目标
 }
 ```
+
+::: tip
+当传递一个空对象时，所有 class 为 ```adsbyopera``` 的标签都会被渲染。
+:::
 
 ## 使用 HTML 属性来配置广告
 
