@@ -42,7 +42,7 @@
     "textlint-rule-terminology": "^2.1.4",
     "textlint-rule-write-good": "^1.6.2",
     "typescript": "^3.8.3",
-    "vue-eslint-parser": "^7.0.0",
+    "vue-eslint-parser": "^7.1.0",
     "vuepress": "^1.4.1",
     "vuepress-plugin-typescript": "^0.2.0",
     "vuepress-types": "^0.9.1"
