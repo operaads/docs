@@ -9846,10 +9846,10 @@ try-resolve@^1.0.1:
   resolved "https://registry.yarnpkg.com/try-resolve/-/try-resolve-1.0.1.tgz#cfde6fabd72d63e5797cfaab873abbe8e700e912"
   integrity sha1-z95vq9ctY+V5fPqrhzq76OcA6RI=
 
-ts-loader@^6.2.1:
-  version "6.2.2"
-  resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-6.2.2.tgz#dffa3879b01a1a1e0a4b85e2b8421dc0dfff1c58"
-  integrity sha512-HDo5kXZCBml3EUPcc7RlZOV/JGlLHwppTLEHb3SHnr5V7NXD4klMEkrhJe5wgRbaWsSXi+Y1SIBN/K9B6zWGWQ==
+ts-loader@^7.0.3:
+  version "7.0.5"
+  resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-7.0.5.tgz#789338fb01cb5dc0a33c54e50558b34a73c9c4c5"
+  integrity sha512-zXypEIT6k3oTc+OZNx/cqElrsbBtYqDknf48OZos0NQ3RTt045fBIU8RRSu+suObBzYB355aIPGOe/3kj9h7Ig==
   dependencies:
     chalk "^2.3.0"
     enhanced-resolve "^4.0.0"
@@ -10568,12 +10568,12 @@ vuepress-plugin-smooth-scroll@^0.0.3:
   dependencies:
     smoothscroll-polyfill "^0.4.3"
 
-vuepress-plugin-typescript@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/vuepress-plugin-typescript/-/vuepress-plugin-typescript-0.2.0.tgz#1d27f747af2eabeb8ae803f02370797dae9ee51b"
-  integrity sha512-ETpiJ+96tzd6Yb/bQVRmEQKeLOcCjHIDvDMQVV93UVO5gCziRt2WtX0/v9E869ij9/dHAnHFMfqhuOJN3oAeEw==
+vuepress-plugin-typescript@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/vuepress-plugin-typescript/-/vuepress-plugin-typescript-0.3.0.tgz#cfef12d55a5329fdb4373895aa2963d2e5dd78de"
+  integrity sha512-V3DhjpWWHfuVbH2MHLYRnCOwq6Tk8IxnFnfk3xDgNzYznOmJ6YAih0v314C1Oi+W0yk+ufTk/vZka0ENatXKwA==
   dependencies:
-    ts-loader "^6.2.1"
+    ts-loader "^7.0.3"
 
 vuepress-types@^0.9.3:
   version "0.9.3"
