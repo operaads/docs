@@ -8360,10 +8360,10 @@ remark-parse@^8.0.0:
     vfile-location "^3.0.0"
     xtend "^4.0.1"
 
-remark-preset-lint-consistent@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/remark-preset-lint-consistent/-/remark-preset-lint-consistent-3.0.0.tgz#8548d7a5ff6c342dbaa7f9713adac587faad2640"
-  integrity sha512-T+Nm1FobzqHTKClGG2oYGVbF4zAv8HSipG0tEt30EsXzMXT7AILIXjKyuyIt5T0LOqXbz5aPbGtLMbMuPK8aEw==
+remark-preset-lint-consistent@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/remark-preset-lint-consistent/-/remark-preset-lint-consistent-3.0.1.tgz#58aaf9d5d6606c285929eba3af1bde90324cf343"
+  integrity sha512-Q+i6iSHvEtklZHcrTcRzNy96gRUqnNXkVsZAiH1J06jrkarBoSakQOkWD5gpR7tGbfr9VchrntdWY+n0YSf9Ww==
   dependencies:
     remark-lint "^7.0.0"
     remark-lint-blockquote-indentation "^2.0.0"
