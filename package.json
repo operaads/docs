@@ -31,7 +31,7 @@
     "remark-lint": "^7.0.0",
     "remark-preset-lint-consistent": "^3.0.0",
     "remark-preset-lint-recommended": "^4.0.0",
-    "sass-loader": "^8.0.2",
+    "sass-loader": "^9.0.2",
     "textlint": "^11.6.3",
     "textlint-filter-rule-comments": "^1.2.2",
     "textlint-rule-apostrophe": "^2.0.0",
