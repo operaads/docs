@@ -27,7 +27,7 @@
     "prettier": "^2.0.5",
     "pug": "^2.0.4",
     "pug-plain-loader": "^1.0.0",
-    "remark-cli": "^8.0.0",
+    "remark-cli": "^8.0.1",
     "remark-lint": "^7.0.0",
     "remark-preset-lint-consistent": "^3.0.0",
     "remark-preset-lint-recommended": "^4.0.0",
