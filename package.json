@@ -45,7 +45,7 @@
     "vue-eslint-parser": "^7.1.0",
     "vuepress": "^1.5.4",
     "vuepress-plugin-typescript": "^0.3.0",
-    "vuepress-types": "^0.9.3"
+    "vuepress-types": "^0.9.4"
   },
   "dependencies": {
     "prismjs": "^1.21.0",
