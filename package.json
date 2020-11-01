@@ -29,7 +29,7 @@
     "pug-plain-loader": "^1.0.0",
     "remark-cli": "^8.0.1",
     "remark-lint": "^7.0.1",
-    "remark-preset-lint-consistent": "^3.0.1",
+    "remark-preset-lint-consistent": "^4.0.0",
     "remark-preset-lint-recommended": "^4.0.1",
     "sass-loader": "^10.0.4",
     "textlint": "^11.7.6",
