@@ -26,7 +26,7 @@
     "node-sass": "^5.0.0",
     "prettier": "^2.2.1",
     "pug": "^2.0.4",
-    "pug-plain-loader": "^1.0.0",
+    "pug-plain-loader": "^1.1.0",
     "remark-cli": "^9.0.0",
     "remark-lint": "^8.0.0",
     "remark-preset-lint-consistent": "^4.0.0",
