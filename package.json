@@ -19,7 +19,7 @@
     "@typescript-eslint/parser": "^2.34.0",
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/eslint-config-typescript": "^5.1.0",
-    "@vuepress/plugin-back-to-top": "^1.7.1",
+    "@vuepress/plugin-back-to-top": "^1.8.0",
     "eslint": "^6.8.0",
     "eslint-plugin-prettier": "^3.3.0",
     "eslint-plugin-vue": "^7.4.0",
