@@ -7,8 +7,3 @@ updates:
     time: "09:00"
     timezone: Asia/Shanghai
   open-pull-requests-limit: 10
-  ignore:
-  - dependency-name: vue-eslint-parser
-    versions:
-    - 7.4.1
-    - 7.5.0
