@@ -1,7 +1,7 @@
 const { JSGuide } = require("./sidebar/guide");
 
 module.exports = (ctx) => ({
-  base: "/docs/",
+  base: "/",
   dest: "dist",
   define: {
     SDK_URL: ctx.isProd
