@@ -1,19 +1,25 @@
 "use strict";
-var fs = require("fs");
+const fs = require("fs");
+
 function toToc(dir) {
   let fileNames = fs.readdirSync(dir);
   let names = [];
-  for(let i in fileNames) {
-    let name = fileNames[i]
+  for (let i in fileNames) {
+    let name = fileNames[i];
+    let path = dir + "/" + name;
+    if (fs.statSync(path).isDirectory()) {
+      continue;
+    }
     if (name !== "README.md"){
-      names.push(fileNames[i]);
+      names.push(fileNames[i].split(".")[0]);
     }
   }
   names.unshift("");
   return names;
 }
+
 module.exports.JSGuide = function (groupA, dirName) {
-  var names = toToc(dirName);
+  let names = toToc(dirName);
   return [
     {
       title: groupA,
