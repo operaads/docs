@@ -23,7 +23,7 @@
     "css-loader": "^5.2.4",
     "eslint": "^7.26.0",
     "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-vue": "^7.9.0",
+    "eslint-plugin-vue": "^7.12.1",
     "prettier": "^2.3.0",
     "pug": "^3.0.2",
     "pug-plain-loader": "^1.1.0",
