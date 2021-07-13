@@ -13,7 +13,7 @@
     "lint-md:wording": "textlint ./docs/**/*.md"
   },
   "devDependencies": {
-    "@textlint-rule/textlint-rule-no-unmatched-pair": "^1.0.7",
+    "@textlint-rule/textlint-rule-no-unmatched-pair": "^1.0.8",
     "@types/prismjs": "^1.16.5",
     "@typescript-eslint/eslint-plugin": "^4.28.1",
     "@typescript-eslint/parser": "^4.23.0",
