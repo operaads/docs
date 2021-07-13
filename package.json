@@ -1,7 +1,7 @@
 {
   "name": "ad-docs",
   "version": "1.0.0",
-  "description": "Documentions for Opera Adx",
+  "description": "Documentions for Opera Ads",
   "main": "index.js",
   "author": "xingwangl",
   "license": "MIT",

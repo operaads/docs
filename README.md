@@ -1,1 +1,1 @@
-# Documentations for Opera Adx SDK
+# Documentations for Opera Ads SDK

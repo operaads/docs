@@ -11,13 +11,13 @@ module.exports = (ctx) => ({
   locales: {
     "/": {
       lang: "en-US",
-      title: "Opera Adx",
-      description: "Opera Adx SDK documentations.",
+      title: "Opera Ads",
+      description: "Opera Ads SDK documentations.",
     },
     "/zh-CN/": {
       lang: "zh-CN",
-      title: "Opera Adx",
-      description: "Opera Adx 文档。",
+      title: "Opera Ads",
+      description: "Opera Ads 文档。",
     },
   },
   themeConfig: {
