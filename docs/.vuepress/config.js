@@ -5,7 +5,7 @@ module.exports = (ctx) => ({
   dest: "dist",
   define: {
     SDK_URL: ctx.isProd
-      ? "https://res-odx.op-mobile.opera.com/adsbyopera.js"
+      ? "https://res.adx.opera.com/adx/adsbyopera.js"
       : "http://127.0.0.1:10001/adsbyopera.js",
   },
   locales: {

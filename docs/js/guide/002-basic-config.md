@@ -3,7 +3,7 @@
 Take the following code as an example:
 
 ``` html
-<script src="https://res-odx.op-mobile.opera.com/adsbyopera.js" async></script>
+<script src="https://res.adx.opera.com/adx/adsbyopera.js" async></script>
 <ins class="adsbyopera"
   data-adx-slot="s600xxxxxxxxx"
   style="display: inline-block;width: 300px;"

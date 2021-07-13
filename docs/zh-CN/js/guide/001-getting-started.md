@@ -5,7 +5,7 @@
 一段典型的广告代码如下：
 
 ``` html
-<script src="https://res-odx.op-mobile.opera.com/adsbyopera.js" async></script>
+<script src="https://res.adx.opera.com/adx/adsbyopera.js" async></script>
 <ins id="ad_1"
   data-adx-slot="s600xxxxxxxx"
   style="display: inline-block;width: 300px;"
@@ -47,7 +47,7 @@
 </head>
 <body>
 这是您网页的正文部分。
-<script src="https://res-odx.op-mobile.opera.com/adsbyopera.js" async></script>
+<script src="https://res.adx.opera.com/adx/adsbyopera.js" async></script>
 <ins id="ad_1"
   data-adx-slot="s600xxxxxxxxx"
   style="display: inline-block;width: 300px;"
@@ -76,7 +76,7 @@
 <body>
 这是您网页的正文部分。
 <div align="center">
-<script src="https://res-odx.op-mobile.opera.com/adsbyopera.js" async></script>
+<script src="https://res.adx.opera.com/adx/adsbyopera.js" async></script>
 <ins id="ad_1"
   data-adx-slot="s600xxxxxxxxx"
   style="display: inline-block;width: 300px;"

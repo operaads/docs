@@ -5,7 +5,7 @@
 A typical piece of ad code shows as follows:
 
 ``` html
-<script src="https://res-odx.op-mobile.opera.com/adsbyopera.js" async></script>
+<script src="https://res.adx.opera.com/adx/adsbyopera.js" async></script>
 <ins id="ad_1"
   data-adx-slot="s600xxxxxxxx"
   style="display: inline-block;width: 300px;"
@@ -47,7 +47,7 @@ This is the head of your page.
 </head>
 <body>
 This is the body of your page.
-<script src="https://res-odx.op-mobile.opera.com/adsbyopera.js" async></script>
+<script src="https://res.adx.opera.com/adx/adsbyopera.js" async></script>
 <ins id="ad_1"
   data-adx-slot="s600xxxxxxxxx"
   style="display: inline-block;width: 300px;"
@@ -76,7 +76,7 @@ This is the head of your page.
 <body>
 This is the body of your page.
 <div align="center">
-<script src="https://res-odx.op-mobile.opera.com/adsbyopera.js" async></script>
+<script src="https://res.adx.opera.com/adx/adsbyopera.js" async></script>
 <ins id="ad_1"
   data-adx-slot="s600xxxxxxxxx"
   style="display: inline-block;width: 300px;"
