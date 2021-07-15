@@ -30,6 +30,7 @@ module.exports = (ctx) => ({
         nav: require("./nav/en"),
         sidebar: {
           "/js/guide/": JSGuide("Guide", "./docs/js/guide/"),
+          "/vasttag/guide/": JSGuide("Guide", "./docs/vasttag/guide/"),
         },
       },
       "/zh-CN/": {
@@ -39,6 +40,7 @@ module.exports = (ctx) => ({
         nav: require("./nav/zh-CN"),
         sidebar: {
           "/zh-CN/js/guide/": JSGuide("指南", "./docs/zh-CN/js/guide/"),
+          "/zh-CN/vasttag/guide/": JSGuide("指南", "./docs/zh-CN/vasttag/guide/"),
         },
       },
     },

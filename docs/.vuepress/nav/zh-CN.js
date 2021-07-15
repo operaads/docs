@@ -37,4 +37,18 @@ module.exports = [
       },
     ],
   },
+  {
+    text: "Vast Tag",
+    ariaLabel: "VAST Tag",
+    items: [
+      {
+        text: "指南",
+        link: "/zh-CN/vasttag/guide/",
+      },
+      {
+        text: "样例",
+        link: "/zh-CN/vasttag/examples/",
+      },
+    ],
+  },
 ];

@@ -37,4 +37,18 @@ module.exports = [
       },
     ],
   },
+  {
+    text: "Vast Tag",
+    ariaLabel: "VAST Tag",
+    items: [
+      {
+        text: "Guide",
+        link: "/vasttag/guide/",
+      },
+      {
+        text: "Example",
+        link: "/vasttag/examples/",
+      },
+    ],
+  },
 ];

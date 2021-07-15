@@ -18,4 +18,11 @@ footer: MIT Licensed | Copyright © 2020 Opera
       <ActionButton link="./android/guide/">Quick Start →</ActionButton>
     </p>
   </div>
+  <div class="feature">
+    <h2>VAST TAG</h2>
+    <p>For VAST tag integration.</p>
+    <p>
+      <ActionButton link="./vasttag/guide/">Quick Start →</ActionButton>
+    </p>
+  </div>
 </div>
