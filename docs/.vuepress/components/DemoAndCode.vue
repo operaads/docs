@@ -1,7 +1,6 @@
 <template lang="pug">
   .demo-and-code
-    .demo-wrapper
-      .demo(v-html="htmlContent")
+    .demo-wrapper(v-html="htmlContent")
     .code-wrapper(:style="codeWrapperStyle")
       div(
         ref="code-wrapper",
@@ -36,6 +35,12 @@ export default class DemoAndCode extends Vue {
   })
   id!: string;
 
+  @Prop({
+    type: Number,
+    default: 300,
+  })
+  width!: number;
+
   @Ref("code-wrapper")
   codeWrapper!: HTMLDivElement;
 
@@ -48,15 +53,17 @@ export default class DemoAndCode extends Vue {
   renderAdElement: HTMLScriptElement | null = null;
 
   get highlightedCode(): string {
-    const code = `<script src="${SDK_URL}" async><\/script>
-${this.htmlContent}
-<script>(adsbyopera = window.adsbyopera || []).push("${this.id}");<\/script>`;
+    const codes = [
+      `<script src="${SDK_URL}" async><\/script>`,
+      this.htmlContent,
+      `<script>(adsbyopera = window.adsbyopera || []).push("${this.id}");<\/script>`,
+    ];
 
-    return Prism.highlight(code, Prism.languages["html"], "html");
+    return Prism.highlight(codes.join("\n"), Prism.languages["html"], "html");
   }
 
   get htmlContent(): string {
-    return `<ins id="${this.id}" data-adx-slot="${this.adxSlot}" style="display: inline-block;width: 300px;"><\/ins>`;
+    return `<ins id="${this.id}" data-adx-slot="${this.adxSlot}" style="display: inline-block;width: ${this.width}px;"><\/ins>`;
   }
 
   get codeWrapperStyle(): object {
@@ -69,7 +76,9 @@ ${this.htmlContent}
     const { height: codeHeight } = this.codeWrapper.getBoundingClientRect();
     this.codeHeight = codeHeight;
 
-    if (typeof window.adsbyopera === "undefined") {
+    const q = document.querySelector(`script[src="${SDK_URL}"]`);
+
+    if (!q && typeof window.adsbyopera === "undefined") {
       const scriptElement = document.createElement("script");
       scriptElement.src = SDK_URL;
       scriptElement.async = true;
@@ -95,14 +104,10 @@ ${this.htmlContent}
     box-shadow: 0 0 11px rgba(33, 33, 33, 0.2)
 
   .demo-wrapper
-    display: flex
-    justify-content: center
-    align-items: center
-    overflow: hidden
+    text-align: center
+    width: 100%
+    overflow-x: auto
     padding: 5px 0
-
-    .demo
-      width: 300px
 
   .code-wrapper
     overflow: hidden

@@ -39,9 +39,13 @@
 | consent           |        否      | 字符串      | 用户是否同意使用和处理其个人数据. 空按不同意处理. 可选值为`true` 或者 `false` 或者 `unknown` 或者 符合IAB标准的GDPR user consent string, 详见 [GDPR-Transparency-and-Consent-Framework](https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/Consent%20string%20and%20vendor%20list%20formats%20v1.1%20Final.md#purposes-features).
 
 ## Tag Url 实例
-`https://s.adx.opera.com/tag/video?uid=fad3d048-981d-4f13-9b96-4136b17e187a&plc=s5340077725248&ts=1621654401&site=opera.com&url=https%3A%2F%2Fwww.opera.com%2Fnews%2Fp1&ref=https%3A%2F%2Fwww.opera.com&dt=PHONE&os=ANDROID&osv=9.1&ua=Opera%20News%2F7.4.2254.148299%2F52.0.2743.10%20%28Android%209%29&dw=1920&dh=1080`
+
+```url
+https://s.adx.opera.com/tag/video?uid=fad3d048-981d-4f13-9b96-4136b17e187a&plc=s5340077725248&ts=1621654401&site=opera.com&url=https%3A%2F%2Fwww.opera.com%2Fnews%2Fp1&ref=https%3A%2F%2Fwww.opera.com&dt=PHONE&os=ANDROID&osv=9.1&ua=Opera%20News%2F7.4.2254.148299%2F52.0.2743.10%20%28Android%209%29&dw=1920&dh=1080
+```
 
 ## 响应实例
+
 ```xml
 <VAST version="3.0">
     <Ad id="20009">
@@ -180,14 +184,14 @@
             </Error>
             <Pricing model="cpm" currency="USD">
                 <![CDATA[
-                 25.00 
+                 25.00
             ]]>
             </Pricing>
             <Extensions>
                 <Extension type="iab-Count">
                     <total_available>
                         <![CDATA[ 2 ]]>
-                    
+
                     </total_available>
                 </Extension>
                 <Extension type="Tracking">

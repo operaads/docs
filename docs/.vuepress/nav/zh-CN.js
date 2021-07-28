@@ -1,53 +1,32 @@
 module.exports = [
   {
-    text: "JS",
-    ariaLabel: "JS SDK",
+    text: "OFS",
+    ariaLabel: "",
     items: [
       {
-        text: "指南",
-        link: "/zh-CN/js/guide/",
+        text: "JS SDK",
+        ariaLabel: "JS SDK",
+        link: "/zh-CN/ofs/js/",
       },
       {
-        text: "样例",
-        ariaLabel: "Examples",
-        items: [
-          {
-            text: "桌面端",
-            link: "/zh-CN/js/examples/desktop/",
-          },
-          {
-            text: "移动端",
-            link: "/zh-CN/js/examples/mobile/",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    text: "Android",
-    ariaLabel: "Android SDK",
-    items: [
-      {
-        text: "指南",
-        link: "/zh-CN/android/guide/",
+        text: "Android SDK",
+        ariaLabel: "Android SDK",
+        link: "/zh-CN/ofs/android/",
       },
       {
-        text: "样例",
-        link: "/zh-CN/android/examples/",
-      },
-    ],
-  },
-  {
-    text: "Vast Tag",
-    ariaLabel: "VAST Tag",
-    items: [
-      {
-        text: "指南",
-        link: "/zh-CN/vasttag/guide/",
+        text: "Vast Tag",
+        ariaLabel: "VAST Tag",
+        link: "/zh-CN/ofs/vasttag/",
       },
       {
-        text: "样例",
-        link: "/zh-CN/vasttag/examples/",
+        text: "OpenRTB",
+        ariaLabel: "OpenRTB",
+        link: "/zh-CN/ofs/openrtb/",
+      },
+      {
+        text: "头部竞价",
+        ariaLabel: "头部竞价",
+        link: "/zh-CN/ofs/hb/",
       },
     ],
   },

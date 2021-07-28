@@ -27,12 +27,12 @@ export default class ActionButton extends Vue {
 .action-button
   display: inline-block
   box-sizing: border-box
-  padding: 0.8rem 1.6rem
+  padding: 0.2rem 0.8rem
   border-bottom: 1px solid darken($accentColor, 10%)
   border-radius: 4px
   background-color: $accentColor
   color: #fff
-  font-size: 1.2rem
+  font-size: 1rem
   transition: background-color 0.1s ease
 
   &:hover

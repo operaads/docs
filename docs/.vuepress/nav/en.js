@@ -1,53 +1,32 @@
 module.exports = [
   {
-    text: "JS",
-    ariaLabel: "JS SDK",
+    text: "OFS",
+    ariaLabel: "Opera Ads for Supplier Partners",
     items: [
       {
-        text: "Guide",
-        link: "/js/guide/",
+        text: "JS SDK",
+        ariaLabel: "JS SDK",
+        link: "/ofs/js/",
       },
       {
-        text: "Examples",
-        link: "/js/examples/",
-        items: [
-          {
-            text: "Desktop",
-            link: "/js/examples/desktop/",
-          },
-          {
-            text: "Mobile",
-            link: "/js/examples/mobile/",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    text: "Android",
-    ariaLabel: "Android SDK",
-    items: [
-      {
-        text: "Guide",
-        link: "/android/guide/",
+        text: "Android SDK",
+        ariaLabel: "Android SDK",
+        link: "/ofs/android/",
       },
       {
-        text: "Example",
-        link: "/android/examples/",
-      },
-    ],
-  },
-  {
-    text: "Vast Tag",
-    ariaLabel: "VAST Tag",
-    items: [
-      {
-        text: "Guide",
-        link: "/vasttag/guide/",
+        text: "Vast Tag",
+        ariaLabel: "VAST Tag",
+        link: "/ofs/vasttag/",
       },
       {
-        text: "Example",
-        link: "/vasttag/examples/",
+        text: "OpenRTB",
+        ariaLabel: "OpenRTB",
+        link: "/ofs/openrtb/",
+      },
+      {
+        text: "Header Bidding",
+        ariaLabel: "Header Bidding",
+        link: "/ofs/hb/",
       },
     ],
   },

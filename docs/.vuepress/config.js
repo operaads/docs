@@ -1,18 +1,17 @@
-const { JSGuide } = require("./sidebar/guide");
+const { listMarkdowns } = require("./sidebar");
 
-module.exports = (ctx) => ({
+module.exports = () => ({
   base: "/",
   dest: "dist",
   define: {
-    SDK_URL: ctx.isProd
-      ? "https://res.adx.opera.com/adx/adsbyopera.js"
-      : "http://127.0.0.1:10001/adsbyopera.js",
+    SDK_URL: "https://res.adx.opera.com/adx/adsbyopera.js",
   },
+  head: [["link", { rel: "shortcut icon", href: "/favicon.ico" }]],
   locales: {
     "/": {
       lang: "en-US",
       title: "Opera Ads",
-      description: "Opera Ads SDK documentations.",
+      description: "Opera Ads Documentations.",
     },
     "/zh-CN/": {
       lang: "zh-CN",
@@ -29,8 +28,22 @@ module.exports = (ctx) => ({
         ariaLabel: "Select language",
         nav: require("./nav/en"),
         sidebar: {
-          "/js/guide/": JSGuide("Guide", "./docs/js/guide/"),
-          "/vasttag/guide/": JSGuide("Guide", "./docs/vasttag/guide/"),
+          "/ofs/js/": [
+            {
+              title: "Guide",
+              children: listMarkdowns("./docs/ofs/js/"),
+            },
+            {
+              title: "Examples",
+              children: listMarkdowns("./docs/ofs/js/examples/", "examples/"),
+            },
+          ],
+          "/ofs/vasttag/": [
+            {
+              title: "Guide",
+              children: listMarkdowns("./docs/ofs/vasttag/"),
+            },
+          ],
         },
       },
       "/zh-CN/": {
@@ -39,8 +52,25 @@ module.exports = (ctx) => ({
         ariaLabel: "选择语言",
         nav: require("./nav/zh-CN"),
         sidebar: {
-          "/zh-CN/js/guide/": JSGuide("指南", "./docs/zh-CN/js/guide/"),
-          "/zh-CN/vasttag/guide/": JSGuide("指南", "./docs/zh-CN/vasttag/guide/"),
+          "/zh-CN/ofs/js/": [
+            {
+              title: "指南",
+              children: listMarkdowns("./docs/zh-CN/ofs/js/"),
+            },
+            {
+              title: "样例",
+              children: listMarkdowns(
+                "./docs/zh-CN/ofs/js/examples/",
+                "examples/"
+              ),
+            },
+          ],
+          "/zh-CN/ofs/vasttag/": [
+            {
+              title: "指南",
+              children: listMarkdowns("./docs/zh-CN/ofs/vasttag/"),
+            },
+          ],
         },
       },
     },
@@ -49,9 +79,5 @@ module.exports = (ctx) => ({
     ["@vuepress/back-to-top", true],
     ["vuepress-plugin-typescript", {}],
   ],
-  extraWatchFiles: [
-    ".vuepress/nav/en.js",
-    ".vuepress/nav/zh.js",
-    ".vuepress/examples/*",
-  ],
+  extraWatchFiles: [".vuepress/nav/*.js"],
 });
