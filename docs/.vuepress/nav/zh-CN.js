@@ -16,7 +16,7 @@ module.exports = [
       {
         text: "Vast Tag",
         ariaLabel: "VAST Tag",
-        link: "/zh-CN/ofs/vasttag/",
+        link: "/zh-CN/ofs/vast-tag/",
       },
       {
         text: "OpenRTB",
@@ -26,7 +26,7 @@ module.exports = [
       {
         text: "头部竞价",
         ariaLabel: "头部竞价",
-        link: "/zh-CN/ofs/hb/",
+        link: "/zh-CN/ofs/header-bidding/",
       },
     ],
   },

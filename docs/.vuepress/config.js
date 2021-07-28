@@ -38,10 +38,10 @@ module.exports = () => ({
               children: listMarkdowns("./docs/ofs/js/examples/", "examples/"),
             },
           ],
-          "/ofs/vasttag/": [
+          "/ofs/vast-tag/": [
             {
               title: "Guide",
-              children: listMarkdowns("./docs/ofs/vasttag/"),
+              children: listMarkdowns("./docs/ofs/vast-tag/"),
             },
           ],
         },
@@ -65,10 +65,10 @@ module.exports = () => ({
               ),
             },
           ],
-          "/zh-CN/ofs/vasttag/": [
+          "/zh-CN/ofs/vast-tag/": [
             {
               title: "指南",
-              children: listMarkdowns("./docs/zh-CN/ofs/vasttag/"),
+              children: listMarkdowns("./docs/zh-CN/ofs/vast-tag/"),
             },
           ],
         },

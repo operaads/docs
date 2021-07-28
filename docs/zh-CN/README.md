@@ -22,7 +22,7 @@ footer: MIT Licensed | Copyright © 2020-2021 Opera
     <h2>VAST TAG</h2>
     <p>用于 VAST TAG 集成。</p>
     <p>
-      <ActionButton link="./ofs/vasttag/">快速上手 →</ActionButton>
+      <ActionButton link="./ofs/vast-tag/">快速上手 →</ActionButton>
     </p>
   </div>
   <div class="feature">
@@ -36,7 +36,7 @@ footer: MIT Licensed | Copyright © 2020-2021 Opera
     <h2>头部竞价</h2>
     <p>头部竞价整合文档。</p>
     <p>
-      <ActionButton link="./ofs/hb/">快速上手 →</ActionButton>
+      <ActionButton link="./ofs/header-bidding/">快速上手 →</ActionButton>
     </p>
   </div>
 </div>

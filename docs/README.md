@@ -24,7 +24,7 @@ footer: MIT Licensed | Copyright © 2020-2021 Opera
     <h2>VAST TAG</h2>
     <p>For VAST tag integration.</p>
     <p>
-      <ActionButton link="./ofs/vasttag/">Quick Start →</ActionButton>
+      <ActionButton link="./ofs/vast-tag/">Quick Start →</ActionButton>
     </p>
   </div>
   <div class="feature">
@@ -38,9 +38,19 @@ footer: MIT Licensed | Copyright © 2020-2021 Opera
     <h2>Header Bidding</h2>
     <p>Header Bidding docs.</p>
     <p>
-      <ActionButton link="./ofs/hb/">Quick Start →</ActionButton>
+      <ActionButton link="./ofs/header-bidding/">Quick Start →</ActionButton>
     </p>
   </div>
 </div>
 
 ### Opera Ads for Demand Partners
+
+<div class="features">
+  <div class="feature">
+    <h2>Cookie Sync</h2>
+    <p>Cookie Sync Docs.</p>
+    <p>
+      <ActionButton link="./ofd/cookie-sync/">Quick Start →</ActionButton>
+    </p>
+  </div>
+</div>

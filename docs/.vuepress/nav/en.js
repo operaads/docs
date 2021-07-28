@@ -16,7 +16,7 @@ module.exports = [
       {
         text: "Vast Tag",
         ariaLabel: "VAST Tag",
-        link: "/ofs/vasttag/",
+        link: "/ofs/vast-tag/",
       },
       {
         text: "OpenRTB",
@@ -26,7 +26,7 @@ module.exports = [
       {
         text: "Header Bidding",
         ariaLabel: "Header Bidding",
-        link: "/ofs/hb/",
+        link: "/ofs/header-bidding/",
       },
     ],
   },
