@@ -30,4 +30,15 @@ module.exports = [
       },
     ],
   },
+  {
+    text: "OFD",
+    ariaLabel: "Opera Ads for Demand Partners",
+    items: [
+      {
+        text: "Cookie 同步",
+        ariaLabel: "Cookie 同步",
+        link: "/zh-CN/ofs/cookie-sync/",
+      },
+    ],
+  },
 ];

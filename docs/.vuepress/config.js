@@ -57,6 +57,12 @@ module.exports = () => ({
               ),
             },
           ],
+          "/ofd/cookie-sync/": [
+            {
+              title: "Guide",
+              children: listMarkdowns("./docs/ofd/cookie-sync/"),
+            },
+          ],
         },
       },
       "/zh-CN/": {
@@ -86,8 +92,14 @@ module.exports = () => ({
           ],
           "/zh-CN/ofs/header-bidding/": [
             {
-              title: "Guide",
+              title: "指南",
               children: listMarkdowns("./docs/zh-CN/ofs/header-bidding/"),
+            },
+          ],
+          "/zh-CN/ofd/cookie-sync/": [
+            {
+              title: "指南",
+              children: listMarkdowns("./docs/zh-CN/ofd/cookie-sync/"),
             },
           ],
         },

@@ -1,10 +1,12 @@
 # Quick Start
 
-## Create a app/site
+## Steps
 
-## Create an video ad placement
+1. Create a app/site
 
-## Generate VAST Tag
+2. Create an video ad placement
+
+3. Generate VAST Tag
 
 ## Request Parameters
 

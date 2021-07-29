@@ -30,4 +30,15 @@ module.exports = [
       },
     ],
   },
+  {
+    text: "OFD",
+    ariaLabel: "Opera Ads for Supplier Partners",
+    items: [
+      {
+        text: "Cookie Sync",
+        ariaLabel: "Cookie Sync",
+        link: "/ofd/cookie-sync/",
+      },
+    ],
+  },
 ];
