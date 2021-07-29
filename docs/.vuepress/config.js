@@ -44,6 +44,19 @@ module.exports = () => ({
               children: listMarkdowns("./docs/ofs/vast-tag/"),
             },
           ],
+          "/ofs/header-bidding/": [
+            {
+              title: "Guide",
+              children: listMarkdowns("./docs/ofs/header-bidding/"),
+            },
+            {
+              title: "Examples",
+              children: listMarkdowns(
+                "./docs/ofs/header-bidding/examples",
+                "examples/"
+              ),
+            },
+          ],
         },
       },
       "/zh-CN/": {
@@ -69,6 +82,12 @@ module.exports = () => ({
             {
               title: "指南",
               children: listMarkdowns("./docs/zh-CN/ofs/vast-tag/"),
+            },
+          ],
+          "/zh-CN/ofs/header-bidding/": [
+            {
+              title: "Guide",
+              children: listMarkdowns("./docs/zh-CN/ofs/header-bidding/"),
             },
           ],
         },
