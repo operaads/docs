@@ -56,7 +56,7 @@ Opera provide 5 integration options for suppliers to connect with OperaAds:
 
 ### Supplier Onboarding process
 
-Supplier Onboarding process. [Quick Start →]("./ofs/process/")
+Supplier Onboarding process. [Quick Start →](./ofs/process/)
 
 -----
 -----
@@ -65,8 +65,8 @@ Supplier Onboarding process. [Quick Start →]("./ofs/process/")
 
 ### Onboarding
 
-Demand Partner Onboarding process. [Quick Start →]("./ofd/process/")
+Demand Partner Onboarding process. [Quick Start →](./ofd/process/)
 
 ### Cookie Sync
 
-User id mapping. [Quick Start →]("./ofd/cookie-sync/")
+User id mapping. [Quick Start →](./ofd/cookie-sync/)
