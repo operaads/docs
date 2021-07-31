@@ -10,13 +10,13 @@ module.exports = () => ({
   locales: {
     "/": {
       lang: "en-US",
-      title: "Opera Ads",
-      description: "Opera Ads Documentations.",
+      title: "OperaAds",
+      description: "OperaAds Documentations",
     },
     "/zh-CN/": {
       lang: "zh-CN",
-      title: "Opera Ads",
-      description: "Opera Ads 文档。",
+      title: "OperaAds",
+      description: "OperaAds 文档",
     },
   },
   themeConfig: {

@@ -1,7 +1,7 @@
 module.exports = [
   {
-    text: "OFS",
-    ariaLabel: "Opera Ads for Supplier Partners",
+    text: "For Suppliers",
+    ariaLabel: "OperaAds for Supply Partners",
     items: [
       {
         text: "JS SDK",
@@ -28,17 +28,28 @@ module.exports = [
         ariaLabel: "Header Bidding",
         link: "/ofs/header-bidding/",
       },
+      {
+        text: "Onboarding Process",
+        ariaLabel: "Onboarding Process",
+        link: "/ofs/process/",
+      },
     ],
   },
   {
-    text: "OFD",
-    ariaLabel: "Opera Ads for Supplier Partners",
+    text: "For Buyers",
+    ariaLabel: "OperaAds for Demand Partners",
     items: [
+     {
+        text: "Onboarding Process",
+        ariaLabel: "Onboarding Process",
+        link: "/ofd/process/",
+      },
       {
         text: "Cookie Sync",
         ariaLabel: "Cookie Sync",
         link: "/ofd/cookie-sync/",
       },
+
     ],
   },
 ];

@@ -1,6 +1,6 @@
 module.exports = [
   {
-    text: "OFS",
+    text: "媒体主",
     ariaLabel: "",
     items: [
       {
@@ -31,7 +31,7 @@ module.exports = [
     ],
   },
   {
-    text: "OFD",
+    text: "广告主",
     ariaLabel: "Opera Ads for Demand Partners",
     items: [
       {
