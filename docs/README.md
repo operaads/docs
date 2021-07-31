@@ -1,5 +1,6 @@
 ---
 home: true
+heroImage: /OperaAds_Ver_Pos.png
 heroText: null
 tagline: null
 footer: MIT Licensed | Copyright © 1995-2021 Opera
