@@ -57,6 +57,12 @@ module.exports = () => ({
               ),
             },
           ],
+          "/ofs/openrtb/": [
+            {
+              title: "Guide",
+              children: listMarkdowns("./docs/ofs/openrtb/"),
+            },
+          ],
           "/ofd/cookie-sync/": [
             {
               title: "Guide",
@@ -94,6 +100,12 @@ module.exports = () => ({
             {
               title: "指南",
               children: listMarkdowns("./docs/zh-CN/ofs/header-bidding/"),
+            },
+          ],
+          "/zh-CN/ofs/openrtb/": [
+            {
+              title: "指南",
+              children: listMarkdowns("./docs/zh-CN/ofs/openrtb/"),
             },
           ],
           "/zh-CN/ofd/cookie-sync/": [
