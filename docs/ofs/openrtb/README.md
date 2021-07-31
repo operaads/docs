@@ -1,22 +1,31 @@
 # Server to Server API for Publishers
 
 ## API Overview
+
 Publishers/SSP could call this API on server side to get RTB campaigns from OperaAds. The API is follow [OpenRTB 2.5 specification](https://www.iab.com/wp-content/uploads/2016/03/OpenRTB-API-Specification-Version-2-5-FINAL.pdf) completely and can be integrated easily.
 
 ## Requests
+
 ### Endpoint
+
 ```url
 https://b-${zone}.adx.opera.com/ortb/v2/${publisherId}?ep=${endpointId}
 ```
+
 Variable ${zone} has 3 options: eu, us, sg. All the 3 variables are assigned by OperaAds, the real endpoint will be like: `https://b-us.adx.opera.com/ortb/v2/pubxxxxxx?ep=epxxxxxx`
+
 - The API uses the POST HTTP request method only
+
 - There is no test endpoint. But the API can return test ads in integration phase.
 
 ### Reqeust Headers
+
 - *x-openrtb-version: 2.5*
 
 ### Request Parameters
+
 #### Bid Request
+
 | Attribute         | Type          | Desciption
 |-------------------|---------------|------------------------------------------
 |id                 |string; required|Unique ID of the bid request, provided by the exchange.
@@ -33,6 +42,7 @@ Variable ${zone} has 3 options: eu, us, sg. All the 3 variables are assigned by 
 |ext|object|Placeholder for exchange-specific extensions to OpenRTB.
 
 #### Object:Imp
+
 | Attribute         | Type          | Desciption
 |-------------------|---------------|------------------------------------------
 |id|string; required|A unique identifier for this impression within the context of the bid request (typically, starts with 1 and increments.
@@ -49,6 +59,7 @@ Variable ${zone} has 3 options: eu, us, sg. All the 3 variables are assigned by 
 |ext|object|Placeholder for exchange-specific extensions to OpenRTB.
 
 #### Object:Banner
+
 | Attribute         | Type          | Desciption
 |-------------------|---------------|------------------------------------------
 |format|object array; recommended|Array of format objects representing the banner sizes permitted. If none are specified, then use of the h and w attributes is highly recommended.
@@ -61,6 +72,7 @@ Variable ${zone} has 3 options: eu, us, sg. All the 3 variables are assigned by 
 |ext|object|Placeholder for exchange-specific extensions to OpenRTB.
 
 #### Object:Video
+
 | Attribute         | Type          | Desciption
 |-------------------|---------------|------------------------------------------
 |mimes|string array; required|Content MIME types supported (e.g., “video/x-ms-wmv”, “video/mp4”).
@@ -70,8 +82,8 @@ Variable ${zone} has 3 options: eu, us, sg. All the 3 variables are assigned by 
 |w|integer; recommended|Width of the video player in device independent pixels (DIPS).
 |h|integer; recommended|Height of the video player in device independent pixels (DIPS).
 |startdelay|integer; recommended|Indicates the start delay in seconds for pre-roll, mid-roll, or post-roll ad placements.
-|placement|integer|Placement type for the impression. 
-|linearity|integer|Indicates if the impression must be linear, nonlinear, etc. If none specified, assume all are allowed. 
+|placement|integer|Placement type for the impression.
+|linearity|integer|Indicates if the impression must be linear, nonlinear, etc. If none specified, assume all are allowed.
 |skip|integer|Indicates if the player will allow the video to be skipped, where 0 = no, 1 = yes.If a bidder sends markup/creative that is itself skippable, the Bid object should include the attr array with an element of 16 indicating skippable video.
 |skipmin|integer; default 0|Videos of total duration greater than this number of seconds can be skippable; only applicable if the ad is skippable.
 |skipafter|integer; default 0|Number of seconds a video must play before skipping is enabled; only applicable if the ad is skippable.
@@ -81,12 +93,13 @@ Variable ${zone} has 3 options: eu, us, sg. All the 3 variables are assigned by 
 |maxbitrate|integer|Maximum bit rate in Kbps.
 |boxingallowed|integer; default 1|Indicates if letter-boxing of 4:3 content into a 16:9 window is allowed, where 0 = no, 1 = yes.
 |playbackmethod|integer array|Playback methods that may be in use. If none are specified, any method may be used. Only one method is typically used in practice. As a result, this array may be converted to an integer in a future version of the specification. It is strongly advised to use only the first element of this array in preparation for this change.
-|delivery|integer array|Supported delivery methods (e.g., streaming, progressive). If none specified, assume all are supported. 
-|pos|integer|Ad position on screen. 
+|delivery|integer array|Supported delivery methods (e.g., streaming, progressive). If none specified, assume all are supported.
+|pos|integer|Ad position on screen.
 |companionad|object array|Array of Banner objects if companion ads are available.
 |ext|object|Placeholder for exchange-specific extensions to OpenRTB.
 
 #### Object:Native
+
 | Attribute         | Type          | Desciption
 |-------------------|---------------|------------------------------------------
 |request|string; required|Request payload complying with the Native Ad Specification.
@@ -95,6 +108,7 @@ Variable ${zone} has 3 options: eu, us, sg. All the 3 variables are assigned by 
 |ext|object|Placeholder for exchange-specific extensions to OpenRTB.
 
 #### Object:Format
+
 | Attribute         | Type          | Desciption
 |-------------------|---------------|------------------------------------------
 |w|integer|Width in device independent pixels (DIPS).
@@ -105,6 +119,7 @@ Variable ${zone} has 3 options: eu, us, sg. All the 3 variables are assigned by 
 |ext|object|Placeholder for exchange-specific extensions to OpenRTB.
 
 #### Object:App
+
 | Attribute         | Type          | Desciption
 |-------------------|---------------|------------------------------------------
 |id|string;recommended|Exchange-specific app ID.
@@ -112,9 +127,9 @@ Variable ${zone} has 3 options: eu, us, sg. All the 3 variables are assigned by 
 |bundle|string|A platform-specific application identifier intended to be unique to the app and independent of the exchange. On Android, this should be a bundle or package name (e.g., com.foo.mygame). On iOS, it is typically a numeric ID.
 |domain|string|Domain of the app (e.g., “mygame.foo.com”).
 |storeurl|string|App store URL for an installed app; for IQG 2.1 compliance.
-|cat|string array|Array of IAB content categories of the app. 
-|sectioncat|string array|Array of IAB content categories that describe the current section of the app. 
-|pagecat|string array|Array of IAB content categories that describe the current page or view of the app. 
+|cat|string array|Array of IAB content categories of the app.
+|sectioncat|string array|Array of IAB content categories that describe the current section of the app.
+|pagecat|string array|Array of IAB content categories that describe the current page or view of the app.
 |ver|string|Application version.
 |privacypolicy|integer|Indicates if the app has a privacy policy, where 0 = no, 1 = yes.
 |paid|integer|0 = app is free, 1 = the app is a paid version.
@@ -124,14 +139,15 @@ Variable ${zone} has 3 options: eu, us, sg. All the 3 variables are assigned by 
 |ext|object|Placeholder for exchange-specific extensions to OpenRTB.
 
 #### Object:Site
+
 | Attribute         | Type          | Desciption
 |-------------------|---------------|------------------------------------------
 |id|string;recommended|Exchange-specific site ID.
 |name|string|Site name (may be aliased at the publisher’s request).
 |domain|string|Domain of the site (e.g., “mysite.foo.com”).
-|cat|string array|Array of IAB content categories of the site. 
-|sectioncat|string array|Array of IAB content categories that describe the current section of the site. 
-|pagecat|string array|Array of IAB content categories that describe the current page or view of the site. 
+|cat|string array|Array of IAB content categories of the site.
+|sectioncat|string array|Array of IAB content categories that describe the current section of the site.
+|pagecat|string array|Array of IAB content categories that describe the current page or view of the site.
 |page|string|URL of the page where the impression will be shown.
 |ref|string|Referrer URL that caused navigation to the current page.
 |search|string|Search string that caused navigation to the current page.
@@ -142,15 +158,17 @@ Variable ${zone} has 3 options: eu, us, sg. All the 3 variables are assigned by 
 |ext|object|Placeholder for exchange-specific extensions to OpenRTB.
 
 #### Object:Publisher
+
 | Attribute         | Type          | Desciption
 |-------------------|---------------|------------------------------------------
 |id|string;recommended|Exchange-specific publisher ID.
 |name|string|Publisher name (may be aliased at the publisher’s request).
 |domain|string|Highest level domain of the publisher (e.g., “publisher.com”).
-|cat|string array|Array of IAB content categories of the publisher. 
+|cat|string array|Array of IAB content categories of the publisher.
 |ext|object|Placeholder for exchange-specific extensions to OpenRTB.
 
 #### Object:Device
+
 | Attribute         | Type          | Desciption
 |-------------------|---------------|------------------------------------------
 |ua|string; recommended|Browser user agent string.
@@ -159,7 +177,7 @@ Variable ${zone} has 3 options: eu, us, sg. All the 3 variables are assigned by 
 |lmt|integer; recommended|"Limit Ad Tracking" signal commercially endorsed (e.g., iOS, Android), where 0 = tracking is unrestricted, 1 = tracking must be limited per commercial guidelines.
 |ip|string; recommended|IPv4 address closest to device.
 |ipv6|string|IP address closest to device as IPv6.
-|devicetype|integer|The general type of device. 
+|devicetype|integer|The general type of device.
 |make|string|Device make (e.g., "Apple").
 |model|string|Device model(e.g., "iPhone").
 |os|string|Device operating system (e.g., "iOS").
@@ -172,8 +190,8 @@ Variable ${zone} has 3 options: eu, us, sg. All the 3 variables are assigned by 
 |flashver|string|Version of Flash supported by the browser.
 |language|string|Browser language using ISO-639-1-alpha-2.
 |carrier|string|Carrier or ISP (e.g., “VERIZON”) using exchange curated string names which should be published to bidders a priori.
-|mccmnc|string|Mobile carrier as the concatenated MCC-MNC code (e.g., “310-005” identifies Verizon Wireless CDMA in the USA). Refer to https://en.wikipedia.org/wiki/Mobile_country_code for further examples. Note that the dash between the MCC and MNC parts is required to remove parsing ambiguity.
-|connectiontype|integer|Network connection type. 
+|mccmnc|string|Mobile carrier as the concatenated MCC-MNC code (e.g., “310-005” identifies Verizon Wireless CDMA in the USA). Refer to [https://en.wikipedia.org/wiki/Mobile_country_code](https://en.wikipedia.org/wiki/Mobile_country_code) for further examples. Note that the dash between the MCC and MNC parts is required to remove parsing ambiguity.
+|connectiontype|integer|Network connection type.
 |ifa|string|ID sanctioned for advertiser use in the clear (i.e., not hashed).
 |didsha1|string|Hardware device ID (e.g., IMEI); hashed via SHA1.
 |didmd5|string|Hardware device ID (e.g., IMEI); hashed via MD5.
@@ -184,23 +202,25 @@ Variable ${zone} has 3 options: eu, us, sg. All the 3 variables are assigned by 
 |ext|object|Placeholder for exchange-specific extensions to OpenRTB.
 
 #### Object:Geo
+
 | Attribute         | Type          | Desciption
 |-------------------|---------------|------------------------------------------
 |lat|float|Latitude from -90.0 to +90.0, where negative is south.
 |lon|float|Longitude from -180.0 to +180.0, where negative is west.
-|type|integer|Source of location data; recommended when passing lat/lon. 
+|type|integer|Source of location data; recommended when passing lat/lon.
 |accuracy|integer|Estimated location accuracy in meters; recommended when lat/lon are specified and derived from a device’s location services (i.e., type = 1). Note that this is the accuracy as reported from the device. Consult OS specific documentation (e.g., Android, iOS) for exact interpretation.
 |lastfix|integer|Number of seconds since this geolocation fix was established. Note that devices may cache location data across multiple fetches. Ideally, this value should be from the time the actual fix was taken.
-|ipservice|integer|Service or provider used to determine geolocation from IP address if applicable (i.e., type = 2). 
+|ipservice|integer|Service or provider used to determine geolocation from IP address if applicable (i.e., type = 2).
 |country|string|Country code using ISO-3166-1-alpha-3.
 |region|string|Region code using ISO-3166-2; 2-letter state code if USA.
 |metro|string|Google metro code; similar to but not exactly Nielsen DMAs. See Appendix A for a link to the codes.
-|city|string|City using United Nations Code for Trade & Transport Locations. 
+|city|string|City using United Nations Code for Trade & Transport Locations.
 |zip|string|Zip or postal code.
 |utcoffset|integer|Local time as the number +/- of minutes from UTC.
 |ext|object|Placeholder for exchange-specific extensions to OpenRTB.
 
 #### Object:User
+
 | Attribute         | Type          | Desciption
 |-------------------|---------------|------------------------------------------
 |id|string; recommended|Exchange-specific ID for the user. At least one of id or buyeruid is recommended.
@@ -213,6 +233,7 @@ Variable ${zone} has 3 options: eu, us, sg. All the 3 variables are assigned by 
 |ext|object|Placeholder for exchange-specific extensions to OpenRTB.
 
 #### Object:Source
+
 | Attribute         | Type          | Desciption
 |-------------------|---------------|------------------------------------------
 |fd|integer; recommended|Entity responsible for the final impression sale decision, where 0 = exchange, 1 = upstream source.
@@ -221,13 +242,16 @@ Variable ${zone} has 3 options: eu, us, sg. All the 3 variables are assigned by 
 |ext|object|Placeholder for exchange-specific extensions to OpenRTB.
 
 #### Object:Regs
+
 | Attribute         | Type          | Desciption
 |-------------------|---------------|------------------------------------------
 |coppa|integer|Flag indicating if this request is subject to the COPPA regulations established by the USA FTC, where 0 = no, 1 = yes.
 |ext|object|Placeholder for exchange-specific extensions to OpenRTB.
 
 ### Request Examples
+
 An example of the OperaAds S2S API Request JSON object for a Video Ad on an Android mobile phone:
+
 ```json
 {
     "id":"2b2e61cc-f136-4ed3-a1c0-7624b7a61427",
@@ -378,7 +402,9 @@ An example of the OperaAds S2S API Request JSON object for a Video Ad on an Andr
 ```
 
 ## Responses
+
 ### HTTP Response Status Codes
+
 OperaAds S2S API responses mapped to standard HTTP response codes:
 | Code         | Definition    | Desciption
 |--------------|---------------|------------------------------------------
@@ -388,7 +414,9 @@ OperaAds S2S API responses mapped to standard HTTP response codes:
 |500|Internal Server Error|Some error occurs on server side
 
 ### Response Parameters
+
 #### Bid Response
+
 | Attribute         | Type          | Desciption
 |-------------------|---------------|------------------------------------------
 |id|string;required|ID of the bid request to which this is a response.
@@ -398,6 +426,7 @@ OperaAds S2S API responses mapped to standard HTTP response codes:
 |ext|object|Placeholder for bidder-specific extensions to OpenRTB.
 
 #### Object:SeatBid
+
 | Attribute         | Type          | Desciption
 |-------------------|---------------|------------------------------------------
 |bid|object array; required|Array of 1+ Bid objects (Section 4.2.3) each related to an impression. Multiple bids can relate to the same impression.
@@ -406,6 +435,7 @@ OperaAds S2S API responses mapped to standard HTTP response codes:
 |ext|object|Placeholder for bidder-specific extensions to OpenRTB.
 
 #### Object:Bid
+
 | Attribute         | Type          | Desciption
 |-------------------|---------------|------------------------------------------
 |id|string; required|Bidder generated bid ID to assist with logging/tracking.
@@ -421,10 +451,10 @@ OperaAds S2S API responses mapped to standard HTTP response codes:
 |iurl|string|URL without cache-busting to an image that is representative of the content of the campaign for ad quality/safety checking.
 |cid|string|Campaign ID to assist with ad quality checking; the collection of creatives for which iurl should be representative.
 |crid|string|Creative ID to assist with ad quality checking.
-|cat|string array|IAB content categories of the creative. 
-|attr|integer array|Set of attributes describing the creative. 
-|api|integer|API required by the markup if applicable. 
-|protocol|integer|Video response protocol of the markup if applicable. 
+|cat|string array|IAB content categories of the creative.
+|attr|integer array|Set of attributes describing the creative.
+|api|integer|API required by the markup if applicable.
+|protocol|integer|Video response protocol of the markup if applicable.
 |language|string|Language of the creative using ISO-639-1-alpha-2. The non- standard code "xx" may also be used if the creative has no linguistic content (e.g., a banner with just a company logo).
 |w|integer|Width of the creative in device independent pixels (DIPS).
 |h|integer|Height of the creative in device independent pixels (DIPS)
@@ -434,6 +464,7 @@ OperaAds S2S API responses mapped to standard HTTP response codes:
 |ext|object|Placeholder for exchange-specific extensions to OpenRTB.
 
 #### Substitution Macros
+
 | Macro         | Desciption
 |---------------|------------------------------------------
 |${AUCTION_ID}|ID of the bid request; from BidRequest.id attribute.
@@ -443,10 +474,12 @@ OperaAds S2S API responses mapped to standard HTTP response codes:
 |${AUCTION_AD_ID}|ID of the ad markup the bidder wishes to serve; from bid.adid attribute.
 |${AUCTION_PRICE}|Clearing price using the same currency and units as the bid.
 |${AUCTION_CURRENCY}|The currency used in the bid (explicit or implied); for confirmation only.
-|${AUCTION_LOSS}|Loss reason codes. 
+|${AUCTION_LOSS}|Loss reason codes.
 
 ### Response Examples
+
 Video Response:
+
 ```json
 {
     "id":"610396f2272eb71212d0175b",
