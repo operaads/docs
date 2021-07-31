@@ -21,6 +21,9 @@ module.exports = () => ({
   },
   themeConfig: {
     smoothScroll: true,
+    logo: "/OperaAds_Icon.png",
+    repo: "operaads/docs",
+    editLinks: true,
     locales: {
       "/": {
         label: "English",

@@ -1,13 +1,13 @@
 ---
 home: true
+heroText: null
+tagline: null
 footer: MIT Licensed | Copyright © 1995-2021 Opera
 ---
 
-<!-- <img src="hero.png" width="20%"> -->
+## For Supply Partners
 
-### <h2>For Supply Partners</h2>
-
-#### <h3>Integration Options</h3>
+### Integration Options
 
 Opera provide 5 integration options for suppliers to connect with OperaAds:
 
@@ -53,37 +53,25 @@ Opera provide 5 integration options for suppliers to connect with OperaAds:
   <div class="feature"></div>
 </div>
 
------
+### Supplier Onboarding process
 
-#### <h3>Supplier Onboarding process</h3>
+Supplier Onboarding process
 
-<div class="feature">
-  <p>Supplier Onboarding process</p>
-  <p>
-    <ActionButton link="./ofs/process/">Quick Start →</ActionButton>
-  </p>
-</div>
+<p><ActionButton link="./ofs/process/">Quick Start →</ActionButton></p>
 
 -----
-<br>
+-----
 
+## For Demand Partners
 
-### <h2>For Demand Partners</h2>
+### Onboarding
 
-#### <h3>Onboarding</h3>
-<div class="feature">
-  <h4>Demand Partner Onboarding process</h4>
-  <ActionButton link="./ofd/process/">Quick Start →</ActionButton>
-</div>
+Demand Partner Onboarding process
 
-<div class="features">
-  <div class="feature">
-    <h4>Cookie Sync</h4>
-    <p>User id mapping</p>
-    <p>
-      <ActionButton link="./ofd/cookie-sync/">Quick Start →</ActionButton>
-    </p>
-  </div>
-  <div class="feature"></div>
-  <div class="feature"></div>
-</div>
+<p><ActionButton link="./ofd/process/">Quick Start →</ActionButton></p>
+
+### Cookie Sync
+
+User id mapping
+
+<p><ActionButton link="./ofd/cookie-sync/">Quick Start →</ActionButton></p>
