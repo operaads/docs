@@ -1,6 +1,6 @@
 # Introduction
 
-Opera Ads Header Bidding is avaiable with [Prebid.js](https://prebid.org/).
+Opera Ads Header Bidding is avaiable with [Prebid](https://prebid.org/).
 
 ## Prebid.js
 
