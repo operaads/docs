@@ -41,6 +41,7 @@ footer: MIT Licensed | Copyright © 2020-2021 Opera
       <ActionButton link="./ofs/header-bidding/">Quick Start →</ActionButton>
     </p>
   </div>
+  <div class="feature"></div>
 </div>
 
 ### Opera Ads for Demand Partners
@@ -53,4 +54,6 @@ footer: MIT Licensed | Copyright © 2020-2021 Opera
       <ActionButton link="./ofd/cookie-sync/">Quick Start →</ActionButton>
     </p>
   </div>
+  <div class="feature"></div>
+  <div class="feature"></div>
 </div>
