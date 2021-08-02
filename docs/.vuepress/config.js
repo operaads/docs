@@ -40,6 +40,12 @@ module.exports = () => ({
               children: listMarkdowns("./docs/ofs/js/examples/", "examples/"),
             },
           ],
+          "/ofs/android/": [
+            {
+              title: "Guide",
+              children: listMarkdowns("./docs/ofs/android/"),
+            },
+          ],
           "/ofs/vast-tag/": [
             {
               title: "Guide",
