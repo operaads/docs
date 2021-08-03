@@ -32,10 +32,13 @@ OperaAdSdk.setPersonalizedAdsEnabled(boolean enabled);
     nativeAd.setAdListener(new AdListener() {
         @Override
         public void onAdLoaded(Ad ad) {}
+
         @Override
         public void onError(Ad ad, AdError error) {}
+
         @Override
         public void onAdClicked(Ad ad) {}
+
         @Override
         public void onAdShown(Ad ad) {}
     });
@@ -59,10 +62,10 @@ OperaAdSdk.setPersonalizedAdsEnabled(boolean enabled);
 
     ```xml
     <com.opera.ad.MediaView
-      android:id="@+id/native_ad_media"
-      android:layout_width="wrap_content"
-      android:layout_height="194dp"
-      android:gravity="center"/>
+        android:id="@+id/native_ad_media"
+        android:layout_width="wrap_content"
+        android:layout_height="194dp"
+        android:gravity="center"/>
     ```
 
     Also `must` always remember to call API `NativeAd.setMediaView(MediaView)` after find the MediaView from custom layout.
@@ -247,7 +250,7 @@ can scroll up and down a blank area to see the full screen ad behind news conten
 4. `InterScrollerAdView` is used for display ad content. It should be defined in your custom layout as following:
 
     ```xml
-        <com.opera.ad.interScroller.InterScrollerAdView
+    <com.opera.ad.interScroller.InterScrollerAdView
         android:id="@+id/inter_scroller_ad_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -259,13 +262,13 @@ can scroll up and down a blank area to see the full screen ad behind news conten
    Following API need be invoked when RecyclerView is scrolled:
 
     ```java
-        RecyclerView.OnScrollListener scrollListener = new RecyclerView.OnScrollListener() {
-                @Override
-                public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
-                    mInterScrollerAd.disposeOnScrollEvent();
-                }
-        };
-        RecyclerView.addOnScrollListener(scrollListener);
+    RecyclerView.OnScrollListener scrollListener = new RecyclerView.OnScrollListener() {
+        @Override
+        public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+            mInterScrollerAd.disposeOnScrollEvent();
+        }
+    };
+    RecyclerView.addOnScrollListener(scrollListener);
     ```
 
 6. Click handler, please refer to step 5 of Native Ad.
