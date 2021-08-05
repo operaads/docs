@@ -13,13 +13,13 @@
 
 ## 广告宽高
 
-对于 ```<ins>``` 标签，需要对它设置相应的 CSS style，通常为 ```display: inline-block``` 以行内块级元素显示。
+对于 `<ins>` 标签，需要对它设置相应的 CSS style，通常为 `display: inline-block` 以行内块级元素显示。
 
-推荐为 ```<ins>``` 标签设置宽度和高度，例如 ```width: 500px; height: 300px;```，以确定广告的宽度和高度。
+推荐为 `<ins>` 标签设置宽度和高度，例如 `width: 500px; height: 300px;`，以确定广告的宽度和高度。
 
 ::: tip
-请总是为 ```<ins>``` 标签设置宽度，若宽度为空，则取标签的渲染宽度为广告宽度。
-当高度未设置时，将根据广告的高度，自动设置 ```<ins>``` 标签的高度。
+请总是为 `<ins>` 标签设置宽度，若宽度为空，则取标签的渲染宽度为广告宽度。
+当高度未设置时，将根据广告的高度，自动设置 `<ins>` 标签的高度。
 :::
 
 ## 渲染广告
@@ -30,7 +30,7 @@
 (adsbyopera = window.adsbyopera || []).push({});
 ```
 
-```adsbyopera``` 为 JS SDK 中默认导出的对象，使用该对象的 ```push``` 方法来渲染广告。参数可以是 ```<ins>``` 标签的 ```id```、具体的 DOM 对象（例如：```document.getElementById("ad_1")```）或者一个配置对象。
+`adsbyopera` 为 JS SDK 中默认导出的对象，使用该对象的 `push` 方法来渲染广告。参数可以是 `<ins>` 标签的 `id`、具体的 DOM 对象（例如：`document.getElementById("ad_1")`）或者一个配置对象。
 
 配置对象的定义如下：
 
@@ -41,12 +41,12 @@ interface AdxOptions {
   adxHeight?: number; // 广告高度
   adxFitWidth?: boolean; // 是否填充父元素宽度
   adxTarget: string | Element; // 渲染目标
-  adxTypes: string[]; // 广告素材类型
+  adxTypes?: string[]; // 广告素材类型
 }
 ```
 
 ::: tip
-当传递一个空对象时，所有 class 为 ```adsbyopera``` 的标签都会被渲染。
+当传递一个空对象时，所有 class 为 `adsbyopera` 的标签都会被渲染。
 :::
 
 ## 使用 HTML 属性来配置广告
@@ -89,6 +89,26 @@ interface AdxOptions {
 
 ### data-adx-types
 
-* 类型: string[]
+* 类型：string
 
-* 说明: 支持的广告素材类型
+* 说明：支持的广告素材类型，以逗号分隔 `,`。
+
+* 举例：`DISPLAY_HTML_300x250,DISPLAY_HTML_300x250`
+
+## 暂停广告请求
+
+你可以在需要时暂停广告请求：
+
+``` javascript
+adsbyopera.pauseAdRequests = true;
+```
+
+将 `pauseAdRequests` 设置为 `false` 来继续请求广告。
+
+## 显示调试信息
+
+设置 `debug` 为 `true` 来查看调试信息：
+
+``` javascript
+adsbyopera.debug = true;
+```
