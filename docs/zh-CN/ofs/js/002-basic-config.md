@@ -39,7 +39,9 @@ interface AdxOptions {
   adxSlot?: string; // slot id
   adxWidth?: number; // 广告宽度
   adxHeight?: number; // 广告高度
+  adxFitWidth?: boolean; // 是否填充父元素宽度
   adxTarget: string | Element; // 渲染目标
+  adxTypes: string[]; // 广告素材类型
 }
 ```
 
@@ -74,3 +76,19 @@ interface AdxOptions {
 ::: tip
 当同时通过配置对象和 HTML 属性指定了某一配置项时，以配置对象中的内容为准。
 :::
+
+### data-adx-fit-width
+
+* 类型：boolean
+
+* 说明：是否填充父元素宽度
+
+::: tip
+仅当 `data-adx-width` 未配置时生效。
+:::
+
+### data-adx-types
+
+* 类型: string[]
+
+* 说明: 支持的广告素材类型

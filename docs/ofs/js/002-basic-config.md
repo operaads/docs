@@ -42,6 +42,7 @@ interface AdxOptions {
   adxWidth?: number; // ad width
   adxHeight?: number; // ad height
   adxTarget: string | Element; // render target
+  adxTypes?: sting[]; // supported creative types
 }
 ```
 
@@ -76,3 +77,19 @@ Available attributes are:
 ::: tip
 When a configuration item is specified through both the configuration object and the HTML attribute, the content in the configuration object is used.
 :::
+
+### data-adx-fit-width
+
+* Type: boolean
+
+* Desc: Whether to fill the width of parent element
+
+::: tip
+This attribute only available when `data-adx-width` is not specified.
+:::
+
+### data-adx-types
+
+* Type: string[]
+
+* Desc: The supported creative types
