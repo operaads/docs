@@ -1,7 +1,7 @@
 const { listMarkdowns } = require("./sidebar");
 
 module.exports = () => ({
-  base: "/docs/",
+  base: "/",
   dest: "dist",
   define: {
     SDK_URL: "https://res.adx.opera.com/adx/adsbyopera.js",
