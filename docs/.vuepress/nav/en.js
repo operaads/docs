@@ -29,6 +29,11 @@ module.exports = [
         link: "/ofs/header-bidding/",
       },
       {
+        text: "Cookie Mapping",
+        ariaLabel: "Cookie Mapping",
+        link: "/ofs/cookie-sync/",
+      },
+      {
         text: "Onboarding Process",
         ariaLabel: "Onboarding Process",
         link: "/ofs/process/",

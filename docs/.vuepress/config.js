@@ -71,6 +71,12 @@ module.exports = () => ({
               children: listMarkdowns("./docs/ofs/openrtb/"),
             },
           ],
+          "/ofs/cookie-sync/": [
+            {
+              title: "Guide",
+              children: listMarkdowns("./docs/ofs/cookie-sync/"),
+            },
+          ],
           "/ofd/cookie-sync/": [
             {
               title: "Guide",
