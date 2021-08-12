@@ -2,14 +2,22 @@
 
 ## Overview
 
-Prebid Server is an open-source solution for server-to-server header bidding. Publisher's client can communicate with Prebid Server to request and receive bids. These bids can then compete directly with bids from publisher's primary ad server.
+Prebid Server is an open-source solution for server-to-server header bidding. Supplier's client can communicate with Prebid Server to request and receive bids. These bids can then compete directly with bids from publisher's primary ad server.
 OperaAds has provided bid adapter [golang version](https://docs.prebid.org/dev-docs/pbs-bidders.html#operaads) for prebid server. Prebid server's documentation is available at [prebid-server-overview](https://docs.prebid.org/prebid-server/overview/prebid-server-overview.html), and the source code is available at [prebid-server-src](https://github.com/prebid/prebid-server).
 
-## Request Parameters Example
+## Request Parameters
+### extended paramters for OperaAds
+Following parameters are mandatory for pbs(*prebid-server*) integrationm, please contact OperaAds Account Manager to setup account and get these parameters.
+| Name | Scope | Type | Description | Example
+| ---- | ----- | ---- | ----------- | -------
+| placementId | required | String | The Placement Id provided by Opera Ads. | `s5340077725248`
+| endpointId | required | String | The Endpoint Id provided by Opera Ads. | `ep3425464070464`
+| publisherId | required | String | The Publisher Id provided by Opera Ads. | `pub3054952966336` 
 
+### request example
 Following example includes sample imp object with publisherId,endpointId and placementId which can be used to test OperaAds Adapter.
 
-### banner
+#### banner
 
 ```json
 "imp":[
@@ -34,7 +42,7 @@ Following example includes sample imp object with publisherId,endpointId and pla
    ]
 ```
 
-### video
+#### video
 
 ```json
 "imp":[
@@ -74,7 +82,7 @@ Following example includes sample imp object with publisherId,endpointId and pla
    ]
 ```
 
-### native
+#### native
 
 ```json
 "imp":[
