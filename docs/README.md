@@ -52,15 +52,11 @@ Opera provide 5 integration options for suppliers to connect with OperaAds:
     </p>
   </div>
   <div class="feature"></div>
-  <div class="feature">
-    <h4>Cookie Mapping</h4>
-    <p>Cookie mapping guide</p>
-    <p>
-      <RouterLink to="./ofs/cookie-sync/">Quick Start →</RouterLink>
-    </p>
-  </div>
-  <div class="feature"></div>
 </div>
+
+### Cookie Mapping
+
+Cookie mapping guide. [Quick Start →](./ofs/cookie-sync/)
 
 ### Supplier Onboarding process
 
