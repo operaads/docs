@@ -1,7 +1,7 @@
 # Supplier onboarding Process
 
 1. Fill [Supplier Pre-onboarding Questionnaire](https://docs.google.com/forms/d/e/1FAIpQLSf3huvp-RK7gW5nqzHhG3eXYHfUJM0mQbQf9IIPqsKvbJkSbw/viewform?usp=sf_link) for evaluation
-2. Supplier provide basic information and bundle list with template: [Link](/supplier_onboarding_tpl.xlsx)
+2. Supplier provide bundle list with template: [Link](/supplier_bundles_tpl.xlsx)
 3. Sign IO
 4. Opera side provide app-ads.txt / ads.txt lines to suppliers to add to their app-ads.txt / ads.txt url
 5. Opera side do onboarding setup
