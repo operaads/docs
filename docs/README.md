@@ -58,6 +58,11 @@ Opera provide 5 integration options for suppliers to connect with OperaAds:
 
 Cookie mapping guide. [Quick Start →](./ofs/cookie-sync/)
 
+
+### Report API
+
+Report API. [Quick Start →](./ofs/report-api/)
+
 ### Supplier Onboarding process
 
 Supplier Onboarding process. [Quick Start →](./ofs/process/)

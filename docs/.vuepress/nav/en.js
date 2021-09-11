@@ -34,6 +34,11 @@ module.exports = [
         link: "/ofs/cookie-sync/",
       },
       {
+        text: "Report API",
+        ariaLabel: "Report API",
+        link: "/ofs/report-api/",
+      },
+      {
         text: "Onboarding Process",
         ariaLabel: "Onboarding Process",
         link: "/ofs/process/",

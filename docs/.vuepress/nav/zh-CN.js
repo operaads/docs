@@ -24,9 +24,24 @@ module.exports = [
         link: "/zh-CN/ofs/openrtb/",
       },
       {
-        text: "头部竞价",
-        ariaLabel: "头部竞价",
-        link: "/zh-CN/ofs/header-bidding/",
+        text: "Header Bidding",
+        ariaLabel: "Header Bidding",
+        link: "/ofs/header-bidding/",
+      },
+      {
+        text: "Cookie Mapping",
+        ariaLabel: "Cookie Mapping",
+        link: "/ofs/cookie-sync/",
+      },
+      {
+        text: "Report API",
+        ariaLabel: "Report API",
+        link: "/ofs/report-api/",
+      },
+      {
+        text: "上线流程",
+        ariaLabel: "上线流程",
+        link: "/ofs/process/",
       },
     ],
   },
@@ -34,6 +49,11 @@ module.exports = [
     text: "广告主",
     ariaLabel: "Opera Ads for Demand Partners",
     items: [
+     {
+        text: "上线流程",
+        ariaLabel: "上线流程",
+        link: "/ofd/process/",
+      },
       {
         text: "Cookie 同步",
         ariaLabel: "Cookie 同步",
