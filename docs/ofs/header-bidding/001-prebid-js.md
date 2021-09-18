@@ -1,5 +1,8 @@
 # Prebid JS
 
+## Source Link
+Go to prebid js [download](https://docs.prebid.org/download.html) page, select **Bidder Adapters** *OperaAds* and **User ID Module** *SharedID*,*PubCommon ID*, then click **Get Prebid.js**
+
 ## Supported Creative Types
 
 1. Display Ads(Banner)
@@ -66,9 +69,9 @@ var adUnits = [{
   bids: [{
     bidder: 'operaads',
     params: {
-      placementId: 's5340077725248',
-      endpointId: 'ep3425464070464',
-      publisherId: 'pub3054952966336'
+      placementId: 's5732651204928',
+      endpointId: 'ep5732673449728',
+      publisherId: 'pub5732583002624'
     }
   }]
 }];
@@ -92,9 +95,9 @@ var adUnits = [{
   bids: [{
     bidder: 'operaads',
     params: {
-      placementId: 's5340077725248',
-      endpointId: 'ep3425464070464',
-      publisherId: 'pub3054952966336'
+      placementId: 's5732651204928',
+      endpointId: 'ep5732673449728',
+      publisherId: 'pub5732583002624'
     }
   }]
 }];
@@ -126,13 +129,15 @@ var adUnits = [{
   bids: [{
     bidder: 'operaads',
     params: {
-      placementId: 's5340077725248',
-      endpointId: 'ep3425464070464',
-      publisherId: 'pub3054952966336'
+      placementId: 's5732651204928',
+      endpointId: 'ep5732673449728',
+      publisherId: 'pub5732583002624'
     }
   }]
 }];
 ```
+
+Make sure the bidfloorprice is set to zero, then the example paramters above will get test ads returned.
 
 ### User Ids
 

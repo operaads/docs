@@ -41,9 +41,15 @@
 | consent           |        N      | string      | Flag to signify that the end user has given consent to use and process their data. Omission indicates no consent. `true` or `false` or `unknown` or a GDPR user consent string defined by IAB, see [GDPR-Transparency-and-Consent-Framework](https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/Consent%20string%20and%20vendor%20list%20formats%20v1.1%20Final.md#purposes-features).
 
 ## Tag Url Example
-
+The tag below will get test ads returned.
+### tag used in webpage
 ```url
-https://s.adx.opera.com/tag/video?uid=fad3d048-981d-4f13-9b96-4136b17e187a&plc=s5340077725248&ts=1621654401&site=opera.com&url=https%3A%2F%2Fwww.opera.com%2Fnews%2Fp1&ref=https%3A%2F%2Fwww.opera.com&dt=PHONE&os=ANDROID&osv=9.1&ua=Opera%20News%2F7.4.2254.148299%2F52.0.2743.10%20%28Android%209%29&dw=1920&dh=1080
+https://s.adx.opera.com/tag/video?uid=fad3d048-981d-4f13-9b96-4136b17e187a&plc=s5732691266752&ts=1621654401&site=opera.com&url=https%3A%2F%2Fwww.opera.com%2Fnews%2Fp1&ref=https%3A%2F%2Fwww.opera.com&dt=PHONE&os=ANDROID&osv=9.1&ua=Opera%20News%2F7.4.2254.148299%2F52.0.2743.10%20%28Android%209%29&dw=1920&dh=1080
+```
+
+### tag used in app
+```url
+https://s.adx.opera.com/tag/video?uid=fad3d048-981d-4f13-9b96-4136b17e187a&plc=s5732694217216&ts=1621654401&dt=PHONE&os=ANDROID&osv=9.1&ua=Opera%20News%2F7.4.2254.148299%2F52.0.2743.10%20%28Android%209%29&dw=1920&dh=1080&bundleid=com.opera.browser&appversion=53.1
 ```
 
 ## Response Example
@@ -62,13 +68,10 @@ https://s.adx.opera.com/tag/video?uid=fad3d048-981d-4f13-9b96-4136b17e187a&plc=s
                 <![CDATA[http://example.com/track/impression]]>
             </Impression>
             <Impression>
-                <![CDATA[https://t-odx.op-mobile.opera.com/impr?a=a5212557364800&cc=HK&cm=1&crid=0.46047276opg&dvt=UNKNOWN&ext=BxyGDBaQ5hSZVJNoDBckb-yKj_vng7yZhrJLXVf_f8smzd0CDo1eilG_1m1MoqUlYXBGb2fJp2WcjzQhv93oaKQ9ZcIFpgrxxDm07WzHDJLGVE_MHx45sb25z5cU76dK&gi=abc&iabCat=IAB9-31%2CIAB8&impr_dl=1626169829493&m=m5212557365056&ot=UNKNOWN&pubId=pub3054952966336&s=s5340077725248&se=001004e1c7598c347fc0&u=24a5b3a074e7f369]]>
-            </Impression>
-            <Impression>
-                <![CDATA[https://adrta.com/i?clid=opr&paid=opr&dvid=v&avid=adv4201273455424&caid=o4201273455680&plid=m5212557365056&siteId=app5340073473792&publisherId=pub3054952966336&kv1=250x300&kv2=&kv4=103.196.20.138&kv3=24a5b3a074e7f369&kv10=&kv12=s5340077725248&kv25=Test_Media_For_Prebid&kv15=HK&kv16=0.00000000&kv17=0.00000000&kv18=&kv19=abc&kv28=&kv26=unknown&kv23=&kv27=PostmanRuntime%2F7.26.1&kv11=001004e1c7598c347fc0&lineItemId=a5212557364800&kv29=[ERRORCODE]&kv30=[CONTENTPLAYHEAD]_[ADPLAYHEAD]&kv33=[ASSETURI]&kv34=[VASTVERSIONS]&kv35=[IFATYPE]&kv36=[IFA]&kv37=[CLIENTUA]&kv38=[SERVERUA]&kv39=[DEVICEUA]&kv40=[DEVICEIP]&kv41=[LATLONG]&kv42=[DOMAIN]&kv43=[PAGEURL]&kv44=&kv45=[PLAYERSIZE]&kv46=[REGULATIONS]&kv47=[ADTYPE]&kv48=[TRANSACTIONID]&kv49=[BREAKPOSITION]&kv50=[APPNAME]&kv51=[PLACEMENTTYPE]&kv54=[LAT]&kv5=SSP&kv24=Mobile_Web_Video]]>
+                <![CDATA[https://t-odx.op-mobile.opera.com/impr?a=a5732565818112&b=com.opera.browser&cc=HK&cm=1&crid=0.5095064opg&dvt=PHONE&ext=3DmWo3YVRy_l5UoQXm2DbknwrY67jgunoAXd4vjpkGqu7Z3upwIJBcorh6n9P7QOmck65_4UvWWD5w237BZpng%3D%3D&gi=fad3d048-981d-4f13-9b96-4136b17e187a&iabCat=IAB9-31%2CIAB8&impr_dl=1631962624641&m=m5732970023104&ot=ANDROID&pubId=pub5732585605376&rip=103.104.171.114&s=s5732694217216&se=00100538191c0f37e800&u=ed6e7cb11152951d]]>
             </Impression>
             <Creatives>
-                <Creative id="crid:a5212557364800:0.46047276opg" sequence="1">
+                <Creative id="crid:a5732565818112:0.5095064opg" sequence="1">
                     <Linear skipoffset="00:00:05">
                         <Duration>00:00:16</Duration>
                         <TrackingEvents>
@@ -91,86 +94,80 @@ https://s.adx.opera.com/tag/video?uid=fad3d048-981d-4f13-9b96-4136b17e187a&plc=s
                                 <![CDATA[http://example.com/tracking/progress-10]]>
                             </Tracking>
                             <Tracking event="creativeView">
-                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5212557364800&cc=HK&cm=1&crid=0.46047276opg&dvt=UNKNOWN&ext=BxyGDBaQ5hSZVJNoDBckb-yKj_vng7yZhrJLXVf_f8smzd0CDo1eilG_1m1MoqUlYXBGb2fJp2WcjzQhv93oaKQ9ZcIFpgrxxDm07WzHDJLGVE_MHx45sb25z5cU76dK&gi=abc&iabCat=IAB9-31%2CIAB8&impr_dl=1626169829493&m=m5212557365056&ot=UNKNOWN&pubId=pub3054952966336&s=s5340077725248&se=001004e1c7598c347fc0&u=24a5b3a074e7f369&evt=creativeview]]>
+                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5732565818112&b=com.opera.browser&cc=HK&cm=1&crid=0.5095064opg&dvt=PHONE&ext=3DmWo3YVRy_l5UoQXm2DbknwrY67jgunoAXd4vjpkGqu7Z3upwIJBcorh6n9P7QOmck65_4UvWWD5w237BZpng%3D%3D&gi=fad3d048-981d-4f13-9b96-4136b17e187a&iabCat=IAB9-31%2CIAB8&impr_dl=1631962624641&m=m5732970023104&ot=ANDROID&pubId=pub5732585605376&rip=103.104.171.114&s=s5732694217216&se=00100538191c0f37e800&u=ed6e7cb11152951d&evt=creativeview]]>
                             </Tracking>
                             <Tracking event="start">
-                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5212557364800&cc=HK&cm=1&crid=0.46047276opg&dvt=UNKNOWN&ext=BxyGDBaQ5hSZVJNoDBckb-yKj_vng7yZhrJLXVf_f8smzd0CDo1eilG_1m1MoqUlYXBGb2fJp2WcjzQhv93oaKQ9ZcIFpgrxxDm07WzHDJLGVE_MHx45sb25z5cU76dK&gi=abc&iabCat=IAB9-31%2CIAB8&impr_dl=1626169829493&m=m5212557365056&ot=UNKNOWN&pubId=pub3054952966336&s=s5340077725248&se=001004e1c7598c347fc0&u=24a5b3a074e7f369&evt=start]]>
+                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5732565818112&b=com.opera.browser&cc=HK&cm=1&crid=0.5095064opg&dvt=PHONE&ext=3DmWo3YVRy_l5UoQXm2DbknwrY67jgunoAXd4vjpkGqu7Z3upwIJBcorh6n9P7QOmck65_4UvWWD5w237BZpng%3D%3D&gi=fad3d048-981d-4f13-9b96-4136b17e187a&iabCat=IAB9-31%2CIAB8&impr_dl=1631962624641&m=m5732970023104&ot=ANDROID&pubId=pub5732585605376&rip=103.104.171.114&s=s5732694217216&se=00100538191c0f37e800&u=ed6e7cb11152951d&evt=start]]>
                             </Tracking>
                             <Tracking event="firstQuartile">
-                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5212557364800&cc=HK&cm=1&crid=0.46047276opg&dvt=UNKNOWN&ext=BxyGDBaQ5hSZVJNoDBckb-yKj_vng7yZhrJLXVf_f8smzd0CDo1eilG_1m1MoqUlYXBGb2fJp2WcjzQhv93oaKQ9ZcIFpgrxxDm07WzHDJLGVE_MHx45sb25z5cU76dK&gi=abc&iabCat=IAB9-31%2CIAB8&impr_dl=1626169829493&m=m5212557365056&ot=UNKNOWN&pubId=pub3054952966336&s=s5340077725248&se=001004e1c7598c347fc0&u=24a5b3a074e7f369&evt=firstquartile]]>
+                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5732565818112&b=com.opera.browser&cc=HK&cm=1&crid=0.5095064opg&dvt=PHONE&ext=3DmWo3YVRy_l5UoQXm2DbknwrY67jgunoAXd4vjpkGqu7Z3upwIJBcorh6n9P7QOmck65_4UvWWD5w237BZpng%3D%3D&gi=fad3d048-981d-4f13-9b96-4136b17e187a&iabCat=IAB9-31%2CIAB8&impr_dl=1631962624641&m=m5732970023104&ot=ANDROID&pubId=pub5732585605376&rip=103.104.171.114&s=s5732694217216&se=00100538191c0f37e800&u=ed6e7cb11152951d&evt=firstquartile]]>
                             </Tracking>
                             <Tracking event="midpoint">
-                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5212557364800&cc=HK&cm=1&crid=0.46047276opg&dvt=UNKNOWN&ext=BxyGDBaQ5hSZVJNoDBckb-yKj_vng7yZhrJLXVf_f8smzd0CDo1eilG_1m1MoqUlYXBGb2fJp2WcjzQhv93oaKQ9ZcIFpgrxxDm07WzHDJLGVE_MHx45sb25z5cU76dK&gi=abc&iabCat=IAB9-31%2CIAB8&impr_dl=1626169829493&m=m5212557365056&ot=UNKNOWN&pubId=pub3054952966336&s=s5340077725248&se=001004e1c7598c347fc0&u=24a5b3a074e7f369&evt=midpoint]]>
+                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5732565818112&b=com.opera.browser&cc=HK&cm=1&crid=0.5095064opg&dvt=PHONE&ext=3DmWo3YVRy_l5UoQXm2DbknwrY67jgunoAXd4vjpkGqu7Z3upwIJBcorh6n9P7QOmck65_4UvWWD5w237BZpng%3D%3D&gi=fad3d048-981d-4f13-9b96-4136b17e187a&iabCat=IAB9-31%2CIAB8&impr_dl=1631962624641&m=m5732970023104&ot=ANDROID&pubId=pub5732585605376&rip=103.104.171.114&s=s5732694217216&se=00100538191c0f37e800&u=ed6e7cb11152951d&evt=midpoint]]>
                             </Tracking>
                             <Tracking event="thirdQuartile">
-                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5212557364800&cc=HK&cm=1&crid=0.46047276opg&dvt=UNKNOWN&ext=BxyGDBaQ5hSZVJNoDBckb-yKj_vng7yZhrJLXVf_f8smzd0CDo1eilG_1m1MoqUlYXBGb2fJp2WcjzQhv93oaKQ9ZcIFpgrxxDm07WzHDJLGVE_MHx45sb25z5cU76dK&gi=abc&iabCat=IAB9-31%2CIAB8&impr_dl=1626169829493&m=m5212557365056&ot=UNKNOWN&pubId=pub3054952966336&s=s5340077725248&se=001004e1c7598c347fc0&u=24a5b3a074e7f369&evt=thirdquartile]]>
+                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5732565818112&b=com.opera.browser&cc=HK&cm=1&crid=0.5095064opg&dvt=PHONE&ext=3DmWo3YVRy_l5UoQXm2DbknwrY67jgunoAXd4vjpkGqu7Z3upwIJBcorh6n9P7QOmck65_4UvWWD5w237BZpng%3D%3D&gi=fad3d048-981d-4f13-9b96-4136b17e187a&iabCat=IAB9-31%2CIAB8&impr_dl=1631962624641&m=m5732970023104&ot=ANDROID&pubId=pub5732585605376&rip=103.104.171.114&s=s5732694217216&se=00100538191c0f37e800&u=ed6e7cb11152951d&evt=thirdquartile]]>
                             </Tracking>
                             <Tracking event="complete">
-                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5212557364800&cc=HK&cm=1&crid=0.46047276opg&dvt=UNKNOWN&ext=BxyGDBaQ5hSZVJNoDBckb-yKj_vng7yZhrJLXVf_f8smzd0CDo1eilG_1m1MoqUlYXBGb2fJp2WcjzQhv93oaKQ9ZcIFpgrxxDm07WzHDJLGVE_MHx45sb25z5cU76dK&gi=abc&iabCat=IAB9-31%2CIAB8&impr_dl=1626169829493&m=m5212557365056&ot=UNKNOWN&pubId=pub3054952966336&s=s5340077725248&se=001004e1c7598c347fc0&u=24a5b3a074e7f369&evt=complete]]>
+                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5732565818112&b=com.opera.browser&cc=HK&cm=1&crid=0.5095064opg&dvt=PHONE&ext=3DmWo3YVRy_l5UoQXm2DbknwrY67jgunoAXd4vjpkGqu7Z3upwIJBcorh6n9P7QOmck65_4UvWWD5w237BZpng%3D%3D&gi=fad3d048-981d-4f13-9b96-4136b17e187a&iabCat=IAB9-31%2CIAB8&impr_dl=1631962624641&m=m5732970023104&ot=ANDROID&pubId=pub5732585605376&rip=103.104.171.114&s=s5732694217216&se=00100538191c0f37e800&u=ed6e7cb11152951d&evt=complete]]>
                             </Tracking>
                             <Tracking event="mute">
-                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5212557364800&cc=HK&cm=1&crid=0.46047276opg&dvt=UNKNOWN&ext=BxyGDBaQ5hSZVJNoDBckb-yKj_vng7yZhrJLXVf_f8smzd0CDo1eilG_1m1MoqUlYXBGb2fJp2WcjzQhv93oaKQ9ZcIFpgrxxDm07WzHDJLGVE_MHx45sb25z5cU76dK&gi=abc&iabCat=IAB9-31%2CIAB8&impr_dl=1626169829493&m=m5212557365056&ot=UNKNOWN&pubId=pub3054952966336&s=s5340077725248&se=001004e1c7598c347fc0&u=24a5b3a074e7f369&evt=mute]]>
+                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5732565818112&b=com.opera.browser&cc=HK&cm=1&crid=0.5095064opg&dvt=PHONE&ext=3DmWo3YVRy_l5UoQXm2DbknwrY67jgunoAXd4vjpkGqu7Z3upwIJBcorh6n9P7QOmck65_4UvWWD5w237BZpng%3D%3D&gi=fad3d048-981d-4f13-9b96-4136b17e187a&iabCat=IAB9-31%2CIAB8&impr_dl=1631962624641&m=m5732970023104&ot=ANDROID&pubId=pub5732585605376&rip=103.104.171.114&s=s5732694217216&se=00100538191c0f37e800&u=ed6e7cb11152951d&evt=mute]]>
                             </Tracking>
                             <Tracking event="unmute">
-                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5212557364800&cc=HK&cm=1&crid=0.46047276opg&dvt=UNKNOWN&ext=BxyGDBaQ5hSZVJNoDBckb-yKj_vng7yZhrJLXVf_f8smzd0CDo1eilG_1m1MoqUlYXBGb2fJp2WcjzQhv93oaKQ9ZcIFpgrxxDm07WzHDJLGVE_MHx45sb25z5cU76dK&gi=abc&iabCat=IAB9-31%2CIAB8&impr_dl=1626169829493&m=m5212557365056&ot=UNKNOWN&pubId=pub3054952966336&s=s5340077725248&se=001004e1c7598c347fc0&u=24a5b3a074e7f369&evt=unmute]]>
+                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5732565818112&b=com.opera.browser&cc=HK&cm=1&crid=0.5095064opg&dvt=PHONE&ext=3DmWo3YVRy_l5UoQXm2DbknwrY67jgunoAXd4vjpkGqu7Z3upwIJBcorh6n9P7QOmck65_4UvWWD5w237BZpng%3D%3D&gi=fad3d048-981d-4f13-9b96-4136b17e187a&iabCat=IAB9-31%2CIAB8&impr_dl=1631962624641&m=m5732970023104&ot=ANDROID&pubId=pub5732585605376&rip=103.104.171.114&s=s5732694217216&se=00100538191c0f37e800&u=ed6e7cb11152951d&evt=unmute]]>
                             </Tracking>
                             <Tracking event="pause">
-                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5212557364800&cc=HK&cm=1&crid=0.46047276opg&dvt=UNKNOWN&ext=BxyGDBaQ5hSZVJNoDBckb-yKj_vng7yZhrJLXVf_f8smzd0CDo1eilG_1m1MoqUlYXBGb2fJp2WcjzQhv93oaKQ9ZcIFpgrxxDm07WzHDJLGVE_MHx45sb25z5cU76dK&gi=abc&iabCat=IAB9-31%2CIAB8&impr_dl=1626169829493&m=m5212557365056&ot=UNKNOWN&pubId=pub3054952966336&s=s5340077725248&se=001004e1c7598c347fc0&u=24a5b3a074e7f369&evt=pause]]>
+                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5732565818112&b=com.opera.browser&cc=HK&cm=1&crid=0.5095064opg&dvt=PHONE&ext=3DmWo3YVRy_l5UoQXm2DbknwrY67jgunoAXd4vjpkGqu7Z3upwIJBcorh6n9P7QOmck65_4UvWWD5w237BZpng%3D%3D&gi=fad3d048-981d-4f13-9b96-4136b17e187a&iabCat=IAB9-31%2CIAB8&impr_dl=1631962624641&m=m5732970023104&ot=ANDROID&pubId=pub5732585605376&rip=103.104.171.114&s=s5732694217216&se=00100538191c0f37e800&u=ed6e7cb11152951d&evt=pause]]>
                             </Tracking>
                             <Tracking event="resume">
-                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5212557364800&cc=HK&cm=1&crid=0.46047276opg&dvt=UNKNOWN&ext=BxyGDBaQ5hSZVJNoDBckb-yKj_vng7yZhrJLXVf_f8smzd0CDo1eilG_1m1MoqUlYXBGb2fJp2WcjzQhv93oaKQ9ZcIFpgrxxDm07WzHDJLGVE_MHx45sb25z5cU76dK&gi=abc&iabCat=IAB9-31%2CIAB8&impr_dl=1626169829493&m=m5212557365056&ot=UNKNOWN&pubId=pub3054952966336&s=s5340077725248&se=001004e1c7598c347fc0&u=24a5b3a074e7f369&evt=resume]]>
+                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5732565818112&b=com.opera.browser&cc=HK&cm=1&crid=0.5095064opg&dvt=PHONE&ext=3DmWo3YVRy_l5UoQXm2DbknwrY67jgunoAXd4vjpkGqu7Z3upwIJBcorh6n9P7QOmck65_4UvWWD5w237BZpng%3D%3D&gi=fad3d048-981d-4f13-9b96-4136b17e187a&iabCat=IAB9-31%2CIAB8&impr_dl=1631962624641&m=m5732970023104&ot=ANDROID&pubId=pub5732585605376&rip=103.104.171.114&s=s5732694217216&se=00100538191c0f37e800&u=ed6e7cb11152951d&evt=resume]]>
                             </Tracking>
                             <Tracking event="rewind">
-                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5212557364800&cc=HK&cm=1&crid=0.46047276opg&dvt=UNKNOWN&ext=BxyGDBaQ5hSZVJNoDBckb-yKj_vng7yZhrJLXVf_f8smzd0CDo1eilG_1m1MoqUlYXBGb2fJp2WcjzQhv93oaKQ9ZcIFpgrxxDm07WzHDJLGVE_MHx45sb25z5cU76dK&gi=abc&iabCat=IAB9-31%2CIAB8&impr_dl=1626169829493&m=m5212557365056&ot=UNKNOWN&pubId=pub3054952966336&s=s5340077725248&se=001004e1c7598c347fc0&u=24a5b3a074e7f369&evt=rewind]]>
+                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5732565818112&b=com.opera.browser&cc=HK&cm=1&crid=0.5095064opg&dvt=PHONE&ext=3DmWo3YVRy_l5UoQXm2DbknwrY67jgunoAXd4vjpkGqu7Z3upwIJBcorh6n9P7QOmck65_4UvWWD5w237BZpng%3D%3D&gi=fad3d048-981d-4f13-9b96-4136b17e187a&iabCat=IAB9-31%2CIAB8&impr_dl=1631962624641&m=m5732970023104&ot=ANDROID&pubId=pub5732585605376&rip=103.104.171.114&s=s5732694217216&se=00100538191c0f37e800&u=ed6e7cb11152951d&evt=rewind]]>
                             </Tracking>
                             <Tracking event="fullscreen">
-                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5212557364800&cc=HK&cm=1&crid=0.46047276opg&dvt=UNKNOWN&ext=BxyGDBaQ5hSZVJNoDBckb-yKj_vng7yZhrJLXVf_f8smzd0CDo1eilG_1m1MoqUlYXBGb2fJp2WcjzQhv93oaKQ9ZcIFpgrxxDm07WzHDJLGVE_MHx45sb25z5cU76dK&gi=abc&iabCat=IAB9-31%2CIAB8&impr_dl=1626169829493&m=m5212557365056&ot=UNKNOWN&pubId=pub3054952966336&s=s5340077725248&se=001004e1c7598c347fc0&u=24a5b3a074e7f369&evt=fullscreen&isfullscreen=1]]>
+                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5732565818112&b=com.opera.browser&cc=HK&cm=1&crid=0.5095064opg&dvt=PHONE&ext=3DmWo3YVRy_l5UoQXm2DbknwrY67jgunoAXd4vjpkGqu7Z3upwIJBcorh6n9P7QOmck65_4UvWWD5w237BZpng%3D%3D&gi=fad3d048-981d-4f13-9b96-4136b17e187a&iabCat=IAB9-31%2CIAB8&impr_dl=1631962624641&m=m5732970023104&ot=ANDROID&pubId=pub5732585605376&rip=103.104.171.114&s=s5732694217216&se=00100538191c0f37e800&u=ed6e7cb11152951d&evt=fullscreen&isfullscreen=1]]>
                             </Tracking>
                             <Tracking event="exitFullscreen">
-                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5212557364800&cc=HK&cm=1&crid=0.46047276opg&dvt=UNKNOWN&ext=BxyGDBaQ5hSZVJNoDBckb-yKj_vng7yZhrJLXVf_f8smzd0CDo1eilG_1m1MoqUlYXBGb2fJp2WcjzQhv93oaKQ9ZcIFpgrxxDm07WzHDJLGVE_MHx45sb25z5cU76dK&gi=abc&iabCat=IAB9-31%2CIAB8&impr_dl=1626169829493&m=m5212557365056&ot=UNKNOWN&pubId=pub3054952966336&s=s5340077725248&se=001004e1c7598c347fc0&u=24a5b3a074e7f369&evt=fullscreen&isfullscreen=0]]>
+                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5732565818112&b=com.opera.browser&cc=HK&cm=1&crid=0.5095064opg&dvt=PHONE&ext=3DmWo3YVRy_l5UoQXm2DbknwrY67jgunoAXd4vjpkGqu7Z3upwIJBcorh6n9P7QOmck65_4UvWWD5w237BZpng%3D%3D&gi=fad3d048-981d-4f13-9b96-4136b17e187a&iabCat=IAB9-31%2CIAB8&impr_dl=1631962624641&m=m5732970023104&ot=ANDROID&pubId=pub5732585605376&rip=103.104.171.114&s=s5732694217216&se=00100538191c0f37e800&u=ed6e7cb11152951d&evt=fullscreen&isfullscreen=0]]>
                             </Tracking>
                             <Tracking event="acceptInvitationLinear">
-                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5212557364800&cc=HK&cm=1&crid=0.46047276opg&dvt=UNKNOWN&ext=BxyGDBaQ5hSZVJNoDBckb-yKj_vng7yZhrJLXVf_f8smzd0CDo1eilG_1m1MoqUlYXBGb2fJp2WcjzQhv93oaKQ9ZcIFpgrxxDm07WzHDJLGVE_MHx45sb25z5cU76dK&gi=abc&iabCat=IAB9-31%2CIAB8&impr_dl=1626169829493&m=m5212557365056&ot=UNKNOWN&pubId=pub3054952966336&s=s5340077725248&se=001004e1c7598c347fc0&u=24a5b3a074e7f369&evt=acceptinvitationlinear]]>
+                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5732565818112&b=com.opera.browser&cc=HK&cm=1&crid=0.5095064opg&dvt=PHONE&ext=3DmWo3YVRy_l5UoQXm2DbknwrY67jgunoAXd4vjpkGqu7Z3upwIJBcorh6n9P7QOmck65_4UvWWD5w237BZpng%3D%3D&gi=fad3d048-981d-4f13-9b96-4136b17e187a&iabCat=IAB9-31%2CIAB8&impr_dl=1631962624641&m=m5732970023104&ot=ANDROID&pubId=pub5732585605376&rip=103.104.171.114&s=s5732694217216&se=00100538191c0f37e800&u=ed6e7cb11152951d&evt=acceptinvitationlinear]]>
                             </Tracking>
                             <Tracking event="closeLinear">
-                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5212557364800&cc=HK&cm=1&crid=0.46047276opg&dvt=UNKNOWN&ext=BxyGDBaQ5hSZVJNoDBckb-yKj_vng7yZhrJLXVf_f8smzd0CDo1eilG_1m1MoqUlYXBGb2fJp2WcjzQhv93oaKQ9ZcIFpgrxxDm07WzHDJLGVE_MHx45sb25z5cU76dK&gi=abc&iabCat=IAB9-31%2CIAB8&impr_dl=1626169829493&m=m5212557365056&ot=UNKNOWN&pubId=pub3054952966336&s=s5340077725248&se=001004e1c7598c347fc0&u=24a5b3a074e7f369&evt=closelinear]]>
+                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5732565818112&b=com.opera.browser&cc=HK&cm=1&crid=0.5095064opg&dvt=PHONE&ext=3DmWo3YVRy_l5UoQXm2DbknwrY67jgunoAXd4vjpkGqu7Z3upwIJBcorh6n9P7QOmck65_4UvWWD5w237BZpng%3D%3D&gi=fad3d048-981d-4f13-9b96-4136b17e187a&iabCat=IAB9-31%2CIAB8&impr_dl=1631962624641&m=m5732970023104&ot=ANDROID&pubId=pub5732585605376&rip=103.104.171.114&s=s5732694217216&se=00100538191c0f37e800&u=ed6e7cb11152951d&evt=closelinear]]>
                             </Tracking>
                             <Tracking event="skip">
-                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5212557364800&cc=HK&cm=1&crid=0.46047276opg&dvt=UNKNOWN&ext=BxyGDBaQ5hSZVJNoDBckb-yKj_vng7yZhrJLXVf_f8smzd0CDo1eilG_1m1MoqUlYXBGb2fJp2WcjzQhv93oaKQ9ZcIFpgrxxDm07WzHDJLGVE_MHx45sb25z5cU76dK&gi=abc&iabCat=IAB9-31%2CIAB8&impr_dl=1626169829493&m=m5212557365056&ot=UNKNOWN&pubId=pub3054952966336&s=s5340077725248&se=001004e1c7598c347fc0&u=24a5b3a074e7f369&evt=skip]]>
+                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5732565818112&b=com.opera.browser&cc=HK&cm=1&crid=0.5095064opg&dvt=PHONE&ext=3DmWo3YVRy_l5UoQXm2DbknwrY67jgunoAXd4vjpkGqu7Z3upwIJBcorh6n9P7QOmck65_4UvWWD5w237BZpng%3D%3D&gi=fad3d048-981d-4f13-9b96-4136b17e187a&iabCat=IAB9-31%2CIAB8&impr_dl=1631962624641&m=m5732970023104&ot=ANDROID&pubId=pub5732585605376&rip=103.104.171.114&s=s5732694217216&se=00100538191c0f37e800&u=ed6e7cb11152951d&evt=skip]]>
                             </Tracking>
                             <Tracking event="progress" offset="00:00:02">
-                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5212557364800&cc=HK&cm=1&crid=0.46047276opg&dvt=UNKNOWN&ext=BxyGDBaQ5hSZVJNoDBckb-yKj_vng7yZhrJLXVf_f8smzd0CDo1eilG_1m1MoqUlYXBGb2fJp2WcjzQhv93oaKQ9ZcIFpgrxxDm07WzHDJLGVE_MHx45sb25z5cU76dK&gi=abc&iabCat=IAB9-31%2CIAB8&impr_dl=1626169829493&m=m5212557365056&ot=UNKNOWN&pubId=pub3054952966336&s=s5340077725248&se=001004e1c7598c347fc0&u=24a5b3a074e7f369&evt=progress&offset=2s]]>
+                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5732565818112&b=com.opera.browser&cc=HK&cm=1&crid=0.5095064opg&dvt=PHONE&ext=3DmWo3YVRy_l5UoQXm2DbknwrY67jgunoAXd4vjpkGqu7Z3upwIJBcorh6n9P7QOmck65_4UvWWD5w237BZpng%3D%3D&gi=fad3d048-981d-4f13-9b96-4136b17e187a&iabCat=IAB9-31%2CIAB8&impr_dl=1631962624641&m=m5732970023104&ot=ANDROID&pubId=pub5732585605376&rip=103.104.171.114&s=s5732694217216&se=00100538191c0f37e800&u=ed6e7cb11152951d&evt=progress&offset=2s]]>
                             </Tracking>
                             <Tracking event="progress" offset="00:00:15">
-                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5212557364800&cc=HK&cm=1&crid=0.46047276opg&dvt=UNKNOWN&ext=BxyGDBaQ5hSZVJNoDBckb-yKj_vng7yZhrJLXVf_f8smzd0CDo1eilG_1m1MoqUlYXBGb2fJp2WcjzQhv93oaKQ9ZcIFpgrxxDm07WzHDJLGVE_MHx45sb25z5cU76dK&gi=abc&iabCat=IAB9-31%2CIAB8&impr_dl=1626169829493&m=m5212557365056&ot=UNKNOWN&pubId=pub3054952966336&s=s5340077725248&se=001004e1c7598c347fc0&u=24a5b3a074e7f369&evt=progress&offset=15s]]>
+                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5732565818112&b=com.opera.browser&cc=HK&cm=1&crid=0.5095064opg&dvt=PHONE&ext=3DmWo3YVRy_l5UoQXm2DbknwrY67jgunoAXd4vjpkGqu7Z3upwIJBcorh6n9P7QOmck65_4UvWWD5w237BZpng%3D%3D&gi=fad3d048-981d-4f13-9b96-4136b17e187a&iabCat=IAB9-31%2CIAB8&impr_dl=1631962624641&m=m5732970023104&ot=ANDROID&pubId=pub5732585605376&rip=103.104.171.114&s=s5732694217216&se=00100538191c0f37e800&u=ed6e7cb11152951d&evt=progress&offset=15s]]>
                             </Tracking>
                             <Tracking event="progress" offset="97%">
-                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5212557364800&cc=HK&cm=1&crid=0.46047276opg&dvt=UNKNOWN&ext=BxyGDBaQ5hSZVJNoDBckb-yKj_vng7yZhrJLXVf_f8smzd0CDo1eilG_1m1MoqUlYXBGb2fJp2WcjzQhv93oaKQ9ZcIFpgrxxDm07WzHDJLGVE_MHx45sb25z5cU76dK&gi=abc&iabCat=IAB9-31%2CIAB8&impr_dl=1626169829493&m=m5212557365056&ot=UNKNOWN&pubId=pub3054952966336&s=s5340077725248&se=001004e1c7598c347fc0&u=24a5b3a074e7f369&evt=progress&offset=97p]]>
+                                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5732565818112&b=com.opera.browser&cc=HK&cm=1&crid=0.5095064opg&dvt=PHONE&ext=3DmWo3YVRy_l5UoQXm2DbknwrY67jgunoAXd4vjpkGqu7Z3upwIJBcorh6n9P7QOmck65_4UvWWD5w237BZpng%3D%3D&gi=fad3d048-981d-4f13-9b96-4136b17e187a&iabCat=IAB9-31%2CIAB8&impr_dl=1631962624641&m=m5732970023104&ot=ANDROID&pubId=pub5732585605376&rip=103.104.171.114&s=s5732694217216&se=00100538191c0f37e800&u=ed6e7cb11152951d&evt=progress&offset=97p]]>
                             </Tracking>
                         </TrackingEvents>
                         <VideoClicks>
                             <ClickThrough id="blog">
-                                <![CDATA[
-                                https://iabtechlab.com
-                            ]]>
+                                <![CDATA[https://iabtechlab.com]]>
                             </ClickThrough>
                             <ClickTracking>
-                                <![CDATA[
-                                http://example.com/trackingurl/clickTracking
-                            ]]>
+                                <![CDATA[http://example.com/trackingurl/clickTracking]]>
                             </ClickTracking>
                             <ClickTracking>
-                                <![CDATA[https://t-odx.op-mobile.opera.com/click?a=a5212557364800&cc=HK&cm=1&crid=0.46047276opg&dvt=UNKNOWN&ext=BxyGDBaQ5hSZVJNoDBckb-yKj_vng7yZhrJLXVf_f8smzd0CDo1eilG_1m1MoqUlYXBGb2fJp2WcjzQhv93oaKQ9ZcIFpgrxxDm07WzHDJLGVE_MHx45sb25z5cU76dK&gi=abc&iabCat=IAB9-31%2CIAB8&impr_dl=1626169829493&m=m5212557365056&ot=UNKNOWN&pubId=pub3054952966336&s=s5340077725248&se=001004e1c7598c347fc0&u=24a5b3a074e7f369]]>
+                                <![CDATA[https://t-odx.op-mobile.opera.com/click?a=a5732565818112&b=com.opera.browser&cc=HK&cm=1&crid=0.5095064opg&dvt=PHONE&ext=3DmWo3YVRy_l5UoQXm2DbknwrY67jgunoAXd4vjpkGqu7Z3upwIJBcorh6n9P7QOmck65_4UvWWD5w237BZpng%3D%3D&gi=fad3d048-981d-4f13-9b96-4136b17e187a&iabCat=IAB9-31%2CIAB8&impr_dl=1631962624641&m=m5732970023104&ot=ANDROID&pubId=pub5732585605376&rip=103.104.171.114&s=s5732694217216&se=00100538191c0f37e800&u=ed6e7cb11152951d]]>
                             </ClickTracking>
                             <CustomClick>
-                                <![CDATA[https://t-odx.op-mobile.opera.com/click?a=a5212557364800&cc=HK&cm=1&crid=0.46047276opg&dvt=UNKNOWN&ext=BxyGDBaQ5hSZVJNoDBckb-yKj_vng7yZhrJLXVf_f8smzd0CDo1eilG_1m1MoqUlYXBGb2fJp2WcjzQhv93oaKQ9ZcIFpgrxxDm07WzHDJLGVE_MHx45sb25z5cU76dK&gi=abc&iabCat=IAB9-31%2CIAB8&impr_dl=1626169829493&m=m5212557365056&ot=UNKNOWN&pubId=pub3054952966336&s=s5340077725248&se=001004e1c7598c347fc0&u=24a5b3a074e7f369]]>
+                                <![CDATA[https://t-odx.op-mobile.opera.com/click?a=a5732565818112&b=com.opera.browser&cc=HK&cm=1&crid=0.5095064opg&dvt=PHONE&ext=3DmWo3YVRy_l5UoQXm2DbknwrY67jgunoAXd4vjpkGqu7Z3upwIJBcorh6n9P7QOmck65_4UvWWD5w237BZpng%3D%3D&gi=fad3d048-981d-4f13-9b96-4136b17e187a&iabCat=IAB9-31%2CIAB8&impr_dl=1631962624641&m=m5732970023104&ot=ANDROID&pubId=pub5732585605376&rip=103.104.171.114&s=s5732694217216&se=00100538191c0f37e800&u=ed6e7cb11152951d]]>
                             </CustomClick>
                         </VideoClicks>
                         <MediaFiles>
                             <MediaFile id="5241" delivery="progressive" type="video/mp4" codec="0" bitrate="500" minBitrate="360" maxBitrate="1080" width="400" height="300" scalable="true" maintainAspectRatio="true">
-                                <![CDATA[
-                                https://iab-publicfiles.s3.amazonaws.com/vast/VAST-4.0-Short-Intro.mp4
-                            ]]>
+                                <![CDATA[https://iab-publicfiles.s3.amazonaws.com/vast/VAST-4.0-Short-Intro.mp4]]>
                             </MediaFile>
                         </MediaFiles>
                     </Linear>
@@ -182,18 +179,15 @@ https://s.adx.opera.com/tag/video?uid=fad3d048-981d-4f13-9b96-4136b17e187a&plc=s
                 <![CDATA[http://example.com/error]]>
             </Error>
             <Error>
-                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5212557364800&cc=HK&cm=1&crid=0.46047276opg&dvt=UNKNOWN&ext=BxyGDBaQ5hSZVJNoDBckb-yKj_vng7yZhrJLXVf_f8smzd0CDo1eilG_1m1MoqUlYXBGb2fJp2WcjzQhv93oaKQ9ZcIFpgrxxDm07WzHDJLGVE_MHx45sb25z5cU76dK&gi=abc&iabCat=IAB9-31%2CIAB8&impr_dl=1626169829493&m=m5212557365056&ot=UNKNOWN&pubId=pub3054952966336&s=s5340077725248&se=001004e1c7598c347fc0&u=24a5b3a074e7f369&evt=error]]>
+                <![CDATA[https://t-odx.op-mobile.opera.com/video?a=a5732565818112&b=com.opera.browser&cc=HK&cm=1&crid=0.5095064opg&dvt=PHONE&ext=3DmWo3YVRy_l5UoQXm2DbknwrY67jgunoAXd4vjpkGqu7Z3upwIJBcorh6n9P7QOmck65_4UvWWD5w237BZpng%3D%3D&gi=fad3d048-981d-4f13-9b96-4136b17e187a&iabCat=IAB9-31%2CIAB8&impr_dl=1631962624641&m=m5732970023104&ot=ANDROID&pubId=pub5732585605376&rip=103.104.171.114&s=s5732694217216&se=00100538191c0f37e800&u=ed6e7cb11152951d&evt=error]]>
             </Error>
             <Pricing model="cpm" currency="USD">
-                <![CDATA[
-                 25.00
-            ]]>
+                <![CDATA[ 25.00 ]]>
             </Pricing>
             <Extensions>
                 <Extension type="iab-Count">
                     <total_available>
                         <![CDATA[ 2 ]]>
-
                     </total_available>
                 </Extension>
                 <Extension type="Tracking">
