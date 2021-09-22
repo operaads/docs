@@ -10,9 +10,9 @@ OperaAds has provided bid adapter [golang version](https://docs.prebid.org/dev-d
 Following parameters are mandatory for pbs(*prebid-server*) integrationm, please contact OperaAds Account Manager to setup account and get these parameters.
 | Name | Scope | Type | Description | Example
 | ---- | ----- | ---- | ----------- | -------
-| placementId | required | String | The Placement Id provided by Opera Ads. | `s5340077725248`
-| endpointId | required | String | The Endpoint Id provided by Opera Ads. | `ep3425464070464`
-| publisherId | required | String | The Publisher Id provided by Opera Ads. | `pub3054952966336` 
+| placementId | required | String | The Placement Id provided by Opera Ads. | `s5732648708160`
+| endpointId | required | String | The Endpoint Id provided by Opera Ads. | `ep5732673449728`
+| publisherId | required | String | The Publisher Id provided by Opera Ads. | `pub5732583002624` 
 
 ### request example
 Following example includes sample imp object with publisherId,endpointId and placementId which can be used to test OperaAds Adapter. Make sure the bidfloorprice is set to zero and test ads will be returned. 
