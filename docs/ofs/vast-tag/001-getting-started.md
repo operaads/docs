@@ -12,7 +12,7 @@
 
 | Parameter         | Mandatory     | Type        |Desc
 |-------------------|:-------------:|:-----------:|------------------------------------------
-| uid               |        Y      | string      | User unique id
+| uid               |        N      | string      | User unique id
 | plc               |        Y      | string      | Placement key for media
 | ts                |        N      | int         | Unix timestamp in seconds of this request
 | bundleid          |        N      | string      | App Bundle ID. For example, com.opera.browser
