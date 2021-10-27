@@ -18,7 +18,7 @@ A mapping table can be used to map an ID or other data from one domain to anothe
 
 ## Getting Started
 
-OperaAds Cookie Mapping URL is like `https://t.adx.opera.com/pub/sync?r=${publisher_encoded_cookie_mapping_url}`. Supplier should replace ${publisher_encoded_cookie_mapping_url} with its encoded cookie mapping url, for example, "https://publisher.adnetwork.com/pixel" encoded as "https%3A%2F%2Fpublisher.adnetwork.com%2Fpixel", and in this case OperaAds Cookie Mapping URL is `https://t.adx.opera.com/pub/sync?r=https%3A%2F%2Fpublisher.adnetwork.com%2Fpixel%2Foperaads`
+OperaAds Cookie Mapping URL is like `https://t.adx.opera.com/pub/sync?r=${publisher_encoded_cookie_mapping_url}`. Supplier should replace ${publisher_encoded_cookie_mapping_url} with its encoded cookie mapping url, for example, "https://publisher.adnetwork.com/pixel?uid=${OPERA_UID}" encoded as "https%3A%2F%2Fpublisher.adnetwork.com%2Fpixel%3Fuid%3D%24%7BOPERA_UID%7D", and in this case OperaAds Cookie Mapping URL is `https://t.adx.opera.com/pub/sync?r=https%3A%2F%2Fpublisher.adnetwork.com%2Fpixel%3Fuid%3D%24%7BOPERA_UID%7D`
 
 ## Cookie Mapping Service Workflow
 
@@ -27,22 +27,27 @@ OperaAds Cookie Mapping URL is like `https://t.adx.opera.com/pub/sync?r=${publis
 In order to initiate this flow, a supplier must place OperaAds map tag such that it renders in the user's browser. The map tag will direct the user's browser to OperaAds Cookie Mapping URL. Loot at OperaAds map tag below:
 
 ```html
-<img src="https://t.adx.opera.com/pub/sync?r=https%3A%2F%2Fpublisher.adnetwork.com%2Fpixel%2Foperaads" />
+<img src="https://t.adx.opera.com/pub/sync?r=https%3A%2F%2Fpublisher.adnetwork.com%2Fpixel%3Fuid%3D%24%7BOPERA_UID%7D" />
 ```
 
 When loading in the user's browser, it will request a pixel from the OperaAds Cookie Mapping URL. This request will contain cookie in the HTTP header, which should be extracted for the next step.
 
 ### Step 2: Redirect to supplier' Cookie Mapping URL
 
-OperaAds' Cookie Mapping service will get publisher’ Cookie Mapping URL from query paramter `r`, and redirects to that url after adding query parameter `operaUid` into it. The redirect URL might look like the following:
+OperaAds' Cookie Mapping service will get publisher’ Cookie Mapping URL from query paramter `r`, and redirects to that url after replacing macro ${OPERA_UID} with real opera uid ( if the macro does not exist, query parameter `operaUid` will be added into the redirect url). The redirect URL might look like the following:
 
 ```url
-https://publisher.adnetwork.com/pixel/operaads?operaUid=4e93fa9e-86e3-11eb-8dcd-0242ac130003
+https://publisher.adnetwork.com/pixel?uid=4e93fa9e-86e3-11eb-8dcd-0242ac130003
+```
+Or if the macro ${OPERA_UID} does not exist, the redirect URL might look like the following:
+
+```url
+https://publisher.adnetwork.com/pixel?operaUid=4e93fa9e-86e3-11eb-8dcd-0242ac130003
 ```
 
 ### Step 3: User's browser is redirected to supplier' Cookie Mapping service
 
-Supplier will receive a redirect containing the parameter `operaUid`, in addition to its own cookie in the HTTP headers.
+Supplier will receive a redirect containing opera uid, in addition to its own cookie in the HTTP headers.
 
 ### Step 4: Supplier serves pixel on the end
 

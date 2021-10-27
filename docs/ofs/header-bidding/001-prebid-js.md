@@ -3,6 +3,10 @@
 ## Source Link
 Go to prebid js [download](https://docs.prebid.org/download.html) page, select **Bidder Adapters** *OperaAds* and **User ID Module** *Unified ID*,SharedID*,*PubCommon ID*, then click **Get Prebid.js**
 
+## Change Log
+1. Init version, integrated in **prebid.js v5.6**
+2. Non-USD currency support, integrated in **prebid.js v5.12**
+
 ## Supported Creative Types
 
 1. Display Ads(Banner)
