@@ -14,7 +14,9 @@
 |-------------------|:-------------:|:-----------:|------------------------------------------
 | uid               |        N      | string      | User unique id
 | plc               |        Y      | string      | Placement key for media
-| ts                |        N      | int         | Unix timestamp in seconds of this request
+| channel           |        N      | string      | Channel of the media content (e.g., Cartoon)
+| tag               |        N      | string      | Tag of the media content (e.g., Krtek)
+| badv              |        N      | string array| Block list of advertisers by their domains (e.g., “ford.com”).
 | bundleid          |        N      | string      | App Bundle ID. For example, com.opera.browser
 | appversion        |        N      | string      | App version
 | appname           |        N      | string      | App name
@@ -38,13 +40,14 @@
 | network           |        N      | enum string | Optional values:<br> `UNKNOWN` <br> `WIFI` <br> `CELLULAR_2G` <br> `CELLULAR_3G` <br> `CELLULAR_4G` <br> `CELLULAR_5G`
 | lon               |        N      | double      | Longitude of user's current position
 | lat               |        N      | double      | Latitude of user's current position
+| ts                |        N      | int         | Unix timestamp in seconds of this request
 | consent           |        N      | string      | Flag to signify that the end user has given consent to use and process their data. Omission indicates no consent. `true` or `false` or `unknown` or a GDPR user consent string defined by IAB, see [GDPR-Transparency-and-Consent-Framework](https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/Consent%20string%20and%20vendor%20list%20formats%20v1.1%20Final.md#purposes-features).
 
 ## Tag Url Example
 The tag below will get test ads returned.
 ### tag used in webpage
 ```url
-https://s.adx.opera.com/tag/video?uid=fad3d048-981d-4f13-9b96-4136b17e187a&plc=s5732691266752&ts=1621654401&site=opera.com&url=https%3A%2F%2Fwww.opera.com%2Fnews%2Fp1&ref=https%3A%2F%2Fwww.opera.com&dt=PHONE&os=ANDROID&osv=9.1&ua=Opera%20News%2F7.4.2254.148299%2F52.0.2743.10%20%28Android%209%29&dw=1920&dh=1080
+https://s.adx.opera.com/tag/video?uid=fad3d048-981d-4f13-9b96-4136b17e187a&plc=s5732691266752&channel=Cartoon&tag=Krtek&badv=ford1.com&badv=ford2.com&ts=1621654401&site=opera.com&url=https%3A%2F%2Fwww.opera.com%2Fnews%2Fp1&ref=https%3A%2F%2Fwww.opera.com&dt=PHONE&os=ANDROID&osv=9.1&ua=Opera%20News%2F7.4.2254.148299%2F52.0.2743.10%20%28Android%209%29&dw=1920&dh=1080
 ```
 
 ### tag used in app
