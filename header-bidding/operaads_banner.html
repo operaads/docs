@@ -37,6 +37,12 @@
       pbjs.setConfig({
         debug: true,
         userSync: {
+          filterSettings: {
+            image: {
+              bidders: '*',   // '*' means all bidders
+              filter: 'include'
+            },
+          },
           userIds: [{
             name: 'sharedId',
             storage: {
