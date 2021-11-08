@@ -34,6 +34,11 @@ module.exports = [
         link: "/ofs/cookie-sync/",
       },
       {
+        text: "User Sync",
+        ariaLabel: "User Sync",
+        link: "/ofs/user-sync/",
+      },
+      {
         text: "Report API",
         ariaLabel: "Report API",
         link: "/ofs/report-api/",

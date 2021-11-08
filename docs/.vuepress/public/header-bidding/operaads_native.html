@@ -38,6 +38,12 @@
       pbjs.setConfig({
         debug: true,
         userSync: {
+          filterSettings: {
+            iframe: {
+              bidders: '*',   // '*' means all bidders
+              filter: 'include'
+            },
+          },
           userIds: [{
             name: 'sharedId',
             storage: {

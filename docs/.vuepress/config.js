@@ -83,6 +83,12 @@ module.exports = () => ({
               children: listMarkdowns("./docs/ofd/cookie-sync/"),
             },
           ],
+          "/ofs/user-sync/": [
+            {
+              title: "Guide",
+              children: listMarkdowns("./docs/ofs/user-sync/"),
+            },
+          ],
         },
       },
       "/zh-CN/": {
@@ -126,6 +132,12 @@ module.exports = () => ({
             {
               title: "指南",
               children: listMarkdowns("./docs/zh-CN/ofd/cookie-sync/"),
+            },
+          ],
+          "/zh-CN/ofs/user-sync/": [
+            {
+              title: "指南",
+              children: listMarkdowns("./docs/zh-CN/ofs/user-sync/"),
             },
           ],
         },
