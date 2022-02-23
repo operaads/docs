@@ -79,3 +79,14 @@ Demand Partner Onboarding process. [Quick Start →](./ofd/process/)
 ### Cookie Sync
 
 User id mapping. [Quick Start →](./ofd/cookie-sync/)
+
+-----
+-----
+
+## General informations
+
+General information. [Quick Start →](./common/general/)
+
+Frequently asked questions. [Quick Start →](./common/faq/)
+
+
