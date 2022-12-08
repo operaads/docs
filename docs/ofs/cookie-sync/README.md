@@ -27,8 +27,10 @@ OperaAds Cookie Mapping URL is like `https://t.adx.opera.com/pub/sync?pubid=${pu
 In order to initiate this flow, a supplier must place OperaAds map tag such that it renders in the user's browser. The map tag will direct the user's browser to OperaAds Cookie Mapping URL. Loot at OperaAds map tag below:
 
 ```html
-<img src="https://t.adx.opera.com/pub/sync?pubid=pub123" />
+<img src="https://t.adx.opera.com/pub/sync?pubid=pub123&gdpr=${GDPR}&consent=${GDPR_CONSENT}&us_privacy=${US_PRIVACY}" />
 ```
+
+Suppliers should expand user privacy macro in the map tag. For example, expand ${GDPR} with 0 or 1, expand ${GDPR_CONSENT} with [gdpr consent string](https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/TCF-Implementation-Guidelines.md), expand ${US_PRIVACY} with [us privacy string](https://github.com/InteractiveAdvertisingBureau/USPrivacy/blob/master/CCPA/US%20Privacy%20String.md).
 
 When loading in the user's browser, it will request a pixel from the OperaAds Cookie Mapping URL. This request will contain cookie in the HTTP header, which should be extracted for the next step.
 
