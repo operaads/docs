@@ -2,9 +2,9 @@
 
 ## Steps
 
-1. Create a app/site
+1. Create an app/site
 
-2. Create an video ad placement
+2. Create a video ad placement
 
 3. Generate VAST Tag
 
