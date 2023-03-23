@@ -47,12 +47,12 @@
 The tag below will get test ads returned.
 ### tag used in webpage
 ```url
-https://s.adx.opera.com/tag/video?uid=fad3d048-981d-4f13-9b96-4136b17e187a&plc=s5732691266752&channel=Cartoon&tag=Krtek&badv=ford1.com&badv=ford2.com&ts=1621654401&site=opera.com&url=https%3A%2F%2Fwww.opera.com%2Fnews%2Fp1&ref=https%3A%2F%2Fwww.opera.com&dt=PHONE&os=ANDROID&osv=9.1&ua=Opera%20News%2F7.4.2254.148299%2F52.0.2743.10%20%28Android%209%29&dw=1920&dh=1080
+https://s.adx.opera.com/tag/ortb/v2/video?uid=fad3d048-981d-4f13-9b96-4136b17e187a&plc=s5732691266752&channel=Cartoon&tag=Krtek&badv=ford1.com&badv=ford2.com&ts=1621654401&site=opera.com&url=https%3A%2F%2Fwww.opera.com%2Fnews%2Fp1&ref=https%3A%2F%2Fwww.opera.com&dt=PHONE&os=ANDROID&osv=9.1&ua=Opera%20News%2F7.4.2254.148299%2F52.0.2743.10%20%28Android%209%29&dw=1920&dh=1080
 ```
 
 ### tag used in app
 ```url
-https://s.adx.opera.com/tag/video?uid=fad3d048-981d-4f13-9b96-4136b17e187a&plc=s5732694217216&ts=1621654401&dt=PHONE&os=ANDROID&osv=9.1&ua=Opera%20News%2F7.4.2254.148299%2F52.0.2743.10%20%28Android%209%29&dw=1920&dh=1080&bundleid=com.opera.browser&appversion=53.1
+https://s.adx.opera.com/tag/ortb/v2/video?uid=fad3d048-981d-4f13-9b96-4136b17e187a&plc=s5732694217216&ts=1621654401&dt=PHONE&os=ANDROID&osv=9.1&ua=Opera%20News%2F7.4.2254.148299%2F52.0.2743.10%20%28Android%209%29&dw=1920&dh=1080&bundleid=com.opera.browser&appversion=53.1
 ```
 
 ## Response Example

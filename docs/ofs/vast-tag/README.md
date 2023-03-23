@@ -7,5 +7,5 @@ OperaAds VAST tag points to the VAST XML feed provided by OperaAds ad server. Yo
 ## VAST tag address
 
 ``` wiki
-https://s.adx.opera.com/tag/video
+https://s.adx.opera.com/tag/ortb/v2/video
 ```
