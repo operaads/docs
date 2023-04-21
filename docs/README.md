@@ -58,6 +58,9 @@ Opera provide 5 integration options for suppliers to connect with OperaAds:
 
 Cookie mapping guide. [Quick Start →](./ofs/cookie-sync/)
 
+### Deeplink
+
+Deeplink integration guide. [Quick Start →](./ofs/deeplink/)
 
 ### Supplier Report API
 
@@ -75,6 +78,10 @@ Supplier Onboarding process. [Quick Start →](./ofs/process/)
 ### Onboarding
 
 Demand Partner Onboarding process. [Quick Start →](./ofd/process/)
+
+### Deeplink
+
+Deeplink integration guide. [Quick Start →](./ofd/deeplink/)
 
 ### Buyer Report API
 
