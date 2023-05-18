@@ -14,6 +14,7 @@
 |-------------------|:-------------:|:-----------:|------------------------------------------
 | uid               |        N      | string      | User unique id
 | plc               |        Y      | string      | Placement key for media
+| floor             |        N      | int         | Floor price, unit is 0.001$, for example, floor=1500 means floor is $1.5
 | channel           |        N      | string      | Channel of the media content (e.g., Cartoon)
 | tag               |        N      | string      | Tag of the media content (e.g., Krtek)
 | badv              |        N      | string array| Block list of advertisers by their domains (e.g., “ford.com”).
