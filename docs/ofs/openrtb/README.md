@@ -477,9 +477,9 @@ OperaAds S2S API responses mapped to standard HTTP response codes:
 |${AUCTION_LOSS}|Loss reason codes.
 |${AUCTION_MIN_TO_WIN}|Minimum bid to win the exchange's auction, using the same currency and units as the bid.
 
-Macros in NURL: ${AUCTION_PRICE},${AUCTION_CURRENCY},${AUCTION_MIN_TO_WIN}.
-Macros in LURL: ${AUCTION_LOSS},${AUCTION_MIN_TO_WIN}.
-Macros in BURL: ${AUCTION_PRICE},${AUCTION_CURRENCY}.
+- Macros in NURL: ${AUCTION_PRICE}, ${AUCTION_CURRENCY}, ${AUCTION_MIN_TO_WIN}.
+- Macros in LURL: ${AUCTION_LOSS},  ${AUCTION_MIN_TO_WIN}.
+- Macros in BURL: ${AUCTION_PRICE}, ${AUCTION_CURRENCY}.
 
 ### Response Examples
 
