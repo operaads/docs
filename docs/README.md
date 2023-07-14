@@ -91,6 +91,11 @@ Report API. [Quick Start →](./ofd/report-api/)
 
 User id mapping. [Quick Start →](./ofd/cookie-sync/)
 
+### Integrate OperaAds Pixel to Google Tag Manager
+
+Integration guide. [Quick Start →](./ofd/integrate-pixel-to-gtm/)
+
+
 -----
 -----
 
