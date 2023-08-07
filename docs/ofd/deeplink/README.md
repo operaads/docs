@@ -16,10 +16,10 @@ We will add deeplink indicator in a bid request, then advertisers can deside whe
 
 ### Response
 
-| Field                     | Type | Description
-| ------------------------- | -----| -------------
-| seatbid.bid.ext.deeplink  | int  | deeplink url to delivery
-| seatbid.bid.ext.fallback  | int  | fallback url to delivery
+| Field                     | Type   | Description
+| ------------------------- | -------| -------------
+| seatbid.bid.ext.deeplink  | string | deeplink url to delivery
+| seatbid.bid.ext.fallback  | string | fallback url to delivery
 
 ## Sample
 
