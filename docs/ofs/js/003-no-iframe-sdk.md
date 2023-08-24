@@ -1,6 +1,6 @@
-# Introduction
+# No iframe sdk
 
-This SDK is basically the same as the original JS SDK, but it only support js-taglist creative type. Please make sure only js-taglist ads in your slot.
+This SDK render ads by a div wrapper not iframe, but it only support js-taglist creative type. Please make sure only js-taglist ads in your slot.
 
 ## SDK Address
 
