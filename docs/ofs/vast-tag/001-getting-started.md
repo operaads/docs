@@ -36,7 +36,7 @@
 | dw                |        N      | int         | Device screen width. For example, 1080
 | dh                |        N      | int         | Device screen height. For example, 1920
 | adid              |        N      | string      | Advertising ID - Unhashed Apple IDFA or Google AdId
-| ip                |        N      | string      | User's ip address
+| ip                |        Y      | string      | User's ip address
 | mccmnc            |        N      | string      | Mobile operator MCC+MNC Code, like : 62120, see https://en.wikipedia.org/wiki/Mobile_country_code
 | network           |        N      | enum string | Optional values:<br> `UNKNOWN` <br> `WIFI` <br> `CELLULAR_2G` <br> `CELLULAR_3G` <br> `CELLULAR_4G` <br> `CELLULAR_5G`
 | lon               |        N      | double      | Longitude of user's current position
