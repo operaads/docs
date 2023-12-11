@@ -1,8 +1,8 @@
-# OperaAds Pixel Integration Guide
+# SO Pixel Integration Guide
 
-This documentation is to demonstrate how to integrate OperaAds Pixel Code to Google Tag Manager.
+This documentation is to demonstrate how to integrate SO Pixel Code to Google Tag Manager.
 
-## Step 1: Setup Opera Pixel in Google Tag Manager
+## Step 1: Setup SO Pixel in Google Tag Manager
 
 Visit: [https://tagmanager.google.com/](https://tagmanager.google.com/)
 
@@ -11,19 +11,19 @@ If you do not have an account, create it in [https://tagmanager.google.com/](htt
 
 ### 1) Setup Base Code Tag
 
-Add a new tag for Opera Pixel Base code, such as:
+Add a new tag for SO Pixel Base code, such as:
 ![](./pic_2.png)
 
 The above Custom HTML Tag content  is :
 ```javascript {5}
-<!-- Opera Pixel Base Code -->
+<!-- SO Pixel Base Code -->
   <script>
   !(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)};p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;n.src=w;g.parentNode.insertBefore(n,g)}})(window,document,"script","//res-odx.op-mobile.opera.com/sp.js","otag");
 
   otag('init', 'Your_Advertiser_Id')
 
   </script>
-<!-- End Opera Pixel Base Code -->
+<!-- End SO Pixel Base Code -->
 
 ```
 ::: warning
@@ -38,7 +38,7 @@ You can set up multiple event tags, depending on how many events you want to tri
 
 ![](./pic_3.png)
 
-#### 2. Enter a name for the register Event tag at the top(e.g., "Opera pixel register event tag").
+#### 2. Enter a name for the register Event tag at the top(e.g., "SO Pixel register event tag").
 
 ![](./pic_4.png)
 
@@ -112,7 +112,7 @@ dataLayer.push({"event": "register"});
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Opera Pixel with Google Tag Manager</title>
+  <title>SO Pixel with Google Tag Manager</title>
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
       w[l] = w[l] || []; w[l].push({
