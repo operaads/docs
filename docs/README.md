@@ -95,6 +95,10 @@ User id mapping. [Quick Start →](./ofd/cookie-sync/)
 
 Integration guide. [Quick Start →](./ofd/integrate-pixel-to-gtm/)
 
+### Marketing API
+
+Integration guide. [Quick Start →](./ofd/marketing-api/)
+
 
 -----
 -----
