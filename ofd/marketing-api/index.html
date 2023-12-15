@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Opera Ads Marketing API Integration Guide | OperaAds</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="description" content="OperaAds Documentations">
+    
+    <link rel="preload" href="/assets/css/0.styles.a796ab9c.css" as="style"><link rel="preload" href="/assets/js/app.f2f6a181.js" as="script"><link rel="preload" href="/assets/js/2.b2af7ed7.js" as="script"><link rel="preload" href="/assets/js/17.a9277f74.js" as="script"><link rel="prefetch" href="/assets/js/10.5c505fda.js"><link rel="prefetch" href="/assets/js/11.b8389ef4.js"><link rel="prefetch" href="/assets/js/12.906dc0b6.js"><link rel="prefetch" href="/assets/js/13.b517248a.js"><link rel="prefetch" href="/assets/js/14.58135b01.js"><link rel="prefetch" href="/assets/js/15.2c825f59.js"><link rel="prefetch" href="/assets/js/16.229e5cce.js"><link rel="prefetch" href="/assets/js/18.991c63a9.js"><link rel="prefetch" href="/assets/js/19.c760bac9.js"><link rel="prefetch" href="/assets/js/20.237b8d99.js"><link rel="prefetch" href="/assets/js/21.ef049e59.js"><link rel="prefetch" href="/assets/js/22.37c66912.js"><link rel="prefetch" href="/assets/js/23.d6d7406e.js"><link rel="prefetch" href="/assets/js/24.86543fe1.js"><link rel="prefetch" href="/assets/js/25.00784c66.js"><link rel="prefetch" href="/assets/js/26.b6619e98.js"><link rel="prefetch" href="/assets/js/27.87fa1932.js"><link rel="prefetch" href="/assets/js/28.22ba1b1c.js"><link rel="prefetch" href="/assets/js/29.c78724da.js"><link rel="prefetch" href="/assets/js/3.2e1f5fd5.js"><link rel="prefetch" href="/assets/js/30.3b6c8803.js"><link rel="prefetch" href="/assets/js/31.31c31c96.js"><link rel="prefetch" href="/assets/js/32.bb0c8281.js"><link rel="prefetch" href="/assets/js/33.b5356c39.js"><link rel="prefetch" href="/assets/js/34.98d88879.js"><link rel="prefetch" href="/assets/js/35.faf39f3d.js"><link rel="prefetch" href="/assets/js/36.0d9ca397.js"><link rel="prefetch" href="/assets/js/37.9b113e02.js"><link rel="prefetch" href="/assets/js/38.a3cf078b.js"><link rel="prefetch" href="/assets/js/39.f16e7f1f.js"><link rel="prefetch" href="/assets/js/4.f9c8347b.js"><link rel="prefetch" href="/assets/js/40.d4a7f5e2.js"><link rel="prefetch" href="/assets/js/41.197bf320.js"><link rel="prefetch" href="/assets/js/42.ae56af75.js"><link rel="prefetch" href="/assets/js/43.8a712d5a.js"><link rel="prefetch" href="/assets/js/44.1cb0a44d.js"><link rel="prefetch" href="/assets/js/45.180a7109.js"><link rel="prefetch" href="/assets/js/46.ebc0f005.js"><link rel="prefetch" href="/assets/js/47.da1ab912.js"><link rel="prefetch" href="/assets/js/48.1cfcf713.js"><link rel="prefetch" href="/assets/js/49.53c3981f.js"><link rel="prefetch" href="/assets/js/5.04952b6b.js"><link rel="prefetch" href="/assets/js/50.6e9c0f86.js"><link rel="prefetch" href="/assets/js/51.829cfe48.js"><link rel="prefetch" href="/assets/js/6.237ae445.js"><link rel="prefetch" href="/assets/js/7.370ed007.js"><link rel="prefetch" href="/assets/js/8.251ccf32.js"><link rel="prefetch" href="/assets/js/9.8abfab2e.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a796ab9c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/OperaAds_Icon.png" alt="OperaAds" class="logo"> <span class="site-name can-hide">OperaAds</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="OperaAds for Supply Partners" class="dropdown-title"><span class="title">For Suppliers</span> <span class="arrow down"></span></button> <button type="button" aria-label="OperaAds for Supply Partners" class="mobile-dropdown-title"><span class="title">For Suppliers</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ofs/js/" class="nav-link">
+  JS SDK
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/android/" class="nav-link">
+  Android SDK
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/vast-tag/" class="nav-link">
+  Vast Tag
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/openrtb/" class="nav-link">
+  OpenRTB
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/header-bidding/" class="nav-link">
+  Header Bidding
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/cookie-sync/" class="nav-link">
+  Cookie Mapping
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/user-sync/" class="nav-link">
+  User Sync
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/report-api/" class="nav-link">
+  Report API
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/process/" class="nav-link">
+  Onboarding Process
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="OperaAds for Demand Partners" class="dropdown-title"><span class="title">For Buyers</span> <span class="arrow down"></span></button> <button type="button" aria-label="OperaAds for Demand Partners" class="mobile-dropdown-title"><span class="title">For Buyers</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ofd/process/" class="nav-link">
+  Onboarding Process
+</a></li><li class="dropdown-item"><!----> <a href="/ofd/cookie-sync/" class="nav-link">
+  Cookie Sync
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Languages</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ofd/marketing-api/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/zh-CN/" class="nav-link">
+  简体中文
+</a></li></ul></div></div> <a href="https://github.com/operaads/docs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="OperaAds for Supply Partners" class="dropdown-title"><span class="title">For Suppliers</span> <span class="arrow down"></span></button> <button type="button" aria-label="OperaAds for Supply Partners" class="mobile-dropdown-title"><span class="title">For Suppliers</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ofs/js/" class="nav-link">
+  JS SDK
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/android/" class="nav-link">
+  Android SDK
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/vast-tag/" class="nav-link">
+  Vast Tag
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/openrtb/" class="nav-link">
+  OpenRTB
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/header-bidding/" class="nav-link">
+  Header Bidding
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/cookie-sync/" class="nav-link">
+  Cookie Mapping
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/user-sync/" class="nav-link">
+  User Sync
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/report-api/" class="nav-link">
+  Report API
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/process/" class="nav-link">
+  Onboarding Process
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="OperaAds for Demand Partners" class="dropdown-title"><span class="title">For Buyers</span> <span class="arrow down"></span></button> <button type="button" aria-label="OperaAds for Demand Partners" class="mobile-dropdown-title"><span class="title">For Buyers</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ofd/process/" class="nav-link">
+  Onboarding Process
+</a></li><li class="dropdown-item"><!----> <a href="/ofd/cookie-sync/" class="nav-link">
+  Cookie Sync
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Languages</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ofd/marketing-api/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/zh-CN/" class="nav-link">
+  简体中文
+</a></li></ul></div></div> <a href="https://github.com/operaads/docs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="opera-ads-marketing-api-integration-guide"><a href="#opera-ads-marketing-api-integration-guide" class="header-anchor">#</a> Opera Ads Marketing API Integration Guide</h1> <p>Opera Ads Marketing API is a common API that can be used by advertisers to report their campaign conversion events to the Opera Ads server.</p> <h2 id="markting-api-workflow"><a href="#markting-api-workflow" class="header-anchor">#</a> Markting API WorkFlow</h2> <h3 id="controlled-by-operaads"><a href="#controlled-by-operaads" class="header-anchor">#</a> Controlled By OperaAds</h3> <p>OperaAds bidder delivers ads whose click-through url will have click_id value added
+e.g. https://example.com?click_id=xxxx</p> <p>Important to note that the value of click_id is dynamic, different with each ad click. So advertisers need to get it from the url query string.</p> <h3 id="controller-by-advertisers"><a href="#controller-by-advertisers" class="header-anchor">#</a> Controller By Advertisers</h3> <p>When users click the ads and are redirected to advertisers' product, advertisers should store click_id value in the click-through url in preparation for future macro substitution when calling OperaAds marketing API.</p> <p>When conversion events happen, e.g. registration, advertisers should follow the API's specification to correctly substitute corresponding macros and call Marking API Endpoint.</p> <h2 id="api-specification"><a href="#api-specification" class="header-anchor">#</a> API Specification</h2> <h3 id="request"><a href="#request" class="header-anchor">#</a> Request</h3> <h4 id="example"><a href="#example" class="header-anchor">#</a> Example</h4> <div class="language- extra-class"><pre class="language-text"><code>curl -X GET &quot;https://cb.adx.opera.com/marketing/pb?partner=p_name&amp;click_id=NTcxMJGxNiwyODVjOXcwZjFmAzAOZWIwLElELTI0NFdhMGE2M2ExODk5ND%3D&amp;event_name=purchase&amp;event_value=&amp;payout=0.5&quot;
+</code></pre></div><h4 id="specifications"><a href="#specifications" class="header-anchor">#</a> Specifications</h4> <p>HTTP Method: GET<br>
+Query String Parameters:</p> <table><thead><tr><th>Parameters</th> <th>Type</th> <th>Description</th> <th>Mandatory</th></tr></thead> <tbody><tr><td>partner</td> <td>string</td> <td>The advertiser name assigned by Opera.</td> <td>YES</td></tr> <tr><td>click_id</td> <td>string</td> <td>An ID generated by Opera Ads server dynamically (different click_id for different AD request.) and put in the click-through URL. Advertisers need to get the click_id from the click-through URL, put it in this click_id parameter without any change and post back to Opera Ads Server.</td> <td>YES</td></tr> <tr><td>event_name</td> <td>string</td> <td>Event name install, register, login, purchase, place_bet. If advertisers need more customized events, please contact Opera Ads to create.</td> <td>YES</td></tr> <tr><td>event_value</td> <td>string</td> <td>Event value if have, optional.</td> <td>Optional</td></tr> <tr><td>payout</td> <td>string</td> <td>The payout to Opera in USD, optional.</td> <td>Optional</td></tr></tbody></table> <h3 id="response"><a href="#response" class="header-anchor">#</a> Response</h3> <h4 id="status-code"><a href="#status-code" class="header-anchor">#</a> Status Code</h4> <p>HTTP Status Code：200<br>
+Opera Ads server always return 200 if the request is processed.</p> <h4 id="response-body"><a href="#response-body" class="header-anchor">#</a> Response body</h4> <p>HTTP Body in JSON format: {&quot;status&quot;:0,&quot;message&quot;:&quot;ok&quot;}</p> <table><thead><tr><th>Field</th> <th>Type</th> <th>Description</th></tr></thead> <tbody><tr><td>status</td> <td>int</td> <td>0 means report success, otherwise failure.</td></tr> <tr><td>message</td> <td>string</td> <td>“ok” or the failure reason.</td></tr></tbody></table></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.f2f6a181.js" defer></script><script src="/assets/js/2.b2af7ed7.js" defer></script><script src="/assets/js/17.a9277f74.js" defer></script>
+  </body>
+</html>
