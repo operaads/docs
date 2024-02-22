@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>OperaAds AutoStoreKit Integration Guide | OperaAds</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="description" content="OperaAds Documentations">
+    
+    <link rel="preload" href="/assets/css/0.styles.a796ab9c.css" as="style"><link rel="preload" href="/assets/js/app.2541a5c1.js" as="script"><link rel="preload" href="/assets/js/2.b2af7ed7.js" as="script"><link rel="preload" href="/assets/js/15.f6d3bede.js" as="script"><link rel="prefetch" href="/assets/js/10.5c505fda.js"><link rel="prefetch" href="/assets/js/11.b8389ef4.js"><link rel="prefetch" href="/assets/js/12.e49e4a96.js"><link rel="prefetch" href="/assets/js/13.b517248a.js"><link rel="prefetch" href="/assets/js/14.58135b01.js"><link rel="prefetch" href="/assets/js/16.36b3e053.js"><link rel="prefetch" href="/assets/js/17.00097a43.js"><link rel="prefetch" href="/assets/js/18.e9fceb0b.js"><link rel="prefetch" href="/assets/js/19.eecbfc45.js"><link rel="prefetch" href="/assets/js/20.97226924.js"><link rel="prefetch" href="/assets/js/21.63194403.js"><link rel="prefetch" href="/assets/js/22.126935b4.js"><link rel="prefetch" href="/assets/js/23.e0ac652f.js"><link rel="prefetch" href="/assets/js/24.e48a46dc.js"><link rel="prefetch" href="/assets/js/25.1c44c0bc.js"><link rel="prefetch" href="/assets/js/26.6448866a.js"><link rel="prefetch" href="/assets/js/27.b4859a64.js"><link rel="prefetch" href="/assets/js/28.fe5c9965.js"><link rel="prefetch" href="/assets/js/29.fcb753f0.js"><link rel="prefetch" href="/assets/js/3.a970bb68.js"><link rel="prefetch" href="/assets/js/30.2ece34a1.js"><link rel="prefetch" href="/assets/js/31.8b76b7a7.js"><link rel="prefetch" href="/assets/js/32.bd573472.js"><link rel="prefetch" href="/assets/js/33.9c636cb8.js"><link rel="prefetch" href="/assets/js/34.161672fa.js"><link rel="prefetch" href="/assets/js/35.ae8dfb4e.js"><link rel="prefetch" href="/assets/js/36.53f66d93.js"><link rel="prefetch" href="/assets/js/37.2b67907a.js"><link rel="prefetch" href="/assets/js/38.016a11d0.js"><link rel="prefetch" href="/assets/js/39.aed58340.js"><link rel="prefetch" href="/assets/js/4.4816cd33.js"><link rel="prefetch" href="/assets/js/40.8f071e6b.js"><link rel="prefetch" href="/assets/js/41.a43a5389.js"><link rel="prefetch" href="/assets/js/42.39379c16.js"><link rel="prefetch" href="/assets/js/43.eeee42f8.js"><link rel="prefetch" href="/assets/js/44.4158c34c.js"><link rel="prefetch" href="/assets/js/45.34297f36.js"><link rel="prefetch" href="/assets/js/46.2b96ad29.js"><link rel="prefetch" href="/assets/js/47.949a2df1.js"><link rel="prefetch" href="/assets/js/48.56fe6584.js"><link rel="prefetch" href="/assets/js/49.030eb07d.js"><link rel="prefetch" href="/assets/js/5.04952b6b.js"><link rel="prefetch" href="/assets/js/50.db89fbd2.js"><link rel="prefetch" href="/assets/js/51.25de0a74.js"><link rel="prefetch" href="/assets/js/52.8dee473b.js"><link rel="prefetch" href="/assets/js/53.b2f3e665.js"><link rel="prefetch" href="/assets/js/54.a9e8ad2d.js"><link rel="prefetch" href="/assets/js/6.f214db93.js"><link rel="prefetch" href="/assets/js/7.370ed007.js"><link rel="prefetch" href="/assets/js/8.251ccf32.js"><link rel="prefetch" href="/assets/js/9.8bc34c12.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a796ab9c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/OperaAds_Icon.png" alt="OperaAds" class="logo"> <span class="site-name can-hide">OperaAds</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="OperaAds for Supply Partners" class="dropdown-title"><span class="title">For Suppliers</span> <span class="arrow down"></span></button> <button type="button" aria-label="OperaAds for Supply Partners" class="mobile-dropdown-title"><span class="title">For Suppliers</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ofs/js/" class="nav-link">
+  JS SDK
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/android/" class="nav-link">
+  Android SDK
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/vast-tag/" class="nav-link">
+  Vast Tag
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/openrtb/" class="nav-link">
+  OpenRTB
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/header-bidding/" class="nav-link">
+  Header Bidding
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/cookie-sync/" class="nav-link">
+  Cookie Mapping
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/user-sync/" class="nav-link">
+  User Sync
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/report-api/" class="nav-link">
+  Report API
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/process/" class="nav-link">
+  Onboarding Process
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="OperaAds for Demand Partners" class="dropdown-title"><span class="title">For Buyers</span> <span class="arrow down"></span></button> <button type="button" aria-label="OperaAds for Demand Partners" class="mobile-dropdown-title"><span class="title">For Buyers</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ofd/process/" class="nav-link">
+  Onboarding Process
+</a></li><li class="dropdown-item"><!----> <a href="/ofd/cookie-sync/" class="nav-link">
+  Cookie Sync
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Languages</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ofd/autostorekit/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/zh-CN/" class="nav-link">
+  简体中文
+</a></li></ul></div></div> <a href="https://github.com/operaads/docs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="OperaAds for Supply Partners" class="dropdown-title"><span class="title">For Suppliers</span> <span class="arrow down"></span></button> <button type="button" aria-label="OperaAds for Supply Partners" class="mobile-dropdown-title"><span class="title">For Suppliers</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ofs/js/" class="nav-link">
+  JS SDK
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/android/" class="nav-link">
+  Android SDK
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/vast-tag/" class="nav-link">
+  Vast Tag
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/openrtb/" class="nav-link">
+  OpenRTB
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/header-bidding/" class="nav-link">
+  Header Bidding
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/cookie-sync/" class="nav-link">
+  Cookie Mapping
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/user-sync/" class="nav-link">
+  User Sync
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/report-api/" class="nav-link">
+  Report API
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/process/" class="nav-link">
+  Onboarding Process
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="OperaAds for Demand Partners" class="dropdown-title"><span class="title">For Buyers</span> <span class="arrow down"></span></button> <button type="button" aria-label="OperaAds for Demand Partners" class="mobile-dropdown-title"><span class="title">For Buyers</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ofd/process/" class="nav-link">
+  Onboarding Process
+</a></li><li class="dropdown-item"><!----> <a href="/ofd/cookie-sync/" class="nav-link">
+  Cookie Sync
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Languages</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ofd/autostorekit/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/zh-CN/" class="nav-link">
+  简体中文
+</a></li></ul></div></div> <a href="https://github.com/operaads/docs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="operaads-autostorekit-integration-guide"><a href="#operaads-autostorekit-integration-guide" class="header-anchor">#</a> OperaAds AutoStoreKit Integration Guide</h1> <h2 id="autostorekit"><a href="#autostorekit" class="header-anchor">#</a> AutoStoreKit</h2> <p>Auto-Storekit enhances the performance of app install campaigns. It  allows DSPs to decide whether to automatically open the AppStore Storekit view after the video is skipped or completed and before the end card based on the app store assets sent in the bid response.</p> <h2 id="specification"><a href="#specification" class="header-anchor">#</a> Specification</h2> <h3 id="request"><a href="#request" class="header-anchor">#</a> Request</h3> <table><thead><tr><th>Field</th> <th>Type</th> <th>Description</th></tr></thead> <tbody><tr><td>BidRequest.imp.video.ext.autostore</td> <td>int</td> <td>1 means autostorekit supported; 0 means autostorekit not supported</td></tr></tbody></table> <h3 id="response"><a href="#response" class="header-anchor">#</a> Response</h3> <p>If you want open SKOverlay for your Video ads，below fields is required in bid response:</p> <table><thead><tr><th>Field</th> <th>Type</th> <th>Description</th></tr></thead> <tbody><tr><td>BidResponse.seatbid.bid.ext.skadn.itunesitem</td> <td>string</td> <td>bundle id,must have if autostore is 1</td></tr> <tr><td>BidResponse.seatbid.bid.ext.autostore</td> <td>int,default 1 if itunesitem is exist</td> <td>Indicate if to enable the autostorekit feature.  1: enabled, 0: disabled.</td></tr> <tr><td>BidResponse.seatbid.bid.ext.autostoreclick</td> <td>int,default is 1</td> <td>When autostorekit be used, if to fire click event or not. 1: enabled, 0: disabled.</td></tr></tbody></table> <h2 id="sample"><a href="#sample" class="header-anchor">#</a> Sample</h2> <h3 id="request-2"><a href="#request-2" class="header-anchor">#</a> Request</h3> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;00000822d5685e68fc80_9872&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;imp&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;00000822d5685e68fc80_9872&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;video&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;mimes&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;video/mp4&quot;</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;maxduration&quot;</span><span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;protocols&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token number">1</span><span class="token punctuation">,</span>
+          <span class="token number">2</span><span class="token punctuation">,</span>
+          <span class="token number">3</span><span class="token punctuation">,</span>
+          <span class="token number">4</span><span class="token punctuation">,</span>
+          <span class="token number">5</span><span class="token punctuation">,</span>
+          <span class="token number">6</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;w&quot;</span><span class="token operator">:</span> <span class="token number">640</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;h&quot;</span><span class="token operator">:</span> <span class="token number">360</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;linearity&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;skip&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;sequence&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;minbitrate&quot;</span><span class="token operator">:</span> <span class="token number">516</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;placement&quot;</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;ext&quot;</span><span class="token operator">:</span><span class="token punctuation">{</span>
+          <span class="token property">&quot;autostore&quot;</span><span class="token operator">:</span><span class="token number">1</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;displaymanager&quot;</span><span class="token operator">:</span> <span class="token string">&quot;opera&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;displaymanagerver&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.0.1&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;instl&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;clickbrowser&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;tagid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;s887400326784&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;bidfloor&quot;</span><span class="token operator">:</span> <span class="token number">0.08</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;bidfloorcur&quot;</span><span class="token operator">:</span> <span class="token string">&quot;USD&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;secure&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;exp&quot;</span><span class="token operator">:</span> <span class="token number">7200</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;app&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;app307992346304&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Opera for Android Final&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;domain&quot;</span><span class="token operator">:</span> <span class="token string">&quot;opera.com&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;privacypolicy&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;publisher&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;pub236088034304&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;bundle&quot;</span><span class="token operator">:</span> <span class="token string">&quot;com.opera.browser&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;storeurl&quot;</span><span class="token operator">:</span> <span class="token string">&quot;https://play.google.com/store/apps/details?id=com.opera.browser&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;ver&quot;</span><span class="token operator">:</span> <span class="token string">&quot;74.1.3922.71199&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;device&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;ua&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Mozilla/5.0 (Linux; Android 12; TECNO LG7n) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.5481.192 Mobile Safari/537.36 OPR/74.1.3922.71199&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;geo&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;country&quot;</span><span class="token operator">:</span> <span class="token string">&quot;RUS&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;region&quot;</span><span class="token operator">:</span> <span class="token string">&quot;RU-KIR&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;city&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Kirov&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;dnt&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;lmt&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;ip&quot;</span><span class="token operator">:</span> <span class="token string">&quot;176.59.255.255&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;devicetype&quot;</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;make&quot;</span><span class="token operator">:</span> <span class="token string">&quot;TECNO&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;model&quot;</span><span class="token operator">:</span> <span class="token string">&quot;TECNOLG7n&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;os&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ANDROID&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;osv&quot;</span><span class="token operator">:</span> <span class="token string">&quot;12&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;h&quot;</span><span class="token operator">:</span> <span class="token number">1567</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;w&quot;</span><span class="token operator">:</span> <span class="token number">720</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;js&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;language&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ru&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;mccmnc&quot;</span><span class="token operator">:</span> <span class="token string">&quot;250-20&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;connectiontype&quot;</span><span class="token operator">:</span> <span class="token number">5</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;user&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;511b4522807a7902&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;at&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;tmax&quot;</span><span class="token operator">:</span> <span class="token number">1000</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;cur&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;USD&quot;</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;bcat&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;IAB24&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;IAB25&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;IAB26&quot;</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;badv&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;bapp&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;regs&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;coppa&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;ext&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;gdpr&quot;</span><span class="token operator">:</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="response-2"><a href="#response-2" class="header-anchor">#</a> Response</h3> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;id&quot;</span><span class="token operator">:</span><span class="token string">&quot;000909905006892739c0_8912&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;seatbid&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;bid&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span>
+                <span class="token punctuation">{</span>
+                    <span class="token property">&quot;ext&quot;</span><span class="token operator">:</span><span class="token punctuation">{</span>
+                        <span class="token property">&quot;autostore&quot;</span><span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;autostoreclick&quot;</span><span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;skadn&quot;</span><span class="token operator">:</span><span class="token punctuation">{</span>
+                            <span class="token property">&quot;version&quot;</span><span class="token operator">:</span><span class="token string">&quot;4.0&quot;</span><span class="token punctuation">,</span>
+                            <span class="token property">&quot;network&quot;</span><span class="token operator">:</span><span class="token string">&quot;cdkw7geqsh.skadnetwork&quot;</span><span class="token punctuation">,</span>
+                            <span class="token property">&quot;sourceidentifier&quot;</span><span class="token operator">:</span><span class="token string">&quot;4321&quot;</span><span class="token punctuation">,</span>
+                            <span class="token property">&quot;itunesitem&quot;</span><span class="token operator">:</span><span class="token string">&quot;123456789&quot;</span><span class="token punctuation">,</span>
+                            <span class="token property">&quot;sourceapp&quot;</span><span class="token operator">:</span><span class="token string">&quot;880047117&quot;</span><span class="token punctuation">,</span>
+                            <span class="token property">&quot;productpageid&quot;</span><span class="token operator">:</span><span class="token string">&quot;45812c9b-c296-43d3-c6a0-c5a02f74bf6e&quot;</span><span class="token punctuation">,</span>
+                            <span class="token property">&quot;fidelities&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span>
+                                <span class="token punctuation">{</span>
+                                    <span class="token property">&quot;fidelity&quot;</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">,</span>
+                                    <span class="token property">&quot;signature&quot;</span><span class="token operator">:</span><span class="token string">&quot;MEQCIEQlmZRNfYzKBSE8QnhLTIHZZZWCFgZpRqRxHss65KoFAiAJgJKjdrWdkLUOCCjuEx2RmFS7daRzSVZRVZ8RyMyUXg==&quot;</span><span class="token punctuation">,</span>
+                                    <span class="token property">&quot;nonce&quot;</span><span class="token operator">:</span><span class="token string">&quot;473b1a16-b4ef-43ad-9591-fcf3aefa82a7&quot;</span><span class="token punctuation">,</span>
+                                    <span class="token property">&quot;timestamp&quot;</span><span class="token operator">:</span><span class="token string">&quot;1594406341&quot;</span>
+                                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                                <span class="token punctuation">{</span>
+                                    <span class="token property">&quot;fidelity&quot;</span><span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span>
+                                    <span class="token property">&quot;signature&quot;</span><span class="token operator">:</span><span class="token string">&quot;GRlMDktMmE5Zi00ZGMzLWE0ZDEtNTQ0YzQwMmU5MDk1IiwKICAgICAgICAgICAgICAgICAgInRpbWVzdGTk0NDA2MzQyIg==&quot;</span><span class="token punctuation">,</span>
+                                    <span class="token property">&quot;nonce&quot;</span><span class="token operator">:</span><span class="token string">&quot;e650de09-2a9f-4dc3-a4d1-544c402e9095&quot;</span><span class="token punctuation">,</span>
+                                    <span class="token property">&quot;timestamp&quot;</span><span class="token operator">:</span><span class="token string">&quot;1594406342&quot;</span>
+                                <span class="token punctuation">}</span>
+                            <span class="token punctuation">]</span>
+                        <span class="token punctuation">}</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;price&quot;</span><span class="token operator">:</span><span class="token number">0.3107</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;id&quot;</span><span class="token operator">:</span><span class="token string">&quot;233905142216853169&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;impid&quot;</span><span class="token operator">:</span><span class="token string">&quot;000909905006892739c0_8912&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;crid&quot;</span><span class="token operator">:</span><span class="token string">&quot;1_201817729_0x0&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;adm&quot;</span><span class="token operator">:</span><span class="token string">&quot;...vast xml&quot;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;cur&quot;</span><span class="token operator">:</span><span class="token string">&quot;USD&quot;</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.2541a5c1.js" defer></script><script src="/assets/js/2.b2af7ed7.js" defer></script><script src="/assets/js/15.f6d3bede.js" defer></script>
+  </body>
+</html>
