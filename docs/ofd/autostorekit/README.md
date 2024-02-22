@@ -14,7 +14,7 @@ Auto-Storekit enhances the performance of app install campaigns. It  allows DSPs
 
 
 ### Response
-If you want open SKOverlay for your Video ads，below fields is required in bid response:
+If you want open AutoStoreKit for your Video ads，below fields is required in bid response:
 | Field                     | Type   | Description
 | ------------------------- | -------| -------------
 | BidResponse.seatbid.bid.ext.skadn.itunesitem  | string | bundle id,must have if autostore is 1
