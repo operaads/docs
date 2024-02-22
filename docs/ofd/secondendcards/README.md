@@ -4,8 +4,8 @@
 
 Aimed to boost performance of app install campaigns. Only some suppliers support Second End Card, there is 2 cases:
 <ol>
-  <li>1.Use the second companion ad to display as 2nd End card.</li>
-  <li>2.Auto generated Second End card with the app’s name and icon.</li>
+  <li>Use the second companion ad to display as 2nd End card.</li>
+  <li>Auto generated Second End card with the app’s name and icon.</li>
 </ol>
 
 ## Specification
