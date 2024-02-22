@@ -17,7 +17,7 @@ We now support SKOverlay for video ads on iOS. It is supported with the iOS vers
 If you want open SKOverlay for your Video ads，below fields is required in bid response:
 | Field                     | Type   | Description
 | ------------------------- | -------| -------------
-| BidResponse.seatbid.bid.ext.skadn.itunesitem  | string | bundle id,must have if autostore is 1
+| BidResponse.seatbid.bid.ext.skadn.itunesitem  | string | bundle id,must have if skoverlay is 1
 | BidResponse.seatbid.bid.ext.skadn.skoverlay  | object | skoverlay info
 
 Fields description of the skoverlay object: 
