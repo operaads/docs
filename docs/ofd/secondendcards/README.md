@@ -24,6 +24,7 @@ If you want open Second End Card for your Video ads，below fields is required i
 | Field                     | Type   | Description
 | ------------------------- | -------| -------------
 | BidResponse.seatbid.bid.ext.networkec  | int,default 1 | 1 enable, 0 disable
+| BidResponse.seatbid.bid.bundle  | string | A platform-specific application identifier intended to be unique to the app and independent of the exchange. On Android, this should be a bundle or package name (e.g., com.foo.mygame). On iOS, it is a numeric ID.
 
 ## Sample
 
@@ -145,7 +146,8 @@ If you want open Second End Card for your Video ads，below fields is required i
                     "id":"233905142216853169",
                     "impid":"000909905006892739c0_8912",
                     "crid":"1_201817729_0x0",
-                    "adm":"...vast xml"
+                    "adm":"...vast xml",
+                    "bundle":"com.opera.browser"
                 }
             ]
         }
