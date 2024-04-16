@@ -70,6 +70,11 @@ Report API. [Quick Start →](./ofs/report-api/)
 
 Supplier Onboarding process. [Quick Start →](./ofs/process/)
 
+
+### Supplier Rewarded
+
+Supplier Rewarded. [Quick Start →](./ofs/rewarded/)
+
 -----
 -----
 
@@ -111,7 +116,9 @@ AutoStoreKit guide. [Quick Start →](./ofd/autostorekit/)
 
 Second End Cards guide. [Quick Start →](./ofd/secondendcards/)
 
+### Rewarded
 
+Rewarded. [Quick Start →](./ofd/rewarded/)
 
 -----
 -----
