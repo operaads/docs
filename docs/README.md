@@ -96,6 +96,10 @@ Report API. [Quick Start →](./ofd/report-api/)
 
 User id mapping. [Quick Start →](./ofd/cookie-sync/)
 
+### SO Pixel Helper
+
+SO Pixel Helper guide. [Quick Start →](./ofd/pixel-helper)
+
 ### Integrate SO Pixel to Google Tag Manager
 
 Integration guide. [Quick Start →](./ofd/integrate-pixel-to-gtm/)
