@@ -29,11 +29,11 @@ SO Pixel Helper is a browser extension that automatically detects whether the pi
 
 <img src="./pic_3.png" class="pixel-helper__image" />
 
-Then do the tests you want, such as page view, and the fired events will display on the extension.
+Then perform the tests you want, such as page view, and the fired events will display on the extension.
 
 <img src="./pic_4.png" class="pixel-helper__image" />
 
-You can click the icon ![](./external_link.svg) too, it will open a new browser tab to show the test events.
+You can also click the icon ![](./external_link.svg), which will open a new browser tab to show the test events.
 
 ![](./pic_5.png)
 
@@ -47,7 +47,7 @@ You can click the icon ![](./external_link.svg) too, it will open a new browser 
 
 <img src="./pic_6.png" class="pixel-helper__image" />
 
-FYI: this test [link](https://doc.adx.opera.com/google-tag-manager-testing.html) is using Google Tag Manager, you can see test events by clicking the Register button.
+FYI: This test [link](https://doc.adx.opera.com/google-tag-manager-testing.html) uses Google Tag Manager. You can see test events by clicking the Register button.
 
 3. If you see this error on the extension, it means you forgot to carry the query string `"opera_click_id"` from the first link to the second one when redirecting(SO Pixel needs this query string to work).
 
