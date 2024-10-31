@@ -46,7 +46,7 @@ When loading in the user's browser, it will request a pixel from the OperaAds Co
 
 ### Step 2: Redirect to supplier' Cookie Mapping URL
 
-OperaAds' Cookie Mapping service will query publisher’ Cookie Mapping URL from backend according to paramter `pubid`, and redirects to that url after replacing macro ${OPERA_UID} with real opera uid ( if the macro does not exist, query parameter `operaUid` will be added into the redirect url). The redirect URL might look like the following:
+OperaAds' Cookie Mapping service will query publisher’ Cookie Mapping URL from backend according to paramter `pubid`, and redirects to that url after replacing macro ${OPERA_UID} with real opera uid. The redirect URL might look like the following:
 
 ```url
 https://publisher.adnetwork.com/pixel?uid=4e93fa9e-86e3-11eb-8dcd-0242ac130003
