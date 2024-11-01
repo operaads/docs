@@ -51,3 +51,13 @@ OperaAds will receive a redirect containing the parameters you specified, in add
 ### Step 4: OperaAds serves pixel on the end
 
 If the cookie mapping operation is done, OperaAds will serve a 1x1 transparent pixel by default, and the workflow will end here. Bid requests for this user will include bidder-specific user id as BidRequest.user.buyeruid for OperaAds' OpenRTB implementation.
+
+## Record Mapping Relationship
+
+A bidder is allowed to redirect to another cookie mapping service of OperaAds for the sake of recording the mapping relationship from bidder-specific user ID to OperaAds user ID. The typical formation of URL is shown below:
+
+```url
+https://t.adx.opera.com/sync/adv?cuid=4e93fa9e-86e3-11eb-8dcd-0242ac130003&advid=adv123456789
+```
+
+The cuid(Client User ID) and advid(advertiser ID) within query are indispensable, otherwise the call would get a http status code of 400 returned. With the mapping relationship being successfully recorded, the service would return a 1x1 transparent pixel and a HTTP status code of 200.
