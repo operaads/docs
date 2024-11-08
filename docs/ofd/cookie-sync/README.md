@@ -20,7 +20,7 @@ A mapping table can be used to map an ID or other data from one domain to anothe
 
 ## Getting Started
 
-In order to get started with Cookie Mapping, you must contact your Account Manager, who can enable specific workflows and help you configure the cookie mapping url, like `https://t.adx.opera.com/sync?vendor=<bidder_id>&uid=`. bidder_id is allocated by OperaAds.
+In order to get started with Cookie Mapping, you must contact your Account Manager, who can enable specific workflows and help you configure the cookie mapping url, like `https://t.adx.opera.com/sync?vendor=${BIDDER_ID}&uid=${DSP_USER_ID}`. ${BIDDER_ID} is allocated by OperaAds, and ${DSP_USER_ID} should be replaced with the bidder-specific user id. For example, `https://t.adx.opera.com/sync?vendor=600001&uid=4e93fa9e-86e3-11eb-8dcd-0242ac130003`.
 
 ## Cookie Mapping Service Workflow
 
