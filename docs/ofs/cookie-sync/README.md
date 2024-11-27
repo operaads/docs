@@ -19,6 +19,7 @@ A mapping table can be used to map an ID or other data from one domain to anothe
 ## Getting Started
 
 OperaAds Cookie Mapping URL is like `https://t.adx.opera.com/pub/sync?pubid=${publisher_id}`. Suppliers should contact OperaAds account manager to get the publisher id，and provide their cookie mapping url, which contains ${OPERA_UID} macro. Suppose publisher_id is *pub123*, supplier cookie mapping url is https://publisher.adnetwork.com/pixel?uid=${OPERA_UID}, in this case OperaAds Cookie Mapping URL is `https://t.adx.opera.com/pub/sync?pubid=pub123`.
+If a supplier uses different cookie mapping url for different region, for example, `https://eu.pub1.com` for EU and `https://sg.pub1.com` for SG, please provide all these URLs to OperaAds account manager. Then add a query paramter *k* indicating the region into OperaAds Cookie Mapping URL, such as `https://t.adx.opera.com/pub/sync?pubid=pub123&k=sg`, OperaAds cookie mapping service will redirect to pub123's cookie mapping URL for SG.
 
 ### Macros supported
 |Macros              |Description|
