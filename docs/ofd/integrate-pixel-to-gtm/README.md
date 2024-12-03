@@ -20,14 +20,14 @@ The above Custom HTML Tag content  is :
   <script>
   !(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)};p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;n.src=w;g.parentNode.insertBefore(n,g)}})(window,document,"script","//res-odx.op-mobile.opera.com/sp.js","otag");
 
-  otag('init', 'Your_Advertiser_Id')
+  otag('init', 'Your_Pixel_Id')
 
   </script>
 <!-- End SO Pixel Base Code -->
 
 ```
 ::: warning
- Please ask the Opera Ads team for `Your_Advertiser_Id` and replace it above.
+ Please ask the Opera Ads team for `Your_Pixel_Id` and replace it above.
 :::
 
 ### 2) Setup Event Tag and Trigger
