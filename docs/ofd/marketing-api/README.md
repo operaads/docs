@@ -37,6 +37,7 @@ Query String Parameters:
 | event_name  | string | Event name install, register, login, purchase, place_bet. If advertisers need more customized events, please contact Opera Ads to create.                                                                                                                                                 | YES       |
 | event_value | string | Event value if have, optional.                                                                                                                                                                                                                                                            | Optional  |
 | payout      | string | The payout to Opera in USD, optional.                                                                                                                                                                                                                                                      | Optional  |
+| cvid        | string | Unique ID allocated by OperaAds to track events                                                                                                                                                                                                                                            | YES       |
 
 ### Response
 
