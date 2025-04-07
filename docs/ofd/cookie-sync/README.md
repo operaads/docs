@@ -32,7 +32,7 @@ In order to initiate this flow, a bidder must place a map tag such that it rende
 <img src="https://bidder.adnetwork.com/pixel" />
 ```
 
-A bidder can also put user privacy macros in the Cookie Mapping URL, such as:`https://bidder.adnetwork.com/pixel?gdpr=${GDPR}&consent=${GDPR_CONSENT}&us_privacy=${US_PRIVACY}`
+A bidder can also put user privacy macros in the Cookie Mapping URL, such as:`https://bidder.adnetwork.com/pixel?gdpr=${GDPR}&consent=${GDPR_CONSENT}&us_privacy=${US_PRIVACY}&gpp=${GPP_STRING}&gpp_sid=${GPP_SID}`
 
 When loading in the user's browser, it will request a pixel from the bidder's Cookie Mapping URL. This request will contain their cookie in the HTTP header, which should be extracted for the next step.
 

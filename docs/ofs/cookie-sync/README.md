@@ -27,6 +27,8 @@ If a supplier uses different cookie mapping url for different region, for exampl
 |${GDPR}             |Flag that indicates whether or not the request is subject to GDPR regulations. 0 = No, 1 = Yes, omission indicates Unknown|
 |${GDPR_CONSENT}     |GDPR consent string, which should follow TCFv2 standard|
 |${US_PRIVACY}       |Communicates signals regarding consumer privady under US privacy regulation.|
+|${GPP_STRING}       |Global privacy platform string|
+|${GPP_SID}          |GPP section id|
 |${COPPA}            |California Consumer Privacy Act|
 |${OPERA_UID}        |Opera User ID|
 |${OPERA_UID_ENCODED}|Opera User ID encoded with base64|
@@ -38,10 +40,10 @@ If a supplier uses different cookie mapping url for different region, for exampl
 In order to initiate this flow, a supplier must place OperaAds map tag such that it renders in the user's browser. The map tag will direct the user's browser to OperaAds Cookie Mapping URL. Loot at OperaAds map tag below:
 
 ```html
-<img src="https://t.adx.opera.com/pub/sync?pubid=pub123&gdpr=${GDPR}&consent=${GDPR_CONSENT}&us_privacy=${US_PRIVACY}" />
+<img src="https://t.adx.opera.com/pub/sync?pubid=pub123&gdpr=${GDPR}&consent=${GDPR_CONSENT}&us_privacy=${US_PRIVACY}&gpp=${GPP_STRING}&gpp_sid=${GPP_SID}" />
 ```
 
-Suppliers should expand user privacy macro in the map tag. For example, expand ${GDPR} with 0 or 1, expand ${GDPR_CONSENT} with [gdpr consent string](https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/TCF-Implementation-Guidelines.md), expand ${US_PRIVACY} with [us privacy string](https://github.com/InteractiveAdvertisingBureau/USPrivacy/blob/master/CCPA/US%20Privacy%20String.md).
+Suppliers should expand user privacy macro in the map tag. For example, expand ${GDPR} with 0 or 1, expand ${GDPR_CONSENT} with [gdpr consent string](https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/TCF-Implementation-Guidelines.md), expand ${US_PRIVACY} with [us privacy string](https://github.com/InteractiveAdvertisingBureau/USPrivacy/blob/master/CCPA/US%20Privacy%20String.md), expand ${GPP_STRING} and ${GPP_SID} with [gpp string and section id](https://github.com/InteractiveAdvertisingBureau/Global-Privacy-Platform/blob/main/Core/Consent%20String%20Specification.md).
 
 When loading in the user's browser, it will request a pixel from the OperaAds Cookie Mapping URL. This request will contain cookie in the HTTP header, which should be extracted for the next step.
 
