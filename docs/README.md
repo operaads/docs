@@ -96,6 +96,10 @@ Report API. [Quick Start →](./ofd/report-api/)
 
 User id mapping. [Quick Start →](./ofd/cookie-sync/)
 
+### SO Pixel Integration
+
+SO Pixel Helper guide. [Quick Start →](./ofd/so-pixel)
+
 ### SO Pixel Helper
 
 SO Pixel Helper guide. [Quick Start →](./ofd/pixel-helper)
