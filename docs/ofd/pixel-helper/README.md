@@ -4,13 +4,20 @@
 
 SO Pixel Helper is a browser extension that automatically detects whether the pixel code is installed and events are triggered successfully.
 
-## Install SO Pixel Helper
+## Download & Install
 
-- Install the SO Pixel Helper extension (For Chrome Browser users)
-- Install the SO Pixel Helper add-on (For Opera Browser users)
+Download [SO Pixel Helper](https://res.adx.opera.com/z/SOPixelHelper1.4.0.zip), unzip it, and you will see an unzipped directory.
 
-## Pin the extension to keep it always visible
+In Opera Browser, click Menu: View -> Show Extensions:  
+In Chrome Browser, click Menu: Window -> Extensions:
 
+1. Enable "Developer mode"
+2. Install the extension by clicking “Load unpacked”, then choose the unzipped directory
+<img src="./pic_9.png" />
+Then you'll see SO Pixel Helper extension installed.
+<img src="./pic_10.png" />
+
+3. Pin the extension to keep it always visible
 <div class="pixel-helper__pin-extension">
   <div class="pixel-helper__pin-extension-image">
     <img src="./pic_1.png" />
