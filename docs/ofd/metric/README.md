@@ -11,9 +11,8 @@ vendor measuring the value.
 
 | Attribute         | Type          | Desciption
 |-------------------|---------------|------------------------------------------
-|type               |string; required|Type of metric being presented using exchange curated string names which should be published to bidders a priori. REQUIRED by the OpenRTB specification. The types we support are: - click_through_rate<br> - viewability<br> - video_completion_rate<br> - session_depth<br> Session depth (session_depth) is the total number of ads a user has seen in a given app session. A session ends after a user closes the app.
-|value              |float; required|Number representing the value of the metric. Probabilities
-must be in the range 0.0 – 1.0. REQUIRED by the OpenRTB specification.
+|type               |string; required|Type of metric being presented using exchange curated string names which should be published to bidders a priori. REQUIRED by the OpenRTB specification. The types we support are:<br>- *click_through_rate* <br> - *viewability*<br> - *video_completion_rate*<br> - *session_depth*<br> Session depth (*session_depth*) is the total number of ads a user has seen in a given app session. A session ends after a user closes the app.
+|value              |float; required|Number representing the value of the metric. Probabilities must be in the range 0.0 – 1.0. REQUIRED by the OpenRTB specification.
 |vendor             |string; recommended|Source of the value using exchange curated string names which should be published to bidders a priori. If the exchange itself is the source versus a third party, “EXCHANGE” is recommended.
 
 ## Request Example
