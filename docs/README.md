@@ -128,6 +128,10 @@ Second End Cards guide. [Quick Start →](./ofd/secondendcards/)
 
 Rewarded. [Quick Start →](./ofd/rewarded/)
 
+### Metrics
+
+Metrics. [Quick Start →](./ofd/metric/)
+
 -----
 -----
 
