@@ -6,7 +6,7 @@ SO Pixel Helper is a browser extension that automatically detects whether the pi
 
 ## Download & Install
 
-Download [SO Pixel Helper](https://res.adx.opera.com/z/SOPixelHelper1.4.0.zip), unzip it, and you will see an unzipped directory.
+Download [SO Pixel Helper](https://res.adx.opera.com/z/SOPixelHelper.zip), unzip it, and you will see an unzipped directory.
 
 In Opera Browser, click Menu: View -> Show Extensions:  
 In Chrome Browser, click Menu: Window -> Extensions:
