@@ -72,7 +72,54 @@ Fields description of the skoverlay object:
       "secure": 1,
       "exp": 7200,
       "ext":{
-        "skoverlay":1
+        "skadn": {
+          "version": "4.0",
+          "versions": [
+            "2.0",
+            "2.2",
+            "3.0",
+            "4.0"
+          ],
+          "sourceapp": "336435697",
+          "skadnetids": [
+            "22mmun2rn5.skadnetwork",
+            "275upjj5gd.skadnetwork",
+            "2u9pt9hc89.skadnetwork",
+            "3rd42ekr43.skadnetwork",
+            "4468km3ulz.skadnetwork",
+            "44jx6755aq.skadnetwork",
+            "578prtvx9j.skadnetwork",
+            "5a6flpkh64.skadnetwork",
+            "5tjdwbrq8w.skadnetwork",
+            "7ug5zh24hu.skadnetwork",
+            "8s468mfl3y.skadnetwork",
+            "9nlqeag3gk.skadnetwork",
+            "9rd848q2bz.skadnetwork",
+            "9t245vhmpl.skadnetwork",
+            "a8cz6cu7e5.skadnetwork",
+            "dbu4b84rxf.skadnetwork",
+            "e5fvkxwrpn.skadnetwork",
+            "glqzh8vgby.skadnetwork",
+            "hs6bdukanm.skadnetwork",
+            "k674qkevps.skadnetwork",
+            "kbd757ywx3.skadnetwork",
+            "mj797d8u6f.skadnetwork",
+            "mlmmfzh3r3.skadnetwork",
+            "p78axxw29g.skadnetwork",
+            "ppxm28t8ap.skadnetwork",
+            "s39g8k73mm.skadnetwork",
+            "tl55sbb4fm.skadnetwork",
+            "uw77j35x4d.skadnetwork",
+            "v72qych5uu.skadnetwork",
+            "w9q455wk68.skadnetwork",
+            "yclnxrl5pm.skadnetwork",
+            "zq492l623r.skadnetwork"
+          ],
+          "ext": {
+            "sko": 0
+          },
+          "skoverlay": 0
+        }
       }
     },
   ],
