@@ -115,7 +115,7 @@ Fields description of the skoverlay object:
             "yclnxrl5pm.skadnetwork",
             "zq492l623r.skadnetwork"
           ],
-          "skoverlay": 0
+          "skoverlay": 1
         }
       }
     },
