@@ -22,16 +22,15 @@ OperaAds Cookie Mapping URL is like `https://t.adx.opera.com/pub/sync?pubid=${pu
 If a supplier uses different cookie mapping url for different region, for example, `https://eu.pub1.com` for EU and `https://sg.pub1.com` for SG, please provide all these URLs to OperaAds account manager. Then add a query paramter *k* indicating the region into OperaAds Cookie Mapping URL, such as `https://t.adx.opera.com/pub/sync?pubid=pub123&k=sg`, OperaAds cookie mapping service will redirect to pub123's cookie mapping URL for SG.
 
 ### Macros supported
-|Macros              |Description|
-|--------------------|-----------|
-|${GDPR}             |Flag that indicates whether or not the request is subject to GDPR regulations. 0 = No, 1 = Yes, omission indicates Unknown|
-|${GDPR_CONSENT}     |GDPR consent string, which should follow TCFv2 standard|
-|${US_PRIVACY}       |Communicates signals regarding consumer privady under US privacy regulation.|
-|${GPP_STRING}       |Global privacy platform string|
-|${GPP_SID}          |GPP section id|
-|${COPPA}            |California Consumer Privacy Act|
-|${OPERA_UID}        |Opera User ID|
-|${OPERA_UID_ENCODED}|Opera User ID encoded with base64|
+|Macros              |Type      |Description|
+|--------------------|----------|-----------|
+|${GDPR}             |integer   |Flag that indicates whether or not the request is subject to GDPR regulations. 0 = No, 1 = Yes, omission indicates Unknown|
+|${GDPR_CONSENT}     |string    |GDPR consent string, which should follow TCFv2 standard|
+|${US_PRIVACY}       |string    |Communicates signals regarding consumer privady under US privacy regulation.|
+|${GPP_STRING}       |string    |Global privacy platform string|
+|${GPP_SID}          |string    |GPP section id|
+|${OPERA_UID}        |string    |Opera User ID|
+|${OPERA_UID_ENCODED}|string    |Opera User ID encoded with base64|
 
 ## Cookie Mapping Service Workflow
 

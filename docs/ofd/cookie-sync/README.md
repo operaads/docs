@@ -34,6 +34,15 @@ In order to initiate this flow, a bidder must place a map tag such that it rende
 
 A bidder can also put user privacy macros in the Cookie Mapping URL, such as:`https://bidder.adnetwork.com/pixel?gdpr=${GDPR}&consent=${GDPR_CONSENT}&us_privacy=${US_PRIVACY}&gpp=${GPP_STRING}&gpp_sid=${GPP_SID}`
 
+#### Macros supported
+|Macros              |Type      |Description|
+|--------------------|----------|-----------|
+|${GDPR}             |integer   |Flag that indicates whether or not the request is subject to GDPR regulations. 0 = No, 1 = Yes, omission indicates Unknown|
+|${GDPR_CONSENT}     |string    |GDPR consent string, which should follow TCFv2 standard|
+|${US_PRIVACY}       |string    |Communicates signals regarding consumer privady under US privacy regulation.|
+|${GPP_STRING}       |string    |Global privacy platform string|
+|${GPP_SID}          |string    |GPP section id|
+
 When loading in the user's browser, it will request a pixel from the bidder's Cookie Mapping URL. This request will contain their cookie in the HTTP header, which should be extracted for the next step.
 
 ### Step 2: Redirect to OperaAds’ Cookie Mapping service
