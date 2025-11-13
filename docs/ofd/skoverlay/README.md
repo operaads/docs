@@ -208,4 +208,6 @@ Bid Response example
 
 Below is an example of a banner-sized overlay, it includes the promoted app's icon, name, and brief description, is shown near the bottom of the screen.
 
-![Demo](./images/skoverlay.png)
+<div style="text-align:center;">
+  <img src="./images/skoverlay.png" alt="Demo" style="display:block;">
+</div>
