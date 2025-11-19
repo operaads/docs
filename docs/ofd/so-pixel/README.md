@@ -1,5 +1,6 @@
 # SO Pixel Integration
 
+Updated @ 2025.11
 
 ## **Overview**
 
@@ -73,6 +74,12 @@ For example:
       otag("event",  "registration");
     })
 </script>
+```
+
+To pass a value, an additional parameter can be included in the `otag` function, such as:
+
+```javascript
+otag("event", "purchase", {payout: 10.0});
 ```
 
 *Note that the example above uses jQuery to trigger the event call, but you could trigger the function call using any method mechanism you would like.*
