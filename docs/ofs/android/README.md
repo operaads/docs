@@ -1,276 +1,424 @@
-# Opera Ad SDK integration document
+# **Opera Ads SDK Integration Guide**
 
-## I. Initialize SDK
+# **for Android**
 
-Before loading ads, you should initialize the Opera Ad SDK by calling following API.
-This needs to be done only once, ideally at app launch.
+## **Overview**
 
-```java
-// ChannelID: A meaningful string used to indicate the host app, such 'adx_sdk_for_hostname_beta'.
-// UserId: The unique id used by the host app to identify the user.
-// GoogleAdvertisingId: The advertising ID is a unique, provided by Google Play services.
-// SecretKey: To request ads verification parameter, please obtain from the Opera Ads team.
-// UseDebugServer: Used to connect to the Adx test server. Please also remember to change the secretKey to debug value when it is set to true.
-OperaAdSdk.getInstance().initialize(ApplicationContext, ChannelID, UserId, GoogleAdvertisingId, SecretKey, UseDebugServer);
+Welcome to the Ads SDK integration guide\! Our SDK enables developers to easily integrate high-quality ads into their Android applications, supporting a variety of ad formats including Native, Banner (with MRAID support), Interstitials, Rewarded Videos, and High-Engagement Rewarded Videos/Interstitials. This allows for effective monetization while providing engaging user experiences.
 
-// If your APP also needs to comply with the GDPR policy, please enable this flag dynamically. This API can be called multiple times. If set to false, SDK
-// request ads will not upload user sensitive information such as android id, google advertising id. In this way, it may not be possible to get the ads
-// because of missing request parameters.
-// @param enabled default is false.
-OperaAdSdk.setPersonalizedAdsEnabled(boolean enabled);
+### **Key Features**
+
+* **Ad Formats**: Native, Banner (MRAID-compliant), Interstitial, Rewarded Video, High-Engagement Rewarded Video/Interstitial (interactive variants for better user retention).
+* **Easy Integration**: Minimal setup with Gradle dependencies.
+* **Event Callbacks**: Robust listeners for ad lifecycle events (load, show, click, reward, etc.).
+* **Compliance**: Supports GDPR, CCPA, and user consent handling.
+
+### **Prerequisites**
+
+* Android Studio 4.0+.
+* Minimum Android SDK version: API 24 (Android 7.0 Nougat).
+* Target SDK version: API 34 (Android 14\) or higher recommended.
+* An active account with our ad platform to obtain APP ID and ad unit IDs.
+* Internet, phone and network state permissions in your `AndroidManifest.xml`.
+
+## **Installation**
+
+### **Step 1: Add Dependencies**
+
+Add the Ads SDK to your app-level `build.gradle` file. Similar to AdMob, we use Maven repositories for easy integration.
+
+```
+dependencies {
+    implementation 'com.opera:opera-ads:+'
+}
 ```
 
-## II. Native Ad
+Add repositories:
 
-1. Native ad are loaded via the NativeAd class, remember to add AdListener to the NativeAd after building it. The following code demonstrates how to load native ad:
+```
+repositories {
+    maven { url 'https://artifact.op-mobile.opera.com/releases' }
+}
+```
 
-    ```java
-    NativeAd nativeAd = new NativeAd(Context, PlacementId);
-    // Used for targeting delivery
-    nativeAd.setCountry(countryCode);  // see [wikipedia](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
-    nativeAd.setCoordinate(latitude, longitude);
-    nativeAd.setAdListener(new AdListener() {
-        @Override
-        public void onAdLoaded(Ad ad) {}
+Sync your project to download the dependencies. Use “[https://artifact.opera.com/releases](https://artifact.opera.com/releases)” instead if the main maven host is not available.
 
-        @Override
-        public void onError(Ad ad, AdError error) {}
+## **Initialization**
 
-        @Override
-        public void onAdClicked(Ad ad) {}
+Initialize the SDK early in your app lifecycle, preferably in `Application.onCreate()` or `Activity.onCreate()`.
 
-        @Override
-        public void onAdShown(Ad ad) {}
-    });
-    nativeAd.loadAd();
-    ```
+**Code Example (Java)**
 
-2. NativeAd class provide the following ad information:
-    IconUrl, Title, Description, ctaButtonText, ctaButtonVisible(boolean) You should create a custom layout and bind ad data with above infos.
+```java
+import com.opera.ads.AdError;
+import com.opera.ads.OperaAds;
+import com.opera.ads.initialization.OnSdkInitCompleteListener;
+import com.opera.ads.initialization.SdkInitConfig;
 
-3. The SDK will log the impression and handle the click automatically. Please note that you must register the ad's view with the NativeAd instance to enable that.
 
-    To make all ad elements of the view clickable register it using:
+class MyApplication : Application() {
+    override fun onCreate() {
+        super.onCreate()
 
-    ```java
-    NativeAd.registerInteractionContainer(rootView);
-    NativeAd.registerInteractionViews(icon, title, description...);
-    NativeAd.registerCallToActionButton(ctaButton);
-    ```
+    OperaAds.initialize(this,
+        new SdkInitConfig.Builder(APPLICATION_ID)
+            .publisherName(PUBLISHER)
+            .coppa(coppa)
+            .usPrivacy("1YNN")
+            .build(),
+        new OnSdkInitCompleteListener() {
+            @Override
+            public void onSuccess() {
+                // OK.
+            }
 
-4. MediaView: Used for display ad content, include image and video type, etc. It should be defined in your custom layout as following:
+            @Override
+            public void onError(@NonNull AdError error) {
+                Log.e("Application", "Failed to init ad sdk", error.getMessage());
+            }
+        });
+}
+```
 
-    ```xml
-    <com.opera.ad.MediaView
-        android:id="@+id/native_ad_media"
-        android:layout_width="wrap_content"
-        android:layout_height="194dp"
-        android:gravity="center"/>
-    ```
+* **APPLICATION ID**: Register on our [publisher portal](https://ofp.adx.opera.com/) to get your application id.
+* **Publisher Name**: A mobile app developer who integrates ad SDK to display ads and earn revenue.
 
-    Also `must` always remember to call API `NativeAd.setMediaView(MediaView)` after find the MediaView from custom layout.
-    If you don’t use MediaView and use ImageView instead, you also need to set it to `null`, like this: `NativeAd.setMediaView(null)`.
+## **Ad Formats Integration**
 
-5. Download, WebPage or Market type ad: The SDK maybe returns Download, WebPage or Market type ad. So integrate the SDK you can choose to handle the download apk and prompt to install or jump to the ad landing page or open store. Need to set delegate with following API:
+Our SDK supports multiple formats. Each follows a load-show pattern with callbacks.
 
-    ```java
-    NativeAd.setAdClickDelegate(new AdClickDelegate() {
-        @Override
-        public boolean openUrl(@NonNull String url) {
-            return false;
-        }
+### **Demo Example IDs**
 
-        @Override
-        public boolean downloadApk(@NonNull String url, @NonNull String defaultName) {
-            return false;
-        }
+APP ID: pub13423013211200/ep13423013211584/app13423536670400
+Native Unit ID: s13429368154496
+Banner Unit ID: s13423621779136(html)   s13429297184768(video)
+Interstitial Unit ID: s13423624619200(html)  s13424442482432(video)
+Rewarded Unit ID: s13938889680960
 
-        @Override
-        public boolean openStore(@NonNull String url) {
-            return false;
-        }
-    });
-    ```
+### **Native Ads**
 
-    @return True if the host app has consumed the click event, false otherwise.
+Native ads blend with app content. Load and display in your custom ad container layout.
 
-6. The SDK supports the WebView custom user agent to distinguish statistical sources, calling the following API:
+#### **Code Example (Java)**
 
-    ```java
-    NativeAd.setUserAgentDelegate(new UserAgentDelegate() {
-        @Override
-        public String makeUserAgent(@NonNull String defaultUserAgent) {
-            return null;
-        }
-    });
-    ```
+```java
+import com.opera.ads.AdError;
+import com.opera.ads.nativead.NativeAd;
+import com.opera.ads.nativead.NativeAdListener;
+import com.opera.ads.nativead.NativeAdLoader;
+import com.opera.ads.nativead.NativeAdRootView;
 
-7. At last, `NativeAd.unregister()` or `NativeAd.destroy()` should be called in your `unregister()` or `destroy()` method.
+private NativeAd mNativeAd;
 
-## III. Interstitial Ad
+// Load Native Ad
+NativeAdLoader.loadAd(context, "YOUR_NATIVE_AD_UNIT_ID",
+new NativeAdListener() {
+@Override
+      public void onAdLoaded(@NonNull Nativead nativeAd) {
+    mNativeAd = nativeAd;
+}
+@Override
+public void onAdFailedToLoad(@NonNUll AdError error) {
 
-Interstitial Ads are full screen ads that display over an application’s content. These ads often result in higher eCPM for publishers.
-The best time to use Interstitial Ads is during a natural break in the application flow, such as after reading an article in the news.
-Within interstitial ad, we have supported video, html and special image only(`Native Interstitial`) formats.
+}
+@Override
+public void onAdImpression() {
 
-### Native Interstitial
+}
+@Override
+public void onAdClicked() {
 
-Native Interstitial ads only provides image url and the specific behavior of caching image needs to be implemented by the host app.
-Normally, the Interstitial image have been pre-cached when we have the opportunity to display interstitial ads.
-Similarly, the layout and display interface(fragment/activity) are also implemented by the host app.
+}
+});
 
-1. Load Native Interstitial
+if (!mNativeAd.isAdInvalidated()) {
+    // Set AdChoice icon position.
+    mNativeAd.setAdChoicePosition(NativeAd.AdChoicePosition.TOP_RIGHT);
+    // Bind interactive views with ad.
+    NativeAd.InteractionViews interactionViews = new NativeAd.InteractionViews.Builder(
+        nativeAdMedia  // com.opera.ads.MediaView
+).setTitleView(nativeAdTitle)
+        .setBodyView(nativeAdBody)
+        .setCallToActionView(nativeAdCallToAction)
+        .setIconView(nativeAdIcon)
+        .build();
+    // The root view is the top level container. FrameLayout is preferred.
+    // Each native ad view contains native ad assets, such as the
+    // MediaView view element or the Title view element, which must be a
+    // child of the root view.
+    mNativeAd.registerInteractionViews(nativeAdRootView, interactionViews);
+}
 
-    Same as above part II Native Ad. Then use `NativeAd.getImageUrl()` to get the image url and pre-cache it.
+// Destory ad to release resources.
+mNativeAd.destroy();
+```
 
-2. Register interaction view
+### **Banner Ads (MRAID Support)**
 
-    Register interaction views with method `NativeAd.registerInteraction*(views)`. And these views are used to record impression and click events.
+Banner ads are rectangular ad formats that occupy part of an app’s layout, like standard ***BANNER*** (320x50) or ***BANNER\_MREC*** (300x250), supporting MRAID for rich media interactions. Please see the ***AdSize*** class to know all the supported banner sizes.
 
-3. MediaView
+Banner ads will refresh automatically for BANNER and BANNER\_MREC in default interval, and *`BannerAdView.setAutoRefreshInterval(int)`* can be used to set custom intervals. It can be disabled with *`BannerAdView.setAutoRefreshEnabled(boolean)`*.
 
-    Even the Native Interstitial ad can be displayed with ImageView. But also please remember to set MediaView to `null` with `NativeAd.setMediaView(null)`.
+You can configure banner autorefresh interval, or enable/disable auto refresh per ad placement id on Opera Ads console.
 
-4. Click handler
+#### **Code Example (Java)**
 
-    Please refer to Native Ad step 5, you can selectively handle clicks or use the default processing ways in the SDK.
+```java
+import com.opera.ads.AdError;
+import com.opera.ads.AdFormat;
+import com.opera.ads.AdSize;
+import com.opera.ads.banner.BannerAd;
+import com.opera.ads.banner.BannerAdListener;
+import com.opera.ads.banner.BannerAdView;
 
-### Interstitial
+private BannerAdView mBannerAdView;
 
-InterstitialAd is rendered internally by the sdk. The host app only needs to load the ad in advance and show it at the appropriate time.
-
-1. Prepare an instance of InterstitialAd and set up common parameters as Native Ad.
-
-    ```java
-    InterstitialAd interstitialAd = new InterstitialAd(Context, PlacementId);
-    // Used for targeting delivery
-    interstitialAd.setCountry(countryCode);  // see [wikipedia](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
-    interstitialAd.setCoordinate(latitude, longitude);
-    ```
-
-2. InterstitialAd use `AdLoadListener` to observer loading event.
-
-    ```java
-    interstitialAd.setAdLoadListener(new AdLoadListener() {
-        @Override
-        public void onAdLoaded() {
-            Log.d(TAG, "Interstitial ad loaded!")
-        }
-
-        @Override
-        public void onAdLoadFailed(@NonNull AdError error) {
-            Log.d(TAG, "Interstitial ad load failed!")
-        }
-    });
-    ```
-
-3. InterstitialAd use `AdInteractionListener` to observer events from the ad.
-
-   ```java
-   interstitialAd.setInteractionListener(new AdInteractionListener() {
-       @Override
-       public void onAdClicked() {
-           Log.d(TAG, "Ad clicked!");
-       }
-
-       @Override
-       public void onAdDisplayed() {
-           Log.d(TAG, "Ad shown!");
-       }
-
-       @Override
-       public void onAdDismissed() {
-           Log.d(TAG, "Ad dismissed!");
-       }
-
-       @Override
-       public void onAdFailed(@NonNull AdError error) {
-           Log.d(TAG, "Error: " + error.getErrorMsg());
-       }
-   });
-   ```
-
-4. Calling `InterstitialAd.loadAd()` to request an ad. After load an ad, should call `isLoaded()` and `isAdInvalidated()`
-   to check whether the ad is available to show before calling `show()`.
-
-    ```java
-    if (interstitialAd.isLoaded() && !interstitialAd.isAdInvalidated()) {
-        interstitialAd.show();
+mBannerAdView = new BannerAdView(context);
+BannerAdListener adListener = new BannerAdListener() {
+    @Override
+    public void onAdLoaded(@NonNull BannerAd bannerAd) {
+        // Banner is ready.
+  // Note that it may be called agian on auto refreshed.
+  // You can check bannerAd.refreshCount to know if it's called for auto refresh.
     }
-    ```
+    @Override
+    public void onAdFailedToLoad(@NonNUll AdError error) {
+        // Banner failed to load.
+	  // Note that it's only called if failed to load when loadAd()  called for the first time.
+  // Will never be called for auto refresh.
+    }
+    @Override
+    public void onAdImpression() {
 
-5. Since starting an activity to play this type of ad, do not need to register any view for it. Ad impression and click
-   tracking will be done inside ad by itself. But remember to call `destroy()` to release ad if it's used or not needed.
+    }
+    @Override
+    public void onAdClicked() {
 
-## IV. Support OMID reporting
+    }
+};
+mBannerAdView.setPlacementId("YOUR_BANNER_AD_UNIT_ID");
+mBannerAdView.setAdSize(AdSize.BANNER_MREC);
+// Load Banner Ad.
+// It can be called only once for a BannerAdView.
+// If you call loadAd() again then it just fails siliently, without any callback.
+mBannerAdView.loadAd(adListener);
+// Add to layout
+bannerContainer.addView(mBannerAdView)
 
-The Open Measurement Software Development Kit (OMSDK) is designed to facilitate third party viewability and verification measurement
-for ads served to web video and mobile app environments. OMSDK has been integrated since 1.10.0. Related ads can send measurement
-signals to the Open Measurement Interface Definition (OMID) provider (such as Oracle Moat) through Opera ad sdk.
+// Destory ad to release resources
+mBannerAdView.destroy();
+```
 
-1. How to enable OMSDK
+###
 
-    There is a unique OMSDK provided by IAB [https://iabtechlab.com](https://iabtechlab.com), please contact Opera Ads team to get it.
-    Then add it as a dependency to the gradle file. After that, OMSDK will report related ads session events
-    (like session start, ad visibility changed, so on) to the measurement provider.
+### **Interstitial Ads**
 
-    Without OMSDK, only related reports will be disabled and nothing else will be effected. It's totally ok to used Opera ad sdk without OMSDK.
+Full-screen ads shown at natural breaks (e.g., level complete).
 
-2. OMSDK integration certification
+#### **Code Example (Java)**
 
-    The OMSDK integration has been certified by IAB since March 11, 2021. Please contact Opera Ads team to get access to the IAB certification report.
+```java
+import com.opera.ads.AdError;
+import com.opera.ads.interstitial.InterstitialAd;
+import com.opera.ads.interstitial.InterstitialAdInteractionListener;
+import com.opera.ads.interstitial.InterstitialAdLoadListener;
 
-## V. Inter Scroller Ad
+private InterstitialAd mInterstitialAd;
 
-The Inter Scroller ads show full screen content in any scrollable views like news feed in RecyclerView. It makes users believe they
-can scroll up and down a blank area to see the full screen ad behind news content.
+// Load Interstitial
+InterstitialAd.load(context, "YOUR_INTERSTITIAL_AD_UNIT_ID", new InterstitialAdLoadListener() {
+    @Override
+    public void onAdLoaded(@NonNull InterstitialAd ad) {
+        mInterstitialAd = ad;
+    }
+    @Override
+    public void onAdLoadFailed(@NonNull AdError error) {
+        
+    }
+});
+// Show Interstitial
+if (!mBannerAdView.isAdInvalidated()) {
+    mInterstitialAd.show(context, new InterstitialAdInteractionListener() {
+    @Override
+    public void onAdClicked() {
 
-1. Inter Scroller ads are loaded via the `InterScrollerAd`. The following code demonstrates how to load it:
+    }
+    @Override
+    public void onAdDisplayed() {
 
-    ```java
-    InterScrollerAd interScrollerAd = new InterScrollerAd(@NonNull Context context,
-                                                          @NonNull String placementId,
-                                                          @NonNull AdListener listener,
-                                                          @Nullable ClickDelegate clickDelegate,
-                                                          @Nullable UserAgentDelegate uaDelegate);
-    interScrollerAd.loadAd();
-    ```
+    }
+    @Override
+    public void onAdDismissed() {
 
-2. The SDK will log the impression and handle the click automatically.
+    }
+    @Override
+    public void onAdFailedToShow(@NonNull AdError error) {
 
-3. Please register the `InterScrollerAdView` and a helper view to enable the inter scroller ad:
+    }
+    });
+}
 
-    ```java
-    InterScrollerAd.register(@NonNull InterScrollerAdView adView, @Nullable View interScrollerAdHolder);
-    ```
+// Destory ad to release resources
+mInterstitialAd.destroy();
+```
 
-    Like MediaView of Native ads, InterScrollerAd use InterScrollerAdView to show ad contents. The optional helper view can adjust the size and position
-    of ad contents to match it. Otherwise the ad view will have a full screen size. Usually we can use ad view's parent view (such as RecyclerView) as the helper view.
+### **Rewarded Video**
 
-4. `InterScrollerAdView` is used for display ad content. It should be defined in your custom layout as following:
+Users watch for rewards. Callback on completion.
 
-    ```xml
-    <com.opera.ad.interScroller.InterScrollerAdView
-        android:id="@+id/inter_scroller_ad_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    ```
+#### **Code Example (Java)**
 
-5. Notify SDK about the scroll events. Please invoke `InterScrollerAd#disposeOnScrollEvent()` when scrollable view is scrolled.
-   Then SDK will adjust the ad content's coordinate which makes it "unmovable" on screen.
-   For example, we can register `RecyclerView.OnScrollListener` for it if ad container is an item of RecyclerView. Just invoke #disposeOnScrollEvent() when scroll listener updates.
-   Following API need be invoked when RecyclerView is scrolled:
+```java
+import com.opera.ads.AdError;
+import com.opera.ads.RewardItem;
+import com.opera.ads.rewarded.RewardedAd;
+import com.opera.ads.rewarded.RewardedAdInteractionListener;
+import com.opera.ads.rewarded.RewardedAdLoadListener;
 
-    ```java
-    RecyclerView.OnScrollListener scrollListener = new RecyclerView.OnScrollListener() {
-        @Override
-        public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
-            mInterScrollerAd.disposeOnScrollEvent();
-        }
-    };
-    RecyclerView.addOnScrollListener(scrollListener);
-    ```
+private RewardedAd mRewardedAd;
 
-6. Click handler, please refer to step 5 of Native Ad.
+// Load Rewarded Video
+RewardedAd.load(context, "YOUR_REWARDED_AD_UNIT_ID", new RewardedAdLoadListener() {
+    @Override
+    public void onAdLoaded(@NonNull RewardedAd ad) {
+        mRewardedAd = ad;
+    }
+    @Override
+    public void onAdLoadFailed(@NonNull AdError error) {
 
-7. At last, `InterScrollerAd.unregister()` or `InterScrollerAd.destroy()` should be called in your `unregister()` or `destroy()` method.
+    }
+});
+// Show Rewarded Video
+if (!mBannerAdView.isAdInvalidated()) {
+    mRewardedAd.show(context, new RewardedAdInteractionListener() {
+    @Override
+    public void onAdClicked() {
+
+    }
+    @Override
+    public void onAdDisplayed() {
+
+    }
+    @Override
+    public void onAdDismissed() {
+
+    }
+    @Override
+    public void onAdFailedToShow(@NonNull AdError error) {
+
+    }
+    @Override
+    public void onRewarded(@NonNull RewardItem reward) {
+
+    }
+});
+}
+
+// Destory ad to release resources
+mRewardedAd.destroy();
+```
+
+## **Ad Mediation**
+
+To support mediation, please set the *`AdMediationProvider`* for *`SdkInitConfig`* when initializing ***`OperaAds`***.
+
+```java
+// Create the initialization configuration
+new SdkInitConfig.Builder(APPLICATION_ID)
+                 .mediationProvider(new AdMediationProvider(...))
+// Perform any additional configuration/setting changes
+                 .build()
+
+```
+
+### **Bidding**
+
+To collect bidding signals, or get bidding tokens, please use *`OperaAds.getBidToken(...)`* *`.`*
+The *`BidTokenCallback`* will be called on the main thread asynchronously.
+If placement id, ad format or ad size are known when you call `getBidToken()` then please call builder’s methods to specify them properly.
+If bidding for banner ads, please set proper *`AdSize`* for the request meanwhile.
+
+```java
+// Please ensure that Opera ads sdk has been initialized.
+// Bid banner ads.
+final BidTokenRequest bidTokenRequest =
+        new BidTokenRequest.Builder(AdMediation.PANGLE)
+                .placementId("s123456789")
+                .adFormat(AdFormat.BANNER)
+                .adSize(AdSize.BANNER_MREC) // use correct AdSize
+                .build();
+// Or for native ads.
+// bidTokenRequest = new BidTokenRequest.Builder(AdMediation.PANGLE)
+//            .placementId("s123456789")
+//            .adFormat(AdFormat.NATIVE)
+//            .build();
+
+OperaAds.getBidToken(bidTokenRequest, new BidTokenCallback() {
+    @Override
+    public void onSuccess(@NotNull String bidToken) {
+        // Bidding token is ready.
+    }
+
+    @Override
+    public void onError(@NotNull AdError error) {
+        // Report error.
+    }
+});
+```
+
+## **Privacy**
+
+### **Coppa**
+
+Generally speaking, the [Children’s Online Privacy Protection Act (COPPA)](https://www.ftc.gov/enforcement/rules/rulemaking-regulatory-reform-proceedings/childrens-online-privacy-protection-rule) regulates the collection, use, and disclosure of personal information for children under the age of 13 by certain websites and online services (including mobile apps). For more information on COPPA, please refer to the Federal Trade Commission's [COPPA FAQ](https://www.ftc.gov/tips-advice/business-center/guidance/complying-coppa-frequently-asked-questions-0).
+Use *`PrivacyManager.setCoppa(...)`* to change coppa status.
+
+```java
+/**
+ * Flag indicating if it's subject to the COPPA: 0 = no, 1 = yes, null = unspecified.
+ *
+ * See [COPPA](https://www.ftc.gov/business-guidance/privacy-security/childrens-privacy).
+ */
+PrivacyManager.setCoppa(1)
+```
+
+### **U.S. states privacy (CCPA)**
+
+To help you comply with U.S. states privacy laws, use *`PrivacyManager.setUSPrivacy(...)`* to change or apply the compliance status of CCPA. For more information, please refer to [IAB USPrivacy](https://github.com/InteractiveAdvertisingBureau/USPrivacy/blob/master/CCPA/US%20Privacy%20String.md).
+
+```java
+/**
+ * The consumer privacy under US privacy regulation.
+ *
+ * See [The IAB Tech Lab's US Privacy String](https://github.com/InteractiveAdvertisingBureau/USPrivacy).
+ */
+PrivacyManager.setUSPrivacy("1YNN")
+```
+
+### GDPR
+
+Opera Ads is listed in TCF Global Vendor List, id: 1135, please make sure to enable Opera Ads in your CMP provider's backend(e.g. Google UMP message). Opera Ads SDK will read application’s consent status from system preference, and send to Ad Networks in ad requests.
+![][image1]
+
+## **Notice**
+
+* Unless otherwise specified, all APIs and callbacks work on the main thread.
+
+## **Best Practices**
+
+* **Load Ads Early**: Preload ads in background for faster display (similar to AdMob).
+* **User Consent**: Always collect and pass consent (GDPR/CCPA) before initializing.
+* **Error Handling**: Implement retries for ad load failures.
+* **Testing**: Use test ad unit IDs from our dashboard.
+* **Frequency Capping**: Limit interstitials/rewarded to avoid user churn (e.g., 1 per 5 minutes).
+* **High-Engagement Ads**: Use for premium placements to boost eCPM.
+
+## **Troubleshooting**
+
+* **Ads Not Loading**: Check internet, permissions, API key, and console logs.
+* **Initialization Failed**: Verify SDK version and manifest entries.
+* **Contact Support**: Reach out via \[ad-sdk-support-list@opera.com\] with logs.
+
+For iOS integration or advanced features, refer to our full documentation or contact support.
+
+[image1]: <data:image/png;base64,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>
