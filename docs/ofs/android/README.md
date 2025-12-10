@@ -90,9 +90,13 @@ Our SDK supports multiple formats. Each follows a load-show pattern with callbac
 ### **Demo Example IDs**
 
 APP ID: pub13423013211200/ep13423013211584/app13423536670400
+
 Native Unit ID: s13429368154496
+
 Banner Unit ID: s13423621779136(html)   s13429297184768(video)
-Interstitial Unit ID: s13423624619200(html)  s13424442482432(video)
+
+Interstitial Unit ID: s13423624619200(html)   s13424442482432(video)
+
 Rewarded Unit ID: s13938889680960
 
 ### **Native Ads**
@@ -111,24 +115,23 @@ import com.opera.ads.nativead.NativeAdRootView;
 private NativeAd mNativeAd;
 
 // Load Native Ad
-NativeAdLoader.loadAd(context, "YOUR_NATIVE_AD_UNIT_ID",
-new NativeAdListener() {
-@Override
-      public void onAdLoaded(@NonNull Nativead nativeAd) {
-    mNativeAd = nativeAd;
-}
-@Override
-public void onAdFailedToLoad(@NonNUll AdError error) {
+NativeAdLoader.loadAd(context, "YOUR_NATIVE_AD_UNIT_ID", new NativeAdListener() {
+    @Override
+    public void onAdLoaded(@NonNull Nativead nativeAd) {
+        mNativeAd = nativeAd;
+    }
+    @Override
+    public void onAdFailedToLoad(@NonNUll AdError error) {
 
-}
-@Override
-public void onAdImpression() {
+    }
+    @Override
+    public void onAdImpression() {
 
-}
-@Override
-public void onAdClicked() {
+    }
+    @Override
+    public void onAdClicked() {
 
-}
+    }
 });
 
 if (!mNativeAd.isAdInvalidated()) {
@@ -137,7 +140,7 @@ if (!mNativeAd.isAdInvalidated()) {
     // Bind interactive views with ad.
     NativeAd.InteractionViews interactionViews = new NativeAd.InteractionViews.Builder(
         nativeAdMedia  // com.opera.ads.MediaView
-).setTitleView(nativeAdTitle)
+    ).setTitleView(nativeAdTitle)
         .setBodyView(nativeAdBody)
         .setCallToActionView(nativeAdCallToAction)
         .setIconView(nativeAdIcon)
@@ -178,14 +181,14 @@ BannerAdListener adListener = new BannerAdListener() {
     @Override
     public void onAdLoaded(@NonNull BannerAd bannerAd) {
         // Banner is ready.
-  // Note that it may be called agian on auto refreshed.
-  // You can check bannerAd.refreshCount to know if it's called for auto refresh.
+        // Note that it may be called agian on auto refreshed.
+        // You can check bannerAd.refreshCount to know if it's called for auto refresh.
     }
     @Override
     public void onAdFailedToLoad(@NonNUll AdError error) {
         // Banner failed to load.
-	  // Note that it's only called if failed to load when loadAd()  called for the first time.
-  // Will never be called for auto refresh.
+        // Note that it's only called if failed to load when loadAd()  called for the first time.
+        // Will never be called for auto refresh.
     }
     @Override
     public void onAdImpression() {
