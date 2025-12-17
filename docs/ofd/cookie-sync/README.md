@@ -20,7 +20,7 @@ A mapping table can be used to map an ID or other data from one domain to anothe
 
 ## Getting Started
 
-In order to get started with Cookie Mapping, you must contact your Account Manager, who can enable specific workflows and help you configure the cookie mapping url, like `https://t.adx.opera.com/sync?vendor=${BIDDER_ID}&uid=${DSP_USER_ID}`. ${BIDDER_ID} is allocated by OperaAds, and ${DSP_USER_ID} should be replaced with the bidder-specific user id. For example, `https://t.adx.opera.com/sync?vendor=600001&uid=4e93fa9e-86e3-11eb-8dcd-0242ac130003`.
+In order to get started with Cookie Mapping, you must contact your Account Manager, who can enable specific workflows and help you configure the cookie mapping url, like `https://t.oa.opera.com/sync?vendor=${BIDDER_ID}&uid=${DSP_USER_ID}`. ${BIDDER_ID} is allocated by OperaAds, and ${DSP_USER_ID} should be replaced with the bidder-specific user id. For example, `https://t.oa.opera.com/sync?vendor=600001&uid=4e93fa9e-86e3-11eb-8dcd-0242ac130003`.
 
 ## Cookie Mapping Service Workflow
 
@@ -50,7 +50,7 @@ When loading in the user's browser, it will request a pixel from the bidder's Co
 The bidder's cookie mapping endpoint must redirect to OperaAds' Cookie Mapping service, including bidder-specific user id appended. The redirect URL might look like the following:
 
 ```url
-https://t.adx.opera.com/sync?vendor=600001&uid=4e93fa9e-86e3-11eb-8dcd-0242ac130003
+https://t.oa.opera.com/sync?vendor=600001&uid=4e93fa9e-86e3-11eb-8dcd-0242ac130003
 ```
 
 ### Step 3: User's browser is redirected to OperaAds' Cookie Mapping service
@@ -66,7 +66,7 @@ If the cookie mapping operation is done, OperaAds will serve a 1x1 transparent p
 A bidder is allowed to redirect to another cookie mapping service of OperaAds for the sake of recording the mapping relationship from bidder-specific user ID to OperaAds user ID. The typical formation of URL is shown below:
 
 ```url
-https://t.adx.opera.com/sync/adv?cuid=4e93fa9e-86e3-11eb-8dcd-0242ac130003&advid=adv123456789
+https://t.oa.opera.com/sync/adv?cuid=4e93fa9e-86e3-11eb-8dcd-0242ac130003&advid=adv123456789
 ```
 
 The cuid(Client User ID) and advid(advertiser ID) within query are indispensable, otherwise the call would get a http status code of 400 returned. With the mapping relationship being successfully recorded, the service would return a 1x1 transparent pixel and a HTTP status code of 200.

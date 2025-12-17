@@ -8,7 +8,7 @@ Cookie Mapping is a feature that enables you to map your cookie—for example, a
 
 ### What is Cookie Mapping?
 
-In the context of digital advertising, OperaAds identifies users with cookies that belong to the adx.opera.com domain, and suppliers participating in Real-Time Bidding may have their own domain where they identify some set of users they would like to show ads. Cookie Mapping enables the suppliers to map their cookies with OperaAds', such that OperaAds can determine whether an impression sent in a bid request is associated with one of users being targeted, OperaAds will receive a OperaAds User ID in the bid request ( `req.user.buyeruid` field).
+In the context of digital advertising, OperaAds identifies users with cookies that belong to the opera.com domain, and suppliers participating in Real-Time Bidding may have their own domain where they identify some set of users they would like to show ads. Cookie Mapping enables the suppliers to map their cookies with OperaAds', such that OperaAds can determine whether an impression sent in a bid request is associated with one of users being targeted, OperaAds will receive a OperaAds User ID in the bid request ( `req.user.buyeruid` field).
 
 The cookie mapping service described in this guide facilitates the creation and maintenance of the association between a supplier's cookie and the OperaAds User ID.
 
@@ -18,8 +18,8 @@ A mapping table can be used to map an ID or other data from one domain to anothe
 
 ## Getting Started
 
-OperaAds Cookie Mapping URL is like `https://t.adx.opera.com/pub/sync?pubid=${publisher_id}`. Suppliers should contact OperaAds account manager to get the publisher id，and provide their cookie mapping url, which contains ${OPERA_UID} macro. Suppose publisher_id is *pub123*, supplier cookie mapping url is https://publisher.adnetwork.com/pixel?uid=${OPERA_UID}, in this case OperaAds Cookie Mapping URL is `https://t.adx.opera.com/pub/sync?pubid=pub123`.
-If a supplier uses different cookie mapping url for different region, for example, `https://eu.pub1.com` for EU and `https://sg.pub1.com` for SG, please provide all these URLs to OperaAds account manager. Then add a query paramter *k* indicating the region into OperaAds Cookie Mapping URL, such as `https://t.adx.opera.com/pub/sync?pubid=pub123&k=sg`, OperaAds cookie mapping service will redirect to pub123's cookie mapping URL for SG.
+OperaAds Cookie Mapping URL is like `https://t.oa.opera.com/pub/sync?pubid=${publisher_id}`. Suppliers should contact OperaAds account manager to get the publisher id，and provide their cookie mapping url, which contains ${OPERA_UID} macro. Suppose publisher_id is *pub123*, supplier cookie mapping url is https://publisher.adnetwork.com/pixel?uid=${OPERA_UID}, in this case OperaAds Cookie Mapping URL is `https://t.oa.opera.com/pub/sync?pubid=pub123`.
+If a supplier uses different cookie mapping url for different region, for example, `https://eu.pub1.com` for EU and `https://sg.pub1.com` for SG, please provide all these URLs to OperaAds account manager. Then add a query paramter *k* indicating the region into OperaAds Cookie Mapping URL, such as `https://t.oa.opera.com/pub/sync?pubid=pub123&k=sg`, OperaAds cookie mapping service will redirect to pub123's cookie mapping URL for SG.
 
 ### Macros supported
 |Macros              |Type      |Description|
@@ -39,7 +39,7 @@ If a supplier uses different cookie mapping url for different region, for exampl
 In order to initiate this flow, a supplier must place OperaAds map tag such that it renders in the user's browser. The map tag will direct the user's browser to OperaAds Cookie Mapping URL. Loot at OperaAds map tag below:
 
 ```html
-<img src="https://t.adx.opera.com/pub/sync?pubid=pub123&gdpr=${GDPR}&consent=${GDPR_CONSENT}&us_privacy=${US_PRIVACY}&gpp=${GPP_STRING}&gpp_sid=${GPP_SID}" />
+<img src="https://t.oa.opera.com/pub/sync?pubid=pub123&gdpr=${GDPR}&consent=${GDPR_CONSENT}&us_privacy=${US_PRIVACY}&gpp=${GPP_STRING}&gpp_sid=${GPP_SID}" />
 ```
 
 Suppliers should expand user privacy macro in the map tag. For example, expand ${GDPR} with 0 or 1, expand ${GDPR_CONSENT} with [gdpr consent string](https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/TCF-Implementation-Guidelines.md), expand ${US_PRIVACY} with [us privacy string](https://github.com/InteractiveAdvertisingBureau/USPrivacy/blob/master/CCPA/US%20Privacy%20String.md), expand ${GPP_STRING} and ${GPP_SID} with [gpp string and section id](https://github.com/InteractiveAdvertisingBureau/Global-Privacy-Platform/blob/main/Core/Consent%20String%20Specification.md).
