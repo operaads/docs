@@ -4,7 +4,7 @@ module.exports = () => ({
   base: "/",
   dest: "dist",
   define: {
-    SDK_URL: "https://res.adx.opera.com/adx/adsbyopera.js",
+    SDK_URL: "https://res.oa.opera.com/x/oa.js",
   },
   head: [["link", { rel: "shortcut icon", href: "/favicon.ico" }]],
   locales: {
