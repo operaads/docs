@@ -345,13 +345,13 @@ If bidding for banner ads, please set proper *`AdSize`* for the request meanwhil
 // Please ensure that Opera ads sdk has been initialized.
 // Bid banner ads.
 final BidTokenRequest bidTokenRequest =
-        new BidTokenRequest.Builder(AdMediation.PANGLE)
+        new BidTokenRequest.Builder(AdMediation.[YOUR-ID])
                 .placementId("s123456789")
                 .adFormat(AdFormat.BANNER)
                 .adSize(AdSize.BANNER_MREC) // use correct AdSize
                 .build();
 // Or for native ads.
-// bidTokenRequest = new BidTokenRequest.Builder(AdMediation.PANGLE)
+// bidTokenRequest = new BidTokenRequest.Builder(AdMediation.[YOUR-ID])
 //            .placementId("s123456789")
 //            .adFormat(AdFormat.NATIVE)
 //            .build();
