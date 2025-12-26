@@ -89,15 +89,17 @@ Our SDK supports multiple formats. Each follows a load-show pattern with callbac
 
 ### **Demo Example IDs**
 
-APP ID: pub13423013211200/ep13423013211584/app13423536670400
+**Package Name**: com.opera.ads.demo
 
-Native Unit ID: s13429368154496
+**APP ID**: pub13423013211200/ep13423013211584/app13423536670400
 
-Banner Unit ID: s13423621779136(html)   s13429297184768(video)
+**Native Unit ID**: s13429368154496
 
-Interstitial Unit ID: s13423624619200(html)   s13424442482432(video)
+**Banner Unit ID**: s13423621779136(html)   s13429297184768(video)
 
-Rewarded Unit ID: s13938889680960
+**Interstitial Unit ID**: s13423624619200(html)   s13424442482432(video)
+
+**Rewarded Unit ID**: s13938889680960
 
 ### **Native Ads**
 
@@ -405,6 +407,7 @@ Opera Ads is listed in TCF Global Vendor List, id: 1135, please make sure to ena
 ## **Notice**
 
 * Unless otherwise specified, all APIs and callbacks work on the main thread.
+* Full support for Kotlin integration begins with version 2.3.0.
 
 ## **Best Practices**
 
