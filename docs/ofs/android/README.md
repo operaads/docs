@@ -212,8 +212,6 @@ bannerContainer.addView(mBannerAdView)
 mBannerAdView.destroy();
 ```
 
-###
-
 ### **Interstitial Ads**
 
 Full-screen ads shown at natural breaks (e.g., level complete).

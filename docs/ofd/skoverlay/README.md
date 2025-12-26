@@ -151,9 +151,7 @@ Fields description of the **skoverlay** object:
 | autoclose | int | 0 | Time in seconds to automatically dismiss the overlay (0-60).Value of 0 means no automatic dismiss |
 | click | int | 1 | Fire the click tracking when the overlay is displayed 1=yes 0=mo |
 
-##
-
-Bid Response example
+## Bid Response example
 
 ```json
 {
