@@ -371,7 +371,7 @@ OperaAds.getBidToken(bidTokenRequest, new BidTokenCallback() {
 
 ### **Mediation Platforms**
 
-We've impelmenated 3 adapters for AdMob/TopOn/Applovin mediation platforms. Please refer to ![Mediation Adapter Integration guide](https://doc.adx.opera.com/ofs/mediation/) for more information.
+We've impelmenated 3 adapters for AdMob/TopOn/Applovin mediation platforms. Please refer to [Mediation Adapter Integration guide](https://doc.adx.opera.com/ofs/mediation/) for more information.
 
 ## **Privacy**
 
@@ -410,6 +410,7 @@ Opera Ads is listed in TCF Global Vendor List, id: 1135, please make sure to ena
 
 ## **Notice**
 
+* Please invoke `isAdInvalidated()` on ad to ensure that no impression opportunity is wasted due to expiration.
 * Unless otherwise specified, all APIs and callbacks work on the main thread.
 * Full support for Kotlin integration begins with version 2.3.0.
 
