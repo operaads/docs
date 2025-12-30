@@ -30,6 +30,14 @@ Opera provide 5 integration options for suppliers to connect with OperaAds:
   </div>
 
   <div class="feature">
+    <h4>Mediation Adapters</h4>
+    <p>For Mobile Application</p>
+    <p>
+      <RouterLink to="./ofs/mediation/">Quick Start →</RouterLink>
+    </p>
+  </div>
+
+  <div class="feature">
     <h4>VAST Tag</h4>
     <p>For VAST Tag integration</p>
     <p>

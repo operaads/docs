@@ -369,6 +369,10 @@ OperaAds.getBidToken(bidTokenRequest, new BidTokenCallback() {
 });
 ```
 
+### **Mediation Platforms**
+
+We've impelmenated 3 adapters for AdMob/TopOn/Applovin mediation platforms. Please refer to ![Mediation Adapter Integration guide](https://doc.adx.opera.com/ofs/mediation/) for more information.
+
 ## **Privacy**
 
 ### **Coppa**
