@@ -46,6 +46,12 @@ module.exports = () => ({
               children: listMarkdowns("./docs/ofs/android/"),
             },
           ],
+          "/ofs/mediation/": [
+            {
+              title: "Guide",
+              children: listMarkdowns("./docs/ofs/mediation/"),
+            },
+          ],
           "/ofs/vast-tag/": [
             {
               title: "Guide",
