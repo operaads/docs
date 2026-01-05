@@ -414,6 +414,86 @@ Opera Ads is listed in TCF Global Vendor List, id: 1135, please make sure to ena
 * Unless otherwise specified, all APIs and callbacks work on the main thread.
 * Full support for Kotlin integration begins with version 2.3.0.
 
+## **Advanced**
+
+### **Audio Control for Video Ads**
+
+Opera Ads SDK provides fine-grained control over audio playback for video ads (including Banner, Interstitial, Rewarded, Rewarded Interstitial, and App Open ad formats) through the `OperaAds.setMuted()` API.
+
+#### **API Usage**
+
+```java
+/**
+ * Control audio playback state for video ads.
+ *
+ * @param muted Audio control setting:
+ *              - true: Video ads will play muted (no sound)
+ *              - false: Video ads will play unmuted (with sound)
+ *              - null: Reset to default behavior (system decides based on user interaction)
+ */
+OperaAds.setMuted(Boolean muted);
+```
+
+#### **Parameter Values**
+
+| Value | Behavior | Use Case |
+|-------|----------|----------|
+| `true` | Force mute all video ads | Apps that prefer silent ads, or during quiet hours |
+| `false` | Force unmute all video ads | Apps with audio-focused content, after user permission |
+| `null` | Default behavior | Let the system decide based on autoplay policies |
+
+#### **Important Notes**
+
+* **Must be called before loading ads**: The muted setting only affects ads loaded **after** calling `setMuted()`. It does not apply to already-loaded ads.
+* **Global setting**: The setting applies to all video ad formats across the entire SDK.
+* **Persistence**: The setting persists for the current app session until changed again.
+
+#### **Code Example**
+
+```java
+// Example 1: Mute all video ads
+OperaAds.setMuted(true);
+// Now load ads - they will play muted
+RewardedAd.load(context, placementId, loadListener);
+
+// Example 2: Unmute all video ads
+OperaAds.setMuted(false);
+// Load new ads - they will play with sound
+InterstitialAd.load(context, placementId, loadListener);
+
+// Example 3: Reset to default behavior
+OperaAds.setMuted(null);
+// Load ads - system decides audio behavior
+BannerAdView bannerAdView = new BannerAdView(context);
+bannerAdView.setPlacementId(placementId);
+bannerAdView.loadAd(adListener);
+```
+
+## **FAQ**
+
+### **Q: My app's minSdk is lower than 24, how can I integrate Opera Ads SDK?**
+
+**A:** Opera Ads SDK requires `minSdk 24` (Android 7.0). If your app targets a lower API level, you need to override the library's minSdk requirement in your `AndroidManifest.xml`:
+
+```xml
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.yourapp.package">
+
+    <uses-sdk tools:overrideLibrary="com.opera.ads" />
+
+    <!-- Your other manifest entries -->
+</manifest>
+```
+
+**SDK Behavior on Unsupported Devices:**
+
+Opera Ads SDK **automatically detects** the device API level during initialization:
+* On devices with API level >= 24: Initialization succeeds normally
+* On devices with API level < 24: Initialization **fails immediately** and triggers `OnSdkInitCompleteListener.onError()` with an appropriate error message
+
+**Important:** Using `tools:overrideLibrary` only allows compilation - it does not make the SDK compatible with API levels below 24.
+
 ## **Best Practices**
 
 * **Load Ads Early**: Preload ads in background for faster display (similar to AdMob).
