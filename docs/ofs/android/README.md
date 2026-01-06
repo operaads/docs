@@ -412,7 +412,7 @@ Opera Ads is listed in TCF Global Vendor List, id: 1135, please make sure to ena
 
 * If a certain cached ad is being displayed, please make sure it's still valid (by checking `if (!isAdInvalidated())`) at first. Otherwise the ad may fail to show, or impressions may not generate revenue.
 * Unless otherwise specified, all APIs and callbacks work on the main thread.
-* Full support for Kotlin integration begins with version 2.3.0.
+* Full support for Kotlin integration begins with version 2.2.2.
 
 ## **Advanced**
 
