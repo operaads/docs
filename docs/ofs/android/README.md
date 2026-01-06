@@ -386,7 +386,7 @@ Use *`PrivacyManager.setCoppa(...)`* to change coppa status.
  *
  * See [COPPA](https://www.ftc.gov/business-guidance/privacy-security/childrens-privacy).
  */
-PrivacyManager.setCoppa(1)
+PrivacyManager.setCoppa(...)
 ```
 
 ### **U.S. states privacy (CCPA)**
@@ -399,7 +399,7 @@ To help you comply with U.S. states privacy laws, use *`PrivacyManager.setUSPriv
  *
  * See [The IAB Tech Lab's US Privacy String](https://github.com/InteractiveAdvertisingBureau/USPrivacy).
  */
-PrivacyManager.setUSPrivacy("1YNN")
+PrivacyManager.setUSPrivacy(...)
 ```
 
 ### GDPR
