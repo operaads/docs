@@ -494,6 +494,16 @@ Opera Ads SDK **automatically detects** the device API level during initializati
 
 **Important:** Using `tools:overrideLibrary` only allows compilation - it does not make the SDK compatible with API levels below 24.
 
+### **Q: Why do I encounter OkHttp3 related errors during compilation or runtime after integrating Opera Ads SDK?**
+
+**A:** Opera Ads SDK depends on OkHttp 4.X as default. If your app depends on an older version of OkHttp as 3.X, please upgrade to version of 4.X in your project, or implement Opera Ads SDK OkHttp 3.X compatible version:
+
+```
+dependencies {
+    implementation 'com.opera:opera-ads-okhttp3:+'
+}
+```
+
 ## **Best Practices**
 
 * **Load Ads Early**: Preload ads in background for faster display (similar to AdMob).

@@ -4,14 +4,13 @@ This guide explains how to integrate Opera Ads SDK through custom adapters into 
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Prerequisites](#prerequisites)
-- [AdMob Mediation Integration](#admob-mediation-integration)
-- [TopOn (Anythink) Mediation Integration](#topon-anythink-mediation-integration)
-- [AppLovin MAX Mediation Integration](#applovin-max-mediation-integration)
-- [Privacy Compliance](#privacy-compliance)
-- [FAQ](#faq)
-- [Version Information](#version-information)
+- [Overview](#overview)  
+- [Prerequisites](#prerequisites)  
+- [AdMob Mediation Integration](#admob-mediation-integration-by-custom-event)  
+- [TopOn (Anythink) Mediation Integration](#topon-\(anythink\)-mediation-integration)  
+- [AppLovin MAX Mediation Integration](#applovin-max-mediation-integration)  
+- [FAQ](#faq)  
+- [Technical Support](#technical-support)
 
 ---
 
@@ -32,6 +31,7 @@ Before you begin, ensure that:
 1. You have registered on the [Opera Ads Developer Platform](https://ofp.adx.opera.com) and created your app
 2. You have obtained your Opera Ads **App ID** and **Placement IDs** for each ad unit
 3. You have created your app and ad units on the corresponding mediation platform (AdMob/TopOn/AppLovin)
+4. Full support for kotlin integration begins with version 2.2.2.x
 
 ---
 
@@ -47,7 +47,7 @@ Before you begin, ensure that:
 | Rewarded                           | Rewarded                |
 | Native                             | Native                  |
 
-### 1\. Configure Custom Event in AdMob Console
+### 1. Configure Custom Event in AdMob Console
 
 You need to add Opera to the mediation configuration for your ad unit.
 
@@ -77,7 +77,7 @@ Name this mapping, and fill in the **_Class Name_** with “com.opera.ads.mediat
 }
 ```
 
-### 2\. Add Dependencies
+### 2. Add Dependencies
 
 Add Opera Ads SDK maven repository:
 
@@ -101,11 +101,11 @@ dependencies {
 }
 ```
 
-### 3\. Additional code required
+### 3. Additional code required
 
 The AdMob SDK automatically initializes the Opera Ads SDK when loading ads. No additional initialization code is required.
 
-### 4\. Privacy Compliance
+### 4. Privacy Compliance
 
 ##### GDPR
 
@@ -119,13 +119,11 @@ Opera Ads SDK reads the tag of **TFUA** from AdMob _RequestConfiguration_ and pa
 
 Please refer to [https://doc.adx.opera.com/ofs/android/\#u-s-states-privacy-ccpa](https://doc.adx.opera.com/ofs/android/#u-s-states-privacy-ccpa), to comply with US states privacy laws, you have to invoke “PrivacyManager.setUSPrivacy("....")” to set the status of CCPA manually.
 
-### 5\. Adapter Version Compatibility
+### 5. Adapter Version Compatibility
 
 | Adapter Version | Opera Ads SDK | AdMob SDK |
 | :-------------- | :------------ | :-------- |
 | 2.2.0.0         | 2.2.0         | 24.6.0+   |
-
-###
 
 ---
 
@@ -141,7 +139,7 @@ Please refer to [https://doc.adx.opera.com/ofs/android/\#u-s-states-privacy-ccpa
 | Rewarded                           | Rewarded Video             |
 | Native                             | Native                     |
 
-### 1\. Configure Custom Ad Network in TopOn Console
+### 1. Configure Custom Ad Network in TopOn Console
 
 Refer to [Custom Network](https://help.toponad.net/docs/Custom-Network-integration-instructions) on TopOn **Mediation Network Guide** for detailed information.
 
@@ -173,7 +171,7 @@ After Ad Network is added, click **Ad Source Settings**. Select banner format ad
 And also please also make sure enable \***Bottom Ads**\* on, for Opera Ads network to be the backfill ad network for unbidded requests.  
 ![Banner ad size](./images/topon_banner_size.png)
 
-### 2\. Add Dependencies
+### 2. Add Dependencies
 
 Add Opera Ads SDK maven repository:
 
@@ -203,7 +201,7 @@ dependencies {
 
 **Note**: The current adapter supports TopOn SDK 6.4.17 (com.anythink package name). For TopOn SDK \>= 6.5.12 (com.secmtp.sdk package name), please refer to the official upgrade guide.
 
-### 3\. Additional code required
+### 3. Additional code required
 
 #### Native Ad
 
@@ -216,7 +214,7 @@ localExtra.put(ATAdConst.KEY.AD_CHOICES_PLACEMENT, ATAdConst.AD_CHOICES_PLACEMEN
 mATNative.setLocalExtra(localExtra);
 ```
 
-### 4\. Privacy Compliance
+### 4. Privacy Compliance
 
 ##### GDPR
 
@@ -230,13 +228,11 @@ Please refer to [https://doc.adx.opera.com/ofs/android/\#coppa](https://doc.adx.
 
 Please refer to [https://doc.adx.opera.com/ofs/android/\#u-s-states-privacy-ccpa](https://doc.adx.opera.com/ofs/android/#u-s-states-privacy-ccpa). It’s recommended to use the API “`PrivacyManager.setUSPrivacy(...)`” to set the compliance status of CCPA.
 
-### 5\. Adapter Version Compatibility
+### 5. Adapter Version Compatibility
 
 | Adapter Version | Opera Ads SDK | TopOn SDK        |
 | :-------------- | :------------ | :--------------- |
 | 2.2.0.0         | 2.2.0         | 6.4.17 \~ 6.5.11 |
-
-###
 
 ---
 
@@ -252,7 +248,7 @@ Please refer to [https://doc.adx.opera.com/ofs/android/\#u-s-states-privacy-ccpa
 | Rewarded                           | Rewarded     |
 | Native                             | Native       |
 
-### 1\. Configure Custom Network in AppLovin Console
+### 1. Configure Custom Network in AppLovin Console
 
 Please refer to [Integrating custom SDK networks](https://support.axon.ai/en/max/mediated-network-guides/integrating-custom-sdk-networks/) on Max **Mediated network guides** for detailed information.
 
@@ -284,7 +280,7 @@ On the **Ad Units** page, add Opera Ads as an ad source for each ad unit:
 
 - Placement ID: Placement id from Opera Ads.
 
-### 2\. Add Dependencies
+### 2. Add Dependencies
 
 Add Opera Ads SDK maven repository:
 
@@ -308,11 +304,11 @@ dependencies {
 }
 ```
 
-### 3\. Additional code required
+### 3. Additional code required
 
 No additional code is required for InMobi integration.
 
-### 4\. Privacy Compliance
+### 4. Privacy Compliance
 
 ##### GDPR
 
@@ -326,19 +322,17 @@ Please refer to [https://doc.adx.opera.com/ofs/android/\#coppa](https://doc.adx.
 
 `OperaMediationAdapter` updates the compliance status of CCPA from Applovin mediation configuration automatically requesting ads. But you can use the API “`PrivacyManager.setUSPrivacy(...)`” to change or reset the status. Please refer to [https://doc.adx.opera.com/ofs/android/\#u-s-states-privacy-ccpa](https://doc.adx.opera.com/ofs/android/#u-s-states-privacy-ccpa) for more information.
 
-### 5\. Adapter Version Compatibility
+### 5. Adapter Version Compatibility
 
 | Adapter Version | Opera Ads SDK | AppLovin SDK |
 | :-------------- | :------------ | :----------- |
 | 2.2.0.0         | 2.2.0         | 13.5.0+      |
 
-###
-
 ---
 
 ## FAQ
 
-### 1\. Ads Fail to Load
+### 1. Why can't I load or see an Ad?
 
 **Possible Causes**:
 
@@ -351,13 +345,13 @@ Please refer to [https://doc.adx.opera.com/ofs/android/\#coppa](https://doc.adx.
 - Verify that console configuration parameters are correct
 - Enable logging to view detailed error information:
 
-### 2\. How to Test Opera Ads
+### 2. How can I request or load ads for testing?
 
 The Opera Ads SDK automatically returns test ads in debug mode. Ensure:
 
 - Add your device as a test device in the [Opera Ads console](https://ofp.adx.opera.com/)
 
-### 3\. Banner Auto-Refresh
+### 3. Why doesn't Banner ads refresh?
 
 Opera Ads Adapters automatically disable the Opera Ads SDK's auto-refresh feature, allowing the mediation platform to control refresh logic:
 
@@ -365,6 +359,10 @@ Opera Ads Adapters automatically disable the Opera Ads SDK's auto-refresh featur
 // Automatically called inside the adapter
 bannerAdView.setAutoRefreshEnabled(false);
 ```
+
+### 4. Why do I encounter OkHttp3 related errors during compilation or runtime after integrating Opera Ads SDK?
+
+**A:** Opera Ads SDK depends on OkHttp 4.X as default. If your app depends on an older version of OkHttp as 3.X, please upgrade to version of 4.X in your project, or contact us for help.
 
 ---
 
