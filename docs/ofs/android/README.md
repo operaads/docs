@@ -334,9 +334,9 @@ new SdkInitConfig.Builder(APPLICATION_ID)
 
 ```
 
-### **Bidding**
+### **S2S (server to server) Bidding**
 
-To collect bidding signals, or get bidding tokens, please use *`OperaAds.getBidToken(...)`* *`.`*
+To integrate with S2S bidding on other mediation platforms, for collecting bidding signals, or getting bidding tokens, please use *`OperaAds.getBidToken(...)`* *`.`*
 The *`BidTokenCallback`* will be called on the main thread asynchronously.
 If placement id, ad format or ad size are known when you call `getBidToken()` then please call builder’s methods to specify them properly.
 If bidding for banner ads, please set proper *`AdSize`* for the request meanwhile.
