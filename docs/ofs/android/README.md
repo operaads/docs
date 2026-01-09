@@ -504,6 +504,10 @@ dependencies {
 }
 ```
 
+### **Q: Do I need to add proguard rules for Opera Ads SDK?**
+
+**A:** No, we have wrapped the consumer proguard files in the AAR artifact. No additional rules are needed.
+
 ## **Best Practices**
 
 * **Load Ads Early**: Preload ads in background for faster display (similar to AdMob).
