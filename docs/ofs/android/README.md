@@ -61,8 +61,8 @@ class MyApplication : Application() {
         super.onCreate()
 
     OperaAds.initialize(this,
-        new SdkInitConfig.Builder(APPLICATION_ID)
-            .publisherName(PUBLISHER)
+        new SdkInitConfig.Builder("YOUR_APPLICATION_ID")
+            .publisherName("YOUR_PUBLISHER_NAME")
             .coppa(coppa)
             .usPrivacy("1YNN")
             .build(),
@@ -81,7 +81,7 @@ class MyApplication : Application() {
 ```
 
 * **APPLICATION ID**: Register on our [publisher portal](https://ofp.adx.opera.com/) to get your application id.
-* **Publisher Name**: A mobile app developer who integrates ad SDK to display ads and earn revenue.
+* **Publisher Name**: A mobile app developer who integrates ad SDK to display ads and earn revenue. This can also be your application name.
 
 ## **Ad Formats Integration**
 
@@ -321,24 +321,19 @@ if (!mBannerAdView.isAdInvalidated()) {
 mRewardedAd.destroy();
 ```
 
-## **Ad Mediation**
+## **Bidding Integration**
 
-To support mediation, please set the *`AdMediationProvider`* for *`SdkInitConfig`* when initializing ***`OperaAds`***.
+Opera Ads SDK supports both Server Bidding (S2S) and Client Bidding (C2S) for programmatic ad auctions. These bidding modes use **different APIs** - please choose the appropriate API based on your integration type.
 
-```java
-// Create the initialization configuration
-new SdkInitConfig.Builder(APPLICATION_ID)
-                 .mediationProvider(new AdMediationProvider(...))
-// Perform any additional configuration/setting changes
-                 .build()
+### **Server Bidding (S2S)**
 
-```
+Server Bidding is used when integrating with mediation platforms (AdMob, TopOn, AppLovin, etc.) where the auction happens on the server side.
 
-### **S2S (server to server) Bidding**
+#### **Getting Bid Tokens**
 
-To integrate with S2S bidding on other mediation platforms, for collecting bidding signals, or getting bidding tokens, please use *`OperaAds.getBidToken(...)`* *`.`*
+To collect bidding signals or get bidding tokens for server-side auctions, use *`OperaAds.getBidToken(...)`*.
 The *`BidTokenCallback`* will be called on the main thread asynchronously.
-If placement id, ad format or ad size are known when you call `getBidToken()` then please call builder’s methods to specify them properly.
+If placement id, ad format or ad size are known when you call `getBidToken()` then please call builder's methods to specify them properly.
 If bidding for banner ads, please set proper *`AdSize`* for the request meanwhile.
 
 ```java
@@ -369,9 +364,209 @@ OperaAds.getBidToken(bidTokenRequest, new BidTokenCallback() {
 });
 ```
 
-### **Mediation Platforms**
+#### **Loading Server Bidding Ads**
 
-We've impelmenated 3 adapters for AdMob/TopOn/Applovin mediation platforms. Please refer to [Mediation Adapter Integration guide](https://doc.adx.opera.com/ofs/mediation/) for more information.
+For Server Bidding, use the `loadRtbAd()` or `loadRtb()` APIs with the bid response from your mediation platform:
+
+```java
+// Native Ads
+NativeAdLoader.loadRtbAd(context, "PLACEMENT_ID", bidResponse, listener);
+
+// Banner Ads
+bannerAdView.loadRtbAd(bidResponse, listener);
+
+// Interstitial Ads
+InterstitialAd.loadRtb(context, "PLACEMENT_ID", bidResponse, listener);
+
+// Rewarded Ads
+RewardedAd.loadRtb(context, "PLACEMENT_ID", bidResponse, listener);
+
+// Rewarded Interstitial Ads
+RewardedInterstitialAd.loadRtb(context, "PLACEMENT_ID", bidResponse, listener);
+
+// App Open Ads
+AppOpenAd.loadRtb(context, "PLACEMENT_ID", bidResponse, listener);
+```
+
+### **Client Bidding (C2S)**
+
+Client Bidding allows you to run ad auctions on the client side, giving you full control over the bidding process and auction results.
+
+#### **API Comparison**
+
+Client Bidding uses different loading APIs compared to regular waterfall ads:
+
+| Ad Format | Regular API | Client Bidding API |
+|-----------|-------------|-------------------|
+| **Native** | `loadAd(...)` | `loadC2SBidAd(...)` |
+| **Banner** | `loadAd(...)` | `loadC2SBidAd(...)` |
+| **Interstitial** | `load(...)` | `loadC2SBid(...)` |
+| **Rewarded** | `load(...)` | `loadC2SBid(...)` |
+| **Rewarded Interstitial** | `load(...)` | `loadC2SBid(...)` |
+| **App Open** | `load(...)` | `loadC2SBid(...)` |
+
+#### **Loading Client Bidding Ads**
+
+**Code Example (Java)**
+
+```java
+import com.opera.ads.AdBid;
+import com.opera.ads.LossReason;
+
+// Native Ads
+NativeAdLoader.loadC2SBidAd(context, "PLACEMENT_ID", new NativeAdListener() {
+    @Override
+    public void onAdLoaded(@NonNull NativeAd nativeAd) {
+        // Ad loaded successfully
+        mNativeAd = nativeAd;
+    }
+    // ... other callbacks
+});
+
+// Banner Ads
+mBannerAdView.loadC2SBidAd(new BannerAdListener() {
+    @Override
+    public void onAdLoaded(@NonNull BannerAd bannerAd) {
+        // Ad loaded successfully
+    }
+    // ... other callbacks
+});
+
+// Interstitial Ads
+InterstitialAd.loadC2SBid(context, "PLACEMENT_ID", new InterstitialAdLoadListener() {
+    @Override
+    public void onAdLoaded(@NonNull InterstitialAd ad) {
+        mInterstitialAd = ad;
+    }
+    // ... other callbacks
+});
+
+// Rewarded Ads
+RewardedAd.loadC2SBid(context, "PLACEMENT_ID", new RewardedAdLoadListener() {
+    @Override
+    public void onAdLoaded(@NonNull RewardedAd ad) {
+        mRewardedAd = ad;
+    }
+    // ... other callbacks
+});
+```
+
+#### **Getting Bid Information**
+
+After loading a client bidding ad, use `getBid()` to retrieve the bid object:
+
+```java
+// Get bid object for any ad format
+AdBid bid = nativeAd.getBid();          // For Native ads
+AdBid bid = bannerAdView.getBid();      // For Banner ads
+AdBid bid = interstitialAd.getBid();    // For Interstitial ads
+AdBid bid = rewardedAd.getBid();        // For Rewarded ads
+```
+
+**Note:** `getBid()` returns `null` for ads loaded with regular APIs (`loadAd()`/`load()`/`loadRtbAd()`/`loadRtb()`). It only returns a valid `AdBid` object for ads loaded with client bidding APIs.
+
+#### **AdBid Interface**
+
+The `AdBid` interface provides methods to get bid information and notify auction results:
+
+```java
+public interface AdBid {
+    /**
+     * Gets the eCPM of the ad.
+     *
+     * @return The eCPM price in USD
+     */
+    double getEcpm();
+
+    /**
+     * Notifies that this ad won the auction.
+     *
+     * @param secondPrice The second highest price in the auction (for second-price auction)
+     * @param bidderName The name of the winning bidder
+     */
+    void notifyWin(Double secondPrice, String bidderName);
+
+    /**
+     * Notifies that this ad lost the auction.
+     *
+     * @param lossReason The reason for losing (see LossReason enum)
+     * @param winnerPrice The price of the winning bid
+     * @param winnerBidder The name of the winning bidder
+     */
+    void notifyLose(LossReason lossReason, Double winnerPrice, String winnerBidder);
+}
+```
+
+#### **LossReason Enum**
+
+The `LossReason` enum defines the possible reasons for losing an auction:
+
+| Constant | Value | Description |
+|----------|-------|-------------|
+| `INTERNAL_ERROR` | 1 | Internal error occurred during bidding |
+| `LOWER_THAN_FLOOR_PRICE` | 100 | Bid was lower than the floor price |
+| `LOWER_THAN_HIGHEST_PRICE` | 102 | Bid was lower than the highest competing bid |
+
+#### **Complete Integration Example**
+
+Here's a simplified example showing how to integrate client bidding:
+
+```java
+import com.opera.ads.AdBid;
+import com.opera.ads.LossReason;
+
+// Step 1: Load client bidding ad
+NativeAdLoader.loadC2SBidAd(context, "PLACEMENT_ID", new NativeAdListener() {
+    @Override
+    public void onAdLoaded(@NonNull NativeAd nativeAd) {
+        runAuction(nativeAd);
+    }
+});
+
+// Step 2: Run auction and notify results
+private void runAuction(NativeAd operaAd) {
+    AdBid bid = operaAd.getBid();
+    if (bid == null) return;
+
+    double operaPrice = bid.getEcpm();
+    double competitorPrice = getCompetitorPrice();  // Your auction logic
+
+    if (operaPrice > competitorPrice) {
+        // Opera won
+        bid.notifyWin(competitorPrice, "CompetitorNetwork");
+        showAd(operaAd);
+    } else {
+        // Opera lost
+        bid.notifyLose(LossReason.LOWER_THAN_HIGHEST_PRICE,
+                      competitorPrice, "CompetitorNetwork");
+    }
+}
+```
+
+#### **Important Notes**
+
+* **Only for Client Bidding Ads**: `notifyWin()` and `notifyLose()` can only be called on ads loaded with `loadC2SBidAd()`/`loadC2SBid()` APIs. Calling them on regular ads will result in an error.
+* **Call Once**: Each method (`notifyWin()` or `notifyLose()`) can only be called once per ad. Duplicate calls will be rejected with an error.
+* **Auction Notification Required**: Always notify the auction result (either win or loss) to ensure proper reporting and billing.
+* **Thread Safety**: All AdBid methods should be called from the main thread.
+
+### **Ad Mediation**
+
+#### **Mediation Setup**
+
+To support mediation, please set the *`AdMediationProvider`* for *`SdkInitConfig`* when initializing ***`OperaAds`***.
+
+```java
+// Create the initialization configuration
+new SdkInitConfig.Builder(APPLICATION_ID)
+                 .mediationProvider(new AdMediationProvider(...))
+// Perform any additional configuration/setting changes
+                 .build()
+```
+
+#### **Mediation Platforms**
+
+We've implemented 3 adapters for AdMob/TopOn/AppLovin mediation platforms. Please refer to [Mediation Adapter Integration guide](https://doc.adx.opera.com/ofs/mediation/) for more information.
 
 ## **Privacy**
 
