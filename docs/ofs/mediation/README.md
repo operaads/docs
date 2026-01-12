@@ -123,7 +123,7 @@ Please refer to [https://doc.adx.opera.com/ofs/android/\#u-s-states-privacy-ccpa
 
 | Adapter Version | Opera Ads SDK | AdMob SDK |
 | :-------------- | :------------ | :-------- |
-| 2.2.0.0         | 2.2.0         | 24.6.0+   |
+| 2.4.0.0         | 2.4.0         | 24.6.0+   |
 
 ---
 
@@ -183,7 +183,7 @@ repositories {
 }
 ```
 
-Add the following dependencies to your app's `build.gradle` or `build.gradle.kts` file:
+For the versions of TopOn SDK before **6.5.12**, add the following dependencies to your app's `build.gradle` or `build.gradle.kts` file:
 
 ```
 dependencies {
@@ -199,7 +199,21 @@ dependencies {
 }
 ```
 
-**Note**: The current adapter supports TopOn SDK 6.4.17 (com.anythink package name). For TopOn SDK \>= 6.5.12 (com.secmtp.sdk package name), please refer to the official upgrade guide.
+Since Opera Ads SDK v2.4.0, we support TopOn SDK \>= 6.5.12, add the dependencies as following:
+
+```
+dependencies {
+    // Opera Ads TopOn Adapter for package name "com.secmtp.sdk"
+    implementation 'com.opera:opera-ads-topon-secmtp-adapter:2.4.0.0'
+
+    // TopOn SDK (Anythink package name - for SDK >= 6.5.12)
+    implementation 'com.anythink.sdk:core-tpn:6.5.12'
+    implementation 'com.anythink.sdk:banner-tpn:6.5.12'
+    implementation 'com.anythink.sdk:interstitial-tpn:6.5.12'
+    implementation 'com.anythink.sdk:rewardedvideo-tpn:6.5.12'
+    implementation 'com.anythink.sdk:nativead-tpn:6.5.12'
+}
+```
 
 ### 3. Additional code required
 
@@ -232,7 +246,8 @@ Please refer to [https://doc.adx.opera.com/ofs/android/\#u-s-states-privacy-ccpa
 
 | Adapter Version | Opera Ads SDK | TopOn SDK        |
 | :-------------- | :------------ | :--------------- |
-| 2.2.0.0         | 2.2.0         | 6.4.17 \~ 6.5.11 |
+| 2.4.0.0         | 2.4.0         | >= 6.5.12        |
+| 2.3.0.0         | 2.3.0         | 6.4.17 \~ 6.5.11 |
 
 ---
 
@@ -326,7 +341,7 @@ Please refer to [https://doc.adx.opera.com/ofs/android/\#coppa](https://doc.adx.
 
 | Adapter Version | Opera Ads SDK | AppLovin SDK |
 | :-------------- | :------------ | :----------- |
-| 2.2.0.0         | 2.2.0         | 13.5.0+      |
+| 2.4.0.0         | 2.4.0         | 13.5.0+      |
 
 ---
 

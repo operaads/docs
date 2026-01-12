@@ -613,7 +613,7 @@ Opera Ads is listed in TCF Global Vendor List, id: 1135, please make sure to ena
 
 ### **Audio Control for Video Ads**
 
-Opera Ads SDK provides fine-grained control over audio playback for video ads (including Banner, Interstitial, Rewarded, Rewarded Interstitial, and App Open ad formats) through the `OperaAds.setMuted()` API.
+Opera Ads SDK provides fine-grained control over audio playback for video ads (including Banner, Interstitial, Rewarded, Rewarded Interstitial, and App Open ad formats) through the `OperaAds.setMuted()` API. The video ads playback is muted by default.
 
 #### **API Usage**
 
@@ -691,7 +691,7 @@ Opera Ads SDK **automatically detects** the device API level during initializati
 
 ### **Q: Why do I encounter OkHttp3 related errors during compilation or runtime after integrating Opera Ads SDK?**
 
-**A:** Opera Ads SDK depends on OkHttp 4.X as default. If your app depends on an older version of OkHttp as 3.X, please upgrade to version of 4.X in your project, or implement Opera Ads SDK OkHttp 3.X compatible version:
+**A:** Opera Ads SDK depends on OkHttp 4.X as default. We strongly recommended that use the laset version of OkHttp. But if must use the version of 3.X, you can implement Opera Ads SDK OkHttp 3.X compatible version:
 
 ```
 dependencies {
