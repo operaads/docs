@@ -45,7 +45,7 @@ Sync your project to download the dependencies. Use “[https://artifact.opera.c
 
 ## **Initialization**
 
-Initialize the SDK early in your app lifecycle, preferably in `Application.onCreate()` or `Activity.onCreate()`.
+Initialize the SDK early in your app lifecycle, preferably in `Application.onCreate()` or `Activity.onCreate()`. For the versions of SDK before 2.4.1, please make sure that you invoke `#initialize(...)` on the main thread.
 
 **Code Example (Java)**
 
@@ -608,6 +608,7 @@ Opera Ads is listed in TCF Global Vendor List, id: 1135, please make sure to ena
 * If a certain cached ad is being displayed, please make sure it's still valid (by checking `if (!isAdInvalidated())`) at first. Otherwise the ad may fail to show, or impressions may not generate revenue.
 * Unless otherwise specified, all APIs and callbacks work on the main thread.
 * Full support for Kotlin integration begins with version 2.2.2.
+* Since v2.4.1, Opera Ads SDK supports initializing from any thread.
 
 ## **Advanced**
 

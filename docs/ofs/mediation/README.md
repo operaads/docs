@@ -246,7 +246,7 @@ Please refer to [https://doc.adx.opera.com/ofs/android/\#u-s-states-privacy-ccpa
 
 | Adapter Version | Opera Ads SDK | TopOn SDK        |
 | :-------------- | :------------ | :--------------- |
-| 2.4.0.0         | 2.4.0         | >= 6.5.12        |
+| 2.4.1.0         | 2.4.1         | >= 6.5.12        |
 | 2.3.0.0         | 2.3.0         | 6.4.17 \~ 6.5.11 |
 
 ---
