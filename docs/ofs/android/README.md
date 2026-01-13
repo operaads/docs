@@ -691,7 +691,7 @@ Opera Ads SDK **automatically detects** the device API level during initializati
 
 ### **Q: Why do I encounter OkHttp3 related errors during compilation or runtime after integrating Opera Ads SDK?**
 
-**A:** Opera Ads SDK depends on OkHttp 4.X as default. We strongly recommended that use the laset version of OkHttp. But if must use the version of 3.X, you can implement Opera Ads SDK OkHttp 3.X compatible version:
+**A:** Opera Ads SDK depends on OkHttp 4.X as default. We strongly recommend using the laset version of OkHttp. But if you have to use the version of 3.X, you can implement Opera Ads SDK OkHttp 3.X compatible version:
 
 ```
 dependencies {
