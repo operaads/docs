@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Report API v1 | OperaAds</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="description" content="OperaAds Documentations">
+    
+    <link rel="preload" href="/assets/css/0.styles.069220d3.css" as="style"><link rel="preload" href="/assets/js/app.868f366e.js" as="script"><link rel="preload" href="/assets/js/2.616e7dde.js" as="script"><link rel="preload" href="/assets/js/43.ea18f8e0.js" as="script"><link rel="prefetch" href="/assets/js/10.024745d8.js"><link rel="prefetch" href="/assets/js/11.fa9c0392.js"><link rel="prefetch" href="/assets/js/12.615bc196.js"><link rel="prefetch" href="/assets/js/13.db7f1ec7.js"><link rel="prefetch" href="/assets/js/14.3b21fd76.js"><link rel="prefetch" href="/assets/js/15.0a4b668c.js"><link rel="prefetch" href="/assets/js/16.22d865b4.js"><link rel="prefetch" href="/assets/js/17.cfe83de2.js"><link rel="prefetch" href="/assets/js/18.1d16af50.js"><link rel="prefetch" href="/assets/js/19.db117426.js"><link rel="prefetch" href="/assets/js/20.e15f5241.js"><link rel="prefetch" href="/assets/js/21.d91bb2b6.js"><link rel="prefetch" href="/assets/js/22.f4d7fc13.js"><link rel="prefetch" href="/assets/js/23.81592343.js"><link rel="prefetch" href="/assets/js/24.2ecc31b7.js"><link rel="prefetch" href="/assets/js/25.47ee3681.js"><link rel="prefetch" href="/assets/js/26.728e184f.js"><link rel="prefetch" href="/assets/js/27.bb7b35fd.js"><link rel="prefetch" href="/assets/js/28.6a1accd8.js"><link rel="prefetch" href="/assets/js/29.6cdbc4a8.js"><link rel="prefetch" href="/assets/js/3.a1261718.js"><link rel="prefetch" href="/assets/js/30.6e8f9869.js"><link rel="prefetch" href="/assets/js/31.b8420f9b.js"><link rel="prefetch" href="/assets/js/32.a68e0dcb.js"><link rel="prefetch" href="/assets/js/33.76eeee46.js"><link rel="prefetch" href="/assets/js/34.a659328b.js"><link rel="prefetch" href="/assets/js/35.e9980568.js"><link rel="prefetch" href="/assets/js/36.4502c717.js"><link rel="prefetch" href="/assets/js/37.09d4d720.js"><link rel="prefetch" href="/assets/js/38.f97cb5ff.js"><link rel="prefetch" href="/assets/js/39.a61b9ab5.js"><link rel="prefetch" href="/assets/js/4.37501a77.js"><link rel="prefetch" href="/assets/js/40.cca4e2b3.js"><link rel="prefetch" href="/assets/js/41.0c0cf3e1.js"><link rel="prefetch" href="/assets/js/42.0fcca496.js"><link rel="prefetch" href="/assets/js/44.0ccb48f5.js"><link rel="prefetch" href="/assets/js/45.5df71c91.js"><link rel="prefetch" href="/assets/js/46.211a91b2.js"><link rel="prefetch" href="/assets/js/47.80ba5a2f.js"><link rel="prefetch" href="/assets/js/48.d2bfb517.js"><link rel="prefetch" href="/assets/js/49.21d952a2.js"><link rel="prefetch" href="/assets/js/5.1cff4223.js"><link rel="prefetch" href="/assets/js/50.aeec078b.js"><link rel="prefetch" href="/assets/js/51.f671eaab.js"><link rel="prefetch" href="/assets/js/52.eceecc11.js"><link rel="prefetch" href="/assets/js/53.a73d251f.js"><link rel="prefetch" href="/assets/js/54.43f84dc8.js"><link rel="prefetch" href="/assets/js/55.2242d3c0.js"><link rel="prefetch" href="/assets/js/56.52a7089c.js"><link rel="prefetch" href="/assets/js/57.750bab5d.js"><link rel="prefetch" href="/assets/js/58.8fd78171.js"><link rel="prefetch" href="/assets/js/59.26109e8a.js"><link rel="prefetch" href="/assets/js/6.1cd9ae6c.js"><link rel="prefetch" href="/assets/js/60.ced05118.js"><link rel="prefetch" href="/assets/js/61.43a7d2ce.js"><link rel="prefetch" href="/assets/js/62.52fdaa98.js"><link rel="prefetch" href="/assets/js/63.faf07758.js"><link rel="prefetch" href="/assets/js/7.7460f934.js"><link rel="prefetch" href="/assets/js/8.8ef58750.js"><link rel="prefetch" href="/assets/js/9.6cc9bd81.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.069220d3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/OperaAds_Icon.png" alt="OperaAds" class="logo"> <span class="site-name can-hide">OperaAds</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="OperaAds for Supply Partners" class="dropdown-title"><span class="title">For Suppliers</span> <span class="arrow down"></span></button> <button type="button" aria-label="OperaAds for Supply Partners" class="mobile-dropdown-title"><span class="title">For Suppliers</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ofs/js/" class="nav-link">
+  JS SDK
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/android/" class="nav-link">
+  Android SDK
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/mediation/" class="nav-link">
+  Mediation
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/vast-tag/" class="nav-link">
+  Vast Tag
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/openrtb/" class="nav-link">
+  OpenRTB
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/header-bidding/" class="nav-link">
+  Header Bidding
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/cookie-sync/" class="nav-link">
+  Cookie Mapping
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/user-sync/" class="nav-link">
+  User Sync
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/report-api/" class="nav-link router-link-active">
+  Report API
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/process/" class="nav-link">
+  Onboarding Process
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="OperaAds for Demand Partners" class="dropdown-title"><span class="title">For Buyers</span> <span class="arrow down"></span></button> <button type="button" aria-label="OperaAds for Demand Partners" class="mobile-dropdown-title"><span class="title">For Buyers</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ofd/process/" class="nav-link">
+  Onboarding Process
+</a></li><li class="dropdown-item"><!----> <a href="/ofd/cookie-sync/" class="nav-link">
+  Cookie Sync
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Languages</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ofs/report-api/001-reporting-api-v1.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/zh-CN/" class="nav-link">
+  简体中文
+</a></li></ul></div></div> <a href="https://github.com/operaads/docs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="OperaAds for Supply Partners" class="dropdown-title"><span class="title">For Suppliers</span> <span class="arrow down"></span></button> <button type="button" aria-label="OperaAds for Supply Partners" class="mobile-dropdown-title"><span class="title">For Suppliers</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ofs/js/" class="nav-link">
+  JS SDK
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/android/" class="nav-link">
+  Android SDK
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/mediation/" class="nav-link">
+  Mediation
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/vast-tag/" class="nav-link">
+  Vast Tag
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/openrtb/" class="nav-link">
+  OpenRTB
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/header-bidding/" class="nav-link">
+  Header Bidding
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/cookie-sync/" class="nav-link">
+  Cookie Mapping
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/user-sync/" class="nav-link">
+  User Sync
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/report-api/" class="nav-link router-link-active">
+  Report API
+</a></li><li class="dropdown-item"><!----> <a href="/ofs/process/" class="nav-link">
+  Onboarding Process
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="OperaAds for Demand Partners" class="dropdown-title"><span class="title">For Buyers</span> <span class="arrow down"></span></button> <button type="button" aria-label="OperaAds for Demand Partners" class="mobile-dropdown-title"><span class="title">For Buyers</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ofd/process/" class="nav-link">
+  Onboarding Process
+</a></li><li class="dropdown-item"><!----> <a href="/ofd/cookie-sync/" class="nav-link">
+  Cookie Sync
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Languages</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ofs/report-api/001-reporting-api-v1.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/zh-CN/" class="nav-link">
+  简体中文
+</a></li></ul></div></div> <a href="https://github.com/operaads/docs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="report-api-v1"><a href="#report-api-v1" class="header-anchor">#</a> Report API v1</h1> <h2 id="introduction"><a href="#introduction" class="header-anchor">#</a> Introduction</h2> <p>This Report API provides you with data of your current inventory and its performance in a given date.</p> <h3 id="token"><a href="#token" class="header-anchor">#</a> Token</h3> <p>Your token</p> <h2 id="http-method"><a href="#http-method" class="header-anchor">#</a> HTTP Method</h2> <p>GET</p> <h2 id="endpoint"><a href="#endpoint" class="header-anchor">#</a> Endpoint</h2> <p>https://ofp.adx.opera.com/openapi/reports</p> <h2 id="query-parameters"><a href="#query-parameters" class="header-anchor">#</a> Query Parameters</h2> <table><thead><tr><th style="text-align:left;">Name</th> <th style="text-align:center;">Required</th> <th style="text-align:left;">Description</th> <th>Examples</th></tr></thead> <tbody><tr><td style="text-align:left;">token</td> <td style="text-align:center;">Yes</td> <td style="text-align:left;">token</td> <td></td></tr> <tr><td style="text-align:left;">start_date</td> <td style="text-align:center;">Yes</td> <td style="text-align:left;">Start Date</td> <td>2021-07-01</td></tr> <tr><td style="text-align:left;">end_date</td> <td style="text-align:center;">Yes</td> <td style="text-align:left;">End Date</td> <td>2021-08-01</td></tr> <tr><td style="text-align:left;">split</td> <td style="text-align:center;">No</td> <td style="text-align:left;">if is true, return split data</td> <td>false</td></tr></tbody></table> <h2 id="examples"><a href="#examples" class="header-anchor">#</a> Examples</h2> <div class="language- extra-class"><pre class="language-text"><code>GET https://ofp.adx.opera.com/openapi/reports?token={your_token}&amp;start_date=2021-07-01&amp;end_date=2021-08-01
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>curl -H &quot;Content-Type:application/json&quot; -X GET https://ofp.adx.opera.com/openapi/reports?token={your_token}&amp;start_date=2021-07-01&amp;end_date=2021-08-01
+</code></pre></div><p>Successful response:</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;list&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;day&quot;</span><span class="token operator">:</span> <span class="token number">20210709</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;app_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;app_name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;ad_tag_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;ad_tag_name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;country_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;NG&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;format&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Native&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;impression_count&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;request_count&quot;</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;revenue&quot;</span><span class="token operator">:</span> <span class="token number">0</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;total_count&quot;</span><span class="token operator">:</span> <span class="token number">1</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>revenue: in dollar, (-1 means Updating in progress)</p> <p>Bad response:</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token number">400</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;message&quot;</span><span class="token operator">:</span> <span class="token string">&quot;invalid token&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.868f366e.js" defer></script><script src="/assets/js/2.616e7dde.js" defer></script><script src="/assets/js/43.ea18f8e0.js" defer></script>
+  </body>
+</html>
