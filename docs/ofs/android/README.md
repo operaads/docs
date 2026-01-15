@@ -43,13 +43,13 @@ repositories {
 
 Sync your project to download the dependencies. Use “[https://artifact.opera.com/releases](https://artifact.opera.com/releases)” instead if the main maven host is not available.
 
-## Obfuscation & Resources
+### Obfuscation & Resources
 
-### Proguard
+#### Proguard
 
 We have wrapped the consumer proguard files in the AAR artifact. No additional rules are needed.
 
-### Shrink Resources
+#### Shrink Resources
 
 If you use any shrinking tools, please add our resource file, where the resource IDs start with `opera_ads`, to your whitelist.
 
