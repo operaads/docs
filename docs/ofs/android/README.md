@@ -23,7 +23,7 @@ Welcome to the Ads SDK integration guide\! Our SDK enables developers to easily 
 
 ## **Installation**
 
-### **Step 1: Add Dependencies**
+### **Add Dependencies**
 
 Add the Ads SDK to your app-level `build.gradle` file. Similar to AdMob, we use Maven repositories for easy integration.
 
@@ -33,7 +33,7 @@ dependencies {
 }
 ```
 
-Add repositories:
+### **Add repositories**
 
 ```
 repositories {
@@ -42,6 +42,17 @@ repositories {
 ```
 
 Sync your project to download the dependencies. Use “[https://artifact.opera.com/releases](https://artifact.opera.com/releases)” instead if the main maven host is not available.
+
+## Obfuscation & Resources
+
+### Proguard
+
+We have wrapped the consumer proguard files in the AAR artifact. No additional rules are needed.
+
+### Shrink Resources
+
+If you use any shrinking tools, please add our resource file, where the resource IDs start with `opera_ads`, to your whitelist.
+
 
 ## **Initialization**
 
@@ -699,10 +710,6 @@ dependencies {
     implementation 'com.opera:opera-ads-okhttp3:+'
 }
 ```
-
-### **Q: Do I need to add proguard rules for Opera Ads SDK?**
-
-**A:** No, we have wrapped the consumer proguard files in the AAR artifact. No additional rules are needed.
 
 ## **Best Practices**
 
