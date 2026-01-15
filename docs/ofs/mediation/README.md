@@ -29,7 +29,7 @@ Opera Ads provides custom adapters for major mediation platforms, supporting int
 Before you begin, ensure that:
 
 1. You have registered on the [Opera Ads Developer Platform](https://ofp.adx.opera.com) and created your app
-2. You have obtained your Opera Ads **App ID** and **Placement IDs** for each ad unit
+2. You have obtained your Opera Ads **App ID** (e.g. "app1234567890/ep1234567890/app1234567890") and **Placement IDs** (e.g. "s1234567890") for each ad unit
 3. You have created your app and ad units on the corresponding mediation platform (AdMob/TopOn/AppLovin)
 4. Full support for kotlin integration begins with version 2.2.2.x
 
@@ -76,6 +76,7 @@ Name this mapping, and fill in the **_Class Name_** with “com.opera.ads.mediat
   "placementId": "YOUR_OPERA_PLACEMENT_ID"
 }
 ```
+The `appId` from Opera ads is in the format of `pub<digits>/ep<digits>/app<digits>`, e.g. "pub1234567890/ep1234567890/app1234567890".
 
 ### 2. Add Dependencies
 
@@ -291,9 +292,9 @@ On the **Ad Units** page, add Opera Ads as an ad source for each ad unit:
 
 **Parameter Description**:
 
-- `App ID`: Your App ID from Opera Ads (required)
+- `App ID`: Your App ID from Opera [publisher portal](https://ofp.adx.opera.com/) (required), e.g. "pub1234567890/ep1234567890/app1234567890".
 
-- Placement ID: Placement id from Opera Ads.
+- `Placement ID`: Placement id from Opera Ads, e.g. "s1234567890".
 
 ### 2. Add Dependencies
 
