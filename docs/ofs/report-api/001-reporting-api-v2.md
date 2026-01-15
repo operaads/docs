@@ -11,7 +11,7 @@ All API requests must include a valid authorization token in the request header:
 ```
 Authorization: Bearer <your_auth_token>
 ```
-You can get your token by navigating to **Integraion** -> **SDK & API** -> **Reporting API** on [publisher portal](https://ofp.adx.opera.com/).
+You can get your token by navigating to **Integration** -> **SDK & API** -> **Reporting API** on [publisher portal](https://ofp.adx.opera.com/).
 ![Get your auth token](./images/report_api_token.png)
 
 ---
