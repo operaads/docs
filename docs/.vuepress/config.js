@@ -95,6 +95,12 @@ module.exports = () => ({
               children: listMarkdowns("./docs/ofs/user-sync/"),
             },
           ],
+          "/ofs/report-api/": [
+            {
+              title: "Guide",
+              children: listMarkdowns("./docs/ofs/report-api/"),
+            },
+          ],
         },
       },
       "/zh-CN/": {
