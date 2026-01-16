@@ -42,14 +42,14 @@ module.exports = () => ({
           ],
           "/ofs/android/": [
             {
-              title: "Guide",
-              children: listMarkdowns("./docs/ofs/android/"),
-            },
-          ],
-          "/ofs/mediation/": [
-            {
-              title: "Guide",
-              children: listMarkdowns("./docs/ofs/mediation/"),
+              title: "Android",
+              children: [
+                "",
+                "server-bidding/",
+                "client-bidding/",
+                "release-note/",
+                "mediation/",
+              ],
             },
           ],
           "/ofs/vast-tag/": [

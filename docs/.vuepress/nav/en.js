@@ -14,11 +14,6 @@ module.exports = [
         link: "/ofs/android/",
       },
       {
-        text: "Mediation",
-        ariaLabel: "Mediation",
-        link: "/ofs/mediation/",
-      },
-      {
         text: "Vast Tag",
         ariaLabel: "VAST Tag",
         link: "/ofs/vast-tag/",

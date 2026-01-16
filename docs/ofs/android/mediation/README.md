@@ -1,3 +1,7 @@
+---
+title: Mediation
+---
+
 # Opera Ads Mediation Adapter Integration Guide
 
 This guide explains how to integrate Opera Ads SDK through custom adapters into AdMob, TopOn (Anythink), and AppLovin MAX mediation platforms.
@@ -110,7 +114,7 @@ The AdMob SDK automatically initializes the Opera Ads SDK when loading ads. No a
 
 ##### GDPR
 
-Please refer to [https://doc.adx.opera.com/ofs/android/\#gdpr](https://doc.adx.opera.com/ofs/android/#gdpr), Opera Ads SDK read application’s consent string automatically.
+Please refer to [https://doc.adx.opera.com/ofs/android/\#gdpr](../#gdpr), Opera Ads SDK read application’s consent string automatically.
 
 ##### COPPA
 
@@ -118,7 +122,7 @@ Opera Ads SDK reads the tag of **TFUA** from AdMob _RequestConfiguration_ and pa
 
 ##### CPPA
 
-Please refer to [https://doc.adx.opera.com/ofs/android/\#u-s-states-privacy-ccpa](https://doc.adx.opera.com/ofs/android/#u-s-states-privacy-ccpa), to comply with US states privacy laws, you have to invoke “PrivacyManager.setUSPrivacy("....")” to set the status of CCPA manually.
+Please refer to [https://doc.adx.opera.com/ofs/android/\#u-s-states-privacy-ccpa](../#u-s-states-privacy-ccpa), to comply with US states privacy laws, you have to invoke “PrivacyManager.setUSPrivacy("....")” to set the status of CCPA manually.
 
 ### 5. Adapter Version Compatibility
 
@@ -233,15 +237,15 @@ mATNative.setLocalExtra(localExtra);
 
 ##### GDPR
 
-Please refer to [https://doc.adx.opera.com/ofs/android/\#gdpr](https://doc.adx.opera.com/ofs/android/#gdpr), Opera Ads SDK read application’s consent string automatically.
+Please refer to [https://doc.adx.opera.com/ofs/android/\#gdpr](../#gdpr), Opera Ads SDK read application’s consent string automatically.
 
 ##### COPPA
 
-Please refer to [https://doc.adx.opera.com/ofs/android/\#coppa](https://doc.adx.opera.com/ofs/android/#coppa). It’s recommended to use the API “`PrivacyManager.setCoppa(...)`” to set _coppa_ status.
+Please refer to [https://doc.adx.opera.com/ofs/android/\#coppa](../#coppa). It’s recommended to use the API “`PrivacyManager.setCoppa(...)`” to set _coppa_ status.
 
 ##### CPPA
 
-Please refer to [https://doc.adx.opera.com/ofs/android/\#u-s-states-privacy-ccpa](https://doc.adx.opera.com/ofs/android/#u-s-states-privacy-ccpa). It’s recommended to use the API “`PrivacyManager.setUSPrivacy(...)`” to set the compliance status of CCPA.
+Please refer to [https://doc.adx.opera.com/ofs/android/\#u-s-states-privacy-ccpa](../#u-s-states-privacy-ccpa). It’s recommended to use the API “`PrivacyManager.setUSPrivacy(...)`” to set the compliance status of CCPA.
 
 ### 5. Adapter Version Compatibility
 
@@ -328,15 +332,15 @@ No additional code is required for InMobi integration.
 
 ##### GDPR
 
-Please refer to [https://doc.adx.opera.com/ofs/android/\#gdpr](https://doc.adx.opera.com/ofs/android/#gdpr), Opera Ads SDK read application’s consent string automatically.
+Please refer to [https://doc.adx.opera.com/ofs/android/\#gdpr](../#gdpr), Opera Ads SDK read application’s consent string automatically.
 
 ##### COPPA
 
-Please refer to [https://doc.adx.opera.com/ofs/android/\#coppa](https://doc.adx.opera.com/ofs/android/#coppa). It’s recommended to use the API “`PrivacyManager.setCoppa(...)`” to set _coppa_ status.
+Please refer to [https://doc.adx.opera.com/ofs/android/\#coppa](../#coppa). It’s recommended to use the API “`PrivacyManager.setCoppa(...)`” to set _coppa_ status.
 
 ##### CPPA
 
-`OperaMediationAdapter` updates the compliance status of CCPA from Applovin mediation configuration automatically requesting ads. But you can use the API “`PrivacyManager.setUSPrivacy(...)`” to change or reset the status. Please refer to [https://doc.adx.opera.com/ofs/android/\#u-s-states-privacy-ccpa](https://doc.adx.opera.com/ofs/android/#u-s-states-privacy-ccpa) for more information.
+`OperaMediationAdapter` updates the compliance status of CCPA from Applovin mediation configuration automatically requesting ads. But you can use the API “`PrivacyManager.setUSPrivacy(...)`” to change or reset the status. Please refer to [https://doc.adx.opera.com/ofs/android/\#u-s-states-privacy-ccpa](../#u-s-states-privacy-ccpa) for more information.
 
 ### 5. Adapter Version Compatibility
 
@@ -386,7 +390,7 @@ bannerAdView.setAutoRefreshEnabled(false);
 
 For questions or support, please contact:
 
-- **Documentation**: [Opera Ads Developer Documentation](https://doc.adx.opera.com/ofs/android/)
+- **Documentation**: [Opera Ads Developer Documentation](../)
 - **Technical Support**: [ad-sdk-support-list@opera.com](mailto:ad-sdk-support-list@opera.com)
 
 ---
