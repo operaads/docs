@@ -1,4 +1,4 @@
-# Report API v2
+# Advanced Report API
 
 ## Overview
 

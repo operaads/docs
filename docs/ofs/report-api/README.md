@@ -1,4 +1,4 @@
-# Report API v1
+# Basic Report API
 
 ## Introduction
 
