@@ -10,6 +10,21 @@ This page contains the release notes for Opera Ads SDK for Android.
 
 ---
 
+## Version 2.6.0 (2026-01-22)
+
+### New Features
+- **TradPlus Mediation**: Added support for TradPlus custom adapter integration
+  - Supports Native, Banner, Interstitial, Rewarded, and Splash ad formats
+
+### Improvements
+- **Enhanced Dependency Compatibility**: Optimized library dependency versions for better compatibility with legacy integrator apps
+  - Reduced minimum `androidx.lifecycle` requirement to support broader range of app configurations
+  - Lowered `kotlinx-serialization` and `kotlinx-coroutines` version constraints
+- **Backward Compatibility**: SDK now works seamlessly with apps using older dependency versions while maintaining support for latest versions
+- Performance optimizations and bug fixes
+
+---
+
 ## Version 2.5.0 (2026-01-13)
 
 ### New Features
