@@ -10,6 +10,21 @@ This page contains the release notes for Opera Ads SDK for Android.
 
 ---
 
+## Version 2.7.0 (2026-02-02)
+
+### New Features
+- **App Open Ad Support in Mediation**: Added App Open Ad format support for AdMob and TopOn custom adapters
+- **Rewarded Interstitial Ads**: Rewarded Interstitial Ad format is now publicly available for all publishers
+- **Enhanced Debugging**: Improved logging in custom adapters for easier troubleshooting
+
+### Improvements
+- **App Startup Performance**: Optimized SDK initialization for faster app launch
+- **Video Ad Experience**: Improved video ad serving quality for better user experience
+- **Memory Management**: Enhanced resource cleanup for fullscreen ads
+- Performance optimizations and bug fixes
+
+---
+
 ## Version 2.6.0 (2026-01-22)
 
 ### New Features
